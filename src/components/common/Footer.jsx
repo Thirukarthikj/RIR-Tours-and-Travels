@@ -1,0 +1,103 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { RiFacebookCircleFill, RiInstagramFill, RiYoutubeFill, RiMapPin2Line, RiPhoneLine, RiMailLine } from 'react-icons/ri';
+import { CONTACT_INFO } from '../../constants';
+
+export default function Footer() {
+  return (
+    <footer className="bg-primary text-white pt-16 pb-8 border-t border-white/5 font-sans">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        
+        {/* Brand Information */}
+        <div className="space-y-4 text-left">
+          <Link to="/" className="inline-block">
+            <span className="text-2xl font-bold font-display tracking-tight text-white">
+              RIR <span className="text-gold-light">Tours</span>
+            </span>
+          </Link>
+          <p className="text-sm text-gray-300 leading-relaxed max-w-sm">
+            Crafting luxury road journeys across the rich heritage of Tamil Nadu since 2014. Dedicated to convenience, security, safety, and cultural heritage.
+          </p>
+          <div className="flex space-x-4 pt-2">
+            <a href={CONTACT_INFO.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="Facebook">
+              <RiFacebookCircleFill />
+            </a>
+            <a href={CONTACT_INFO.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="Instagram">
+              <RiInstagramFill />
+            </a>
+            <a href={CONTACT_INFO.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="YouTube">
+              <RiYoutubeFill />
+            </a>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div className="text-left">
+          <h3 className="text-sm font-semibold tracking-wider uppercase text-gold-light mb-4">Quick Links</h3>
+          <ul className="space-y-2.5 text-sm">
+            <li>
+              <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link>
+            </li>
+            <li>
+              <a href="/#fleet" className="text-gray-300 hover:text-white transition-colors">Luxury Fleet</a>
+            </li>
+            <li>
+              <a href="/#services" className="text-gray-300 hover:text-white transition-colors">Temple Tours</a>
+            </li>
+            <li>
+              <Link to="/packages" className="text-gray-300 hover:text-white transition-colors">Coastal Escapes</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Legal / Policies */}
+        <div className="text-left">
+          <h3 className="text-sm font-semibold tracking-wider uppercase text-gold-light mb-4">Policies</h3>
+          <ul className="space-y-2.5 text-sm">
+            <li>
+              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Safety Policies</span>
+            </li>
+            <li>
+              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
+            </li>
+            <li>
+              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Terms of Service</span>
+            </li>
+            <li>
+              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Refund Policy</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div className="text-left space-y-3.5">
+          <h3 className="text-sm font-semibold tracking-wider uppercase text-gold-light mb-4">Contact Us</h3>
+          <div className="flex items-start space-x-3 text-sm text-gray-300">
+            <RiMapPin2Line className="text-gold-light text-lg shrink-0 mt-0.5" />
+            <span>{CONTACT_INFO.address}</span>
+          </div>
+          <div className="flex items-center space-x-3 text-sm text-gray-300">
+            <RiPhoneLine className="text-gold-light text-lg shrink-0" />
+            <a href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">{CONTACT_INFO.phone}</a>
+          </div>
+          <div className="flex items-center space-x-3 text-sm text-gray-300">
+            <RiMailLine className="text-gold-light text-lg shrink-0" />
+            <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-white transition-colors">{CONTACT_INFO.email}</a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr className="max-w-7xl mx-auto border-white/10 my-10 px-6" />
+
+      {/* Legal & GST Details */}
+      <div className="max-w-7xl mx-auto px-6 text-center text-xs text-gray-400 space-y-2.5">
+        <p>© 2026 RIR Tours and Travels. All rights reserved. Crafted for luxury.</p>
+        <p className="flex justify-center flex-wrap gap-x-6 gap-y-1 opacity-70">
+          <span>GSTIN: {CONTACT_INFO.gstin}</span>
+          <span>PAN: {CONTACT_INFO.pan}</span>
+        </p>
+      </div>
+    </footer>
+  );
+}
