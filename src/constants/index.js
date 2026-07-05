@@ -476,7 +476,7 @@ export const POPULAR_CATEGORIES = [
     id: 1,
     title: "Tamil Nadu Heritage & Pilgrimage",
     count: "48 TOURS",
-    image: "https://images.unsplash.com/photo-1600100397608-f010b423b971?q=80&w=600",
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_18_madurai_rpybve.jpg",
     cols: "md:col-span-1"
   },
   {
