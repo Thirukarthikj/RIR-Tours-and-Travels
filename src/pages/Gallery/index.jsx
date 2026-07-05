@@ -29,7 +29,7 @@ export default function Gallery() {
         {/* Background Image Scrim */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1590050752117-238cb0612b1b?q=80&w=1200')` }}
+          style={{ backgroundImage: `url('https://res.cloudinary.com/vpjbovlg/image/upload/v1783237806/imgi_32_domestic_upqye0.webp')` }}
         >
           <div className="absolute inset-0 bg-black/60" />
         </div>

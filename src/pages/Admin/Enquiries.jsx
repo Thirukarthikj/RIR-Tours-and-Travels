@@ -9,7 +9,9 @@ export default function Enquiries() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchEnquiries = () => {
-    setEnquiries(adminService.getEnquiries());
+    adminService.getEnquiries().then(data => {
+      setEnquiries(data);
+    });
   };
 
   useEffect(() => {
@@ -21,17 +23,17 @@ export default function Enquiries() {
     setIsModalOpen(true);
   };
 
-  const handleStatusChange = (id, newStatus) => {
-    adminService.updateEnquiryStatus(id, newStatus);
+  const handleStatusChange = async (id, newStatus) => {
+    await adminService.updateEnquiryStatus(id, newStatus);
     fetchEnquiries();
     if (activeEnquiry && activeEnquiry.id === id) {
       setActiveEnquiry(prev => ({ ...prev, status: newStatus }));
     }
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this enquiry entry?")) {
-      adminService.deleteEnquiry(id);
+      await adminService.deleteEnquiry(id);
       setIsModalOpen(false);
       fetchEnquiries();
     }

@@ -13,7 +13,7 @@ export const CONTACT_INFO = {
   name: "RIR Tours & Travels",
   address: "42 Luxury Drive, Anna Salai, Chennai, Tamil Nadu 600002",
   phone: "+91 44 2456 7890",
-  whatsapp: "+91 98765 43210",
+  whatsapp: "+91 93425 53805",
   email: "concierge@rirtours.com",
   hours: "Mon-Sat: 09:00 - 20:00",
   gstin: "33AAAAR0000A1Z2",

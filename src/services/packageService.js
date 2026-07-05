@@ -1,15 +1,13 @@
 import { PACKAGES } from '../constants';
+import { getDocuments } from './firebase/firestore';
 
 export const getPackages = async () => {
-  // Simulate network latency
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(PACKAGES), 300);
-  });
+  const list = await getDocuments('packages', 'createdDate', PACKAGES);
+  // Return only active packages to the public view
+  return list.filter(p => p.status !== 'Inactive');
 };
 
 export const getPackageById = async (id) => {
-  return new Promise((resolve) => {
-    const pkg = PACKAGES.find(p => p.id === id) || null;
-    setTimeout(() => resolve(pkg), 150);
-  });
+  const list = await getPackages();
+  return list.find(p => p.id === id) || null;
 };

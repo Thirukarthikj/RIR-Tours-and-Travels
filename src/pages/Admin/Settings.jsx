@@ -6,20 +6,46 @@ import { RiCheckboxCircleLine } from 'react-icons/ri';
 export default function Settings() {
   const [settings, setSettings] = useState(null);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [debugError, setDebugError] = useState(null);
 
   useEffect(() => {
-    setSettings(adminService.getSettings());
+    const handleError = (e) => {
+      setDebugError(e.message + " at " + e.filename + ":" + e.lineno);
+    };
+    window.addEventListener('error', handleError);
+    
+    adminService.getSettings()
+      .then(data => {
+        setSettings(data);
+      })
+      .catch(err => {
+        setDebugError("getSettings Promise rejected: " + err.message);
+      });
+      
+    return () => window.removeEventListener('error', handleError);
   }, []);
 
-  const handleSave = (updatedSettings) => {
-    adminService.saveSettings(updatedSettings);
-    setSettings(updatedSettings);
-    setSaveSuccess(true);
-    setTimeout(() => setSaveSuccess(false), 3000);
+  const handleSave = async (updatedSettings) => {
+    try {
+      const payload = settings && settings.id ? { id: settings.id, ...updatedSettings } : updatedSettings;
+      const saved = await adminService.saveSettings(payload);
+      setSettings(saved);
+      setSaveSuccess(true);
+      setTimeout(() => setSaveSuccess(false), 3000);
+    } catch (err) {
+      setDebugError("saveSettings rejected: " + err.message);
+    }
   };
 
   return (
     <div className="space-y-6 text-left font-sans">
+      
+      {/* Debug Error Banner */}
+      {debugError && (
+        <div className="p-4 bg-red-500 text-white rounded-xl text-xs font-mono">
+          <strong>JS Runtime Error:</strong> {debugError}
+        </div>
+      )}
       
       {/* View Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -36,11 +62,15 @@ export default function Settings() {
         )}
       </div>
 
-      {settings && (
+      {settings ? (
         <SettingsForm
           initialData={settings}
           onSave={handleSave}
         />
+      ) : (
+        <div className="p-12 text-center text-xs text-gray-400 bg-white rounded-2xl border border-gray-100">
+          Loading settings options...
+        </div>
       )}
 
     </div>

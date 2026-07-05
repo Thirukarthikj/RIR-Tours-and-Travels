@@ -10,7 +10,9 @@ export default function Vehicles() {
   const [editingVehicle, setEditingVehicle] = useState(null);
 
   const fetchVehicles = () => {
-    setVehicles(adminService.getVehicles());
+    adminService.getVehicles().then(data => {
+      setVehicles(data);
+    });
   };
 
   useEffect(() => {
@@ -22,9 +24,9 @@ export default function Vehicles() {
     setIsFormOpen(true);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to remove this vehicle from inventory?")) {
-      adminService.deleteVehicle(id);
+      await adminService.deleteVehicle(id);
       fetchVehicles();
     }
   };
@@ -34,8 +36,8 @@ export default function Vehicles() {
     setIsFormOpen(true);
   };
 
-  const handleSave = (data) => {
-    adminService.saveVehicle(data);
+  const handleSave = async (data) => {
+    await adminService.saveVehicle(data);
     setIsFormOpen(false);
     setEditingVehicle(null);
     fetchVehicles();

@@ -1,17 +1,29 @@
+import { addDocument } from './firebase/firestore';
+
 export const submitEnquiry = async (enquiryData) => {
-  console.log("Enquiry Submitted (Mock API call):", enquiryData);
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ success: true, message: "Enquiry received! Our concierge will contact you shortly." });
-    }, 600);
-  });
+  try {
+    const payload = {
+      ...enquiryData,
+      date: new Date().toISOString(),
+      status: "New"
+    };
+    await addDocument('enquiries', payload);
+    return { success: true, message: "Enquiry received! Our concierge will contact you shortly." };
+  } catch (err) {
+    console.error("Enquiry submission error:", err);
+    return { success: false, message: "Failed to submit enquiry. Please try again." };
+  }
 };
 
 export const subscribeNewsletter = async (email) => {
-  console.log("Newsletter Subscription (Mock API call):", email);
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ success: true, message: "Subscribed successfully!" });
-    }, 400);
-  });
+  try {
+    await addDocument('newsletter', {
+      email,
+      date: new Date().toISOString()
+    });
+    return { success: true, message: "Subscribed successfully!" };
+  } catch (err) {
+    console.error("Newsletter subscription error:", err);
+    return { success: false, message: "Subscription failed. Please try again." };
+  }
 };

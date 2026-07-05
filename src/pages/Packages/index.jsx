@@ -70,7 +70,7 @@ export default function Packages() {
         {/* Background Image Scrim */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1200')` }}
+          style={{ backgroundImage: `url('https://res.cloudinary.com/vpjbovlg/image/upload/v1783237809/download_1_t5rabk.jpg')` }}
         >
           <div className="absolute inset-0 bg-black/60" />
         </div>
@@ -245,7 +245,7 @@ export default function Packages() {
                   </h3>
                   <div className="bg-slate-50 px-2.5 py-1 rounded flex items-center text-xs font-bold text-gray-700 shrink-0 border border-slate-100">
                     <RiStarFill className="text-[#EAB308] mr-1" />
-                    <span>{activePackage.rating.toFixed(1)}</span>
+                    <span>{(activePackage.rating || 5.0).toFixed(1)}</span>
                   </div>
                 </div>
 

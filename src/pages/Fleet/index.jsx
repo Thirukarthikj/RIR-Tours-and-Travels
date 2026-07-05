@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RiUserLine, RiBriefcaseLine, RiWindyLine, RiWifiLine, RiShieldCheckLine, RiUserStarLine, RiCustomerService2Line, RiArrowRightSLine } from 'react-icons/ri';
 
@@ -7,17 +7,29 @@ import Button from '../../components/common/Button';
 import SectionTitle from '../../components/common/SectionTitle';
 import EnquiryModal from '../../components/shared/EnquiryModal';
 import { FLEET_EXTENDED } from '../../constants';
+import { getVehicles } from '../../services/vehicleService';
 
 export default function Fleet() {
+  const [vehicles, setVehicles] = useState(FLEET_EXTENDED);
   const [activeCategory, setActiveCategory] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPresetData, setModalPresetData] = useState(null);
 
+  useEffect(() => {
+    getVehicles().then(data => {
+      if (Array.isArray(data) && data.length > 0) {
+        setVehicles(data);
+      }
+    }).catch(err => {
+      console.error("Error loading vehicles:", err);
+    });
+  }, []);
+
   const categories = ['All', 'Hatchback', 'Sedan', 'SUV', 'Tempo Traveller', 'Luxury Coach'];
 
   const filteredFleet = activeCategory === 'All'
-    ? FLEET_EXTENDED
-    : FLEET_EXTENDED.filter(v => v.category === activeCategory);
+    ? vehicles
+    : vehicles.filter(v => v.category === activeCategory);
 
   const handleEnquireClick = (vehicle) => {
     setModalPresetData(vehicle);

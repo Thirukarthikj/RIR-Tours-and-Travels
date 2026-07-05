@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { RiMenu2Line, RiBellLine, RiArrowDownSLine, RiUserLine, RiSettings4Line, RiLogoutBoxRLine } from 'react-icons/ri';
+import { RiMenu2Line, RiBellLine, RiArrowDownSLine, RiUserLine, RiSettings4Line, RiLogoutBoxRLine, RiArrowLeftLine } from 'react-icons/ri';
 import { adminService } from '../../services/adminService';
 
 export default function AdminHeader({ sidebarOpen, toggleSidebar, isMobile }) {
@@ -11,7 +11,9 @@ export default function AdminHeader({ sidebarOpen, toggleSidebar, isMobile }) {
   const [profile, setProfile] = useState({ name: 'Admin', avatarUrl: '' });
 
   useEffect(() => {
-    setProfile(adminService.getProfile());
+    adminService.getProfile().then(data => {
+      setProfile(data);
+    });
   }, [location.pathname]); // Update profile name/avatar if edited
 
   const getPageTitle = () => {
@@ -34,25 +36,36 @@ export default function AdminHeader({ sidebarOpen, toggleSidebar, isMobile }) {
   };
 
   return (
-    <header className="sticky top-0 right-0 z-30 w-full h-16 bg-white border-b border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,33,64,0.02)] px-6 flex justify-between items-center font-sans">
+    <header className="sticky top-0 right-0 z-30 w-full h-16 bg-white border-b border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,33,64,0.02)] px-4 md:px-6 flex justify-between items-center font-sans">
       
       {/* Left items: Menu trigger & Breadcrumb Title */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-1 md:gap-4 min-w-0">
         <button
           onClick={toggleSidebar}
-          className="p-2 hover:bg-slate-50 rounded-lg text-primary hover:text-gold transition-colors focus:outline-none cursor-pointer"
+          className="p-2 hover:bg-slate-50 rounded-lg text-primary hover:text-gold transition-colors focus:outline-none cursor-pointer flex-shrink-0"
         >
           <RiMenu2Line className="text-xl" />
         </button>
-        <div className="flex items-center gap-2 text-xs md:text-sm font-semibold tracking-wide">
-          <span className="text-gray-400">Control Panel</span>
-          <span className="text-gray-300">/</span>
-          <span className="text-primary font-bold">{getPageTitle()}</span>
+
+        {isMobile && location.pathname !== '/admin/dashboard' && (
+          <button
+            onClick={() => navigate(-1)}
+            className="p-1.5 hover:bg-slate-50 rounded-lg text-primary hover:text-gold transition-colors focus:outline-none cursor-pointer flex-shrink-0"
+            title="Go Back"
+          >
+            <RiArrowLeftLine className="text-xl" />
+          </button>
+        )}
+
+        <div className="flex items-center gap-2 text-xs md:text-sm font-semibold tracking-wide min-w-0">
+          <span className="text-gray-400 hidden sm:inline">Control Panel</span>
+          <span className="text-gray-300 hidden sm:inline">/</span>
+          <span className="text-primary font-bold truncate">{getPageTitle()}</span>
         </div>
       </div>
 
       {/* Right items: Notifications & ProfileDropdown */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 md:gap-4 flex-shrink-0">
         
         {/* Notifications Icon with Indicator */}
         <div className="relative">
@@ -70,7 +83,7 @@ export default function AdminHeader({ sidebarOpen, toggleSidebar, isMobile }) {
           {notificationsOpen && (
             <>
               <div onClick={() => setNotificationsOpen(false)} className="fixed inset-0 z-20 cursor-default" />
-              <div className="absolute right-0 mt-2.5 w-80 bg-white border border-gray-100 rounded-2xl shadow-xl z-30 p-4 text-left space-y-3.5">
+              <div className="absolute right-0 mt-2.5 w-72 sm:w-80 bg-white border border-gray-100 rounded-2xl shadow-xl z-30 p-4 text-left space-y-3.5">
                 <div className="flex justify-between items-center border-b border-gray-100 pb-2.5">
                   <span className="text-xs font-bold text-primary">Notifications</span>
                   <span className="text-[10px] text-gold font-semibold hover:underline cursor-pointer">Mark all read</span>

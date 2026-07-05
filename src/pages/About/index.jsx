@@ -24,7 +24,7 @@ export default function About() {
         {/* Background Image Scrim */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200')` }}
+          style={{ backgroundImage: `url('https://res.cloudinary.com/vpjbovlg/image/upload/v1783237798/Travel_cover_photo_umhm9z.jpg')` }}
         >
           <div className="absolute inset-0 bg-black/60" />
         </div>

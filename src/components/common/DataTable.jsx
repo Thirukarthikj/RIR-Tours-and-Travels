@@ -49,7 +49,7 @@ export default function DataTable({
     <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,33,64,0.02)] overflow-hidden font-sans">
       
       {/* 1. Header Toolbar (Search, Filter, Export) */}
-      <div className="p-5 border-b border-gray-55 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-4 md:p-5 border-b border-gray-55 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         
         {/* Search & Category Filter */}
         <div className="flex flex-wrap items-center gap-3">
@@ -85,7 +85,7 @@ export default function DataTable({
 
       {/* 2. Grid Table Body */}
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse">
+        <table className="w-full text-left border-collapse min-w-[700px]">
           <thead>
             <tr className="bg-slate-50 border-b border-gray-100 text-[10px] font-bold text-gray-400 uppercase tracking-wider">
               {columns.map((col, idx) => (
@@ -151,7 +151,7 @@ export default function DataTable({
 
       {/* 3. Footer Pagination row */}
       {totalPages > 1 && (
-        <div className="p-4 border-t border-gray-50 flex items-center justify-between gap-4 text-xs font-semibold text-gray-500">
+        <div className="p-4 border-t border-gray-50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-semibold text-gray-500">
           <span>
             Showing Page {currentPage} of {totalPages} ({filteredData.length} total entries)
           </span>

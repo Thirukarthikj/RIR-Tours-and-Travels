@@ -36,7 +36,7 @@ export default function PackageCard({ pkg, onDetails, onEnquire }) {
 
         <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-md flex items-center text-xs font-bold text-gray-800 shadow-sm">
           <RiStarFill className="text-[#EAB308] mr-1" />
-          <span>{rating.toFixed(1)}</span>
+          <span>{(rating || 5.0).toFixed(1)}</span>
         </div>
       </div>
 

@@ -10,7 +10,9 @@ export default function Packages() {
   const [editingPackage, setEditingPackage] = useState(null);
 
   const fetchPackages = () => {
-    setPackages(adminService.getPackages());
+    adminService.getPackages().then(data => {
+      setPackages(data);
+    });
   };
 
   useEffect(() => {
@@ -22,9 +24,9 @@ export default function Packages() {
     setIsFormOpen(true);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this package?")) {
-      adminService.deletePackage(id);
+      await adminService.deletePackage(id);
       fetchPackages();
     }
   };
@@ -34,8 +36,8 @@ export default function Packages() {
     setIsFormOpen(true);
   };
 
-  const handleSave = (data) => {
-    adminService.savePackage(data);
+  const handleSave = async (data) => {
+    await adminService.savePackage(data);
     setIsFormOpen(false);
     setEditingPackage(null);
     fetchPackages();

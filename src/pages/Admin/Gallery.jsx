@@ -11,7 +11,9 @@ export default function Gallery() {
   const [activeTab, setActiveTab] = useState('All');
 
   const fetchGallery = () => {
-    setGallery(adminService.getGallery());
+    adminService.getGallery().then(data => {
+      setGallery(data);
+    });
   };
 
   useEffect(() => {
@@ -23,9 +25,9 @@ export default function Gallery() {
     setIsFormOpen(true);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this gallery photo?")) {
-      adminService.deleteGallery(id);
+      await adminService.deleteGallery(id);
       fetchGallery();
     }
   };
@@ -35,8 +37,8 @@ export default function Gallery() {
     setIsFormOpen(true);
   };
 
-  const handleSave = (data) => {
-    adminService.saveGallery(data);
+  const handleSave = async (data) => {
+    await adminService.saveGallery(data);
     setIsFormOpen(false);
     setEditingPhoto(null);
     fetchGallery();

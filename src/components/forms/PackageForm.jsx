@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
-import { RiAddLine, RiDeleteBin6Line, RiSave3Line, RiRefreshLine } from 'react-icons/ri';
+import { RiAddLine, RiDeleteBin6Line, RiSave3Line } from 'react-icons/ri';
 import ImageUploader from '../common/ImageUploader';
 
 export default function PackageForm({ initialData, onSave, onCancel }) {
-  const [activeTab, setActiveTab] = useState('basic'); // basic | details | lists | media
-
-  const { register, handleSubmit, control, setValue, watch, reset, formState: { errors } } = useForm({
+  const { register, handleSubmit, control, setValue, watch, formState: { errors } } = useForm({
     defaultValues: initialData || {
       title: '',
       destination: '',
@@ -68,15 +66,8 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
     onSave(formattedData);
   };
 
-  const tabs = [
-    { id: 'basic', label: 'Basic Info' },
-    { id: 'details', label: 'Details & Route' },
-    { id: 'lists', label: 'Itinerary & Lists' },
-    { id: 'media', label: 'Media & SEO' }
-  ];
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 text-left font-sans bg-white p-6 rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,33,64,0.02)]">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 text-left font-sans bg-white p-6 rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,33,64,0.02)]">
       
       {/* 1. Header Toolbar */}
       <div className="flex justify-between items-center border-b border-gray-100 pb-4">
@@ -103,31 +94,13 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
         </div>
       </div>
 
-      {/* 2. Tab Navigation */}
-      <div className="flex gap-4 border-b border-gray-50 pb-2">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            type="button"
-            onClick={() => setActiveTab(tab.id)}
-            className={`text-xs font-bold tracking-wide pb-1 cursor-pointer focus:outline-none ${
-              activeTab === tab.id 
-                ? 'border-b-2 border-gold text-gold' 
-                : 'text-gray-400 hover:text-primary'
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
-      {/* 3. Tab Contents */}
-      <div className="space-y-6 min-h-[300px]">
+      {/* 2. All Sections in One Single Page */}
+      <div className="space-y-8 divide-y divide-gray-100">
         
-        {/* --- Tab: Basic Info --- */}
-        {activeTab === 'basic' && (
+        {/* Section A: Basic Info */}
+        <div className="space-y-4">
+          <h3 className="text-sm font-bold text-primary uppercase tracking-wide border-l-4 border-gold pl-2">Basic Info</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            
             {/* Title */}
             <div className="space-y-1">
               <label className="text-xs font-semibold text-gray-500">Package Name</label>
@@ -177,17 +150,7 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
               {errors.duration && <span className="text-[10px] text-red-500 font-semibold">{errors.duration.message}</span>}
             </div>
 
-            {/* Starting price */}
-            <div className="space-y-1">
-              <label className="text-xs font-semibold text-gray-500">Starting Price (INR)</label>
-              <input
-                type="number"
-                {...register('price', { required: 'Price is required' })}
-                placeholder="e.g. 14999"
-                className="w-full px-4 py-2.5 bg-slate-50 border border-gray-150 rounded-xl text-xs font-semibold outline-none focus:border-gold transition-colors text-primary"
-              />
-              {errors.price && <span className="text-[10px] text-red-500 font-semibold">{errors.price.message}</span>}
-            </div>
+
 
             {/* Best Season */}
             <div className="space-y-1">
@@ -201,7 +164,7 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
             </div>
 
             {/* Status toggles & featured */}
-            <div className="flex items-center gap-6 pt-6">
+            <div className="flex items-center gap-6 pt-6 col-span-1 md:col-span-2">
               <label className="flex items-center gap-2.5 cursor-pointer">
                 <input 
                   type="checkbox"
@@ -223,12 +186,12 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
                 </label>
               </div>
             </div>
-
           </div>
-        )}
+        </div>
 
-        {/* --- Tab: Details & Route --- */}
-        {activeTab === 'details' && (
+        {/* Section B: Details & Route */}
+        <div className="space-y-4 pt-6">
+          <h3 className="text-sm font-bold text-primary uppercase tracking-wide border-l-4 border-gold pl-2">Details & Route</h3>
           <div className="space-y-5">
             {/* Logistics row */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -265,23 +228,23 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
             <div className="space-y-1">
               <label className="text-xs font-semibold text-gray-500">Detailed Description</label>
               <textarea
-                rows="5"
+                rows="4"
                 {...register('description')}
                 placeholder="Write description about the spiritual or coastal journey destinations"
                 className="w-full px-4 py-3 bg-slate-50 border border-gray-150 rounded-xl text-xs font-semibold outline-none focus:border-gold transition-colors text-primary"
               />
             </div>
           </div>
-        )}
+        </div>
 
-        {/* --- Tab: Itinerary & Lists --- */}
-        {activeTab === 'lists' && (
+        {/* Section C: Itinerary & Lists */}
+        <div className="space-y-4 pt-6">
+          <h3 className="text-sm font-bold text-primary uppercase tracking-wide border-l-4 border-gold pl-2">Itinerary & Lists</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
             {/* Left: Day-by-Day Itinerary timeline */}
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <h3 className="text-xs font-bold text-primary uppercase tracking-wide">Itinerary Schedule</h3>
+                <h4 className="text-xs font-bold text-primary uppercase tracking-wide">Itinerary Schedule</h4>
                 <button
                   type="button"
                   onClick={() => appendItinerary({ day: itineraryFields.length + 1, title: '', description: '' })}
@@ -322,7 +285,6 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
 
             {/* Right: Highlights, Inclusions, Exclusions */}
             <div className="space-y-6">
-              
               {/* Highlights List */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
@@ -415,16 +377,14 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
                   ))}
                 </div>
               </div>
-
             </div>
-
           </div>
-        )}
+        </div>
 
-        {/* --- Tab: Media & SEO --- */}
-        {activeTab === 'media' && (
+        {/* Section D: Media & SEO */}
+        <div className="space-y-4 pt-6">
+          <h3 className="text-sm font-bold text-primary uppercase tracking-wide border-l-4 border-gold pl-2">Media & SEO</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
             {/* Left Column: Image inputs */}
             <div className="space-y-1">
               <ImageUploader
@@ -436,7 +396,7 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
 
             {/* Right Column: SEO Fields */}
             <div className="space-y-4">
-              <h3 className="text-xs font-bold text-primary uppercase tracking-wide border-b border-gray-50 pb-2">SEO Optimization</h3>
+              <h4 className="text-xs font-bold text-primary uppercase tracking-wide border-b border-gray-50 pb-2">SEO Optimization</h4>
               
               <div className="space-y-1">
                 <label className="text-xs font-semibold text-gray-500">Meta Title</label>
@@ -458,9 +418,8 @@ export default function PackageForm({ initialData, onSave, onCancel }) {
                 />
               </div>
             </div>
-
           </div>
-        )}
+        </div>
 
       </div>
 

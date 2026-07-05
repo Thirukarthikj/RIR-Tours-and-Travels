@@ -4,15 +4,20 @@ import AdminSidebar from './AdminSidebar';
 import AdminHeader from './AdminHeader';
 import AdminFooter from './AdminFooter';
 import { adminService } from '../../services/adminService';
+import { subscribeAuthChanges } from '../../services/firebase/auth';
 
 export default function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [authenticated, setAuthenticated] = useState(adminService.isAuthenticated());
 
-  // Redirect if not authenticated (route guard check)
-  if (!adminService.isAuthenticated()) {
-    return <Navigate to="/admin/login" replace />;
-  }
+  // Monitor live session updates from Firebase Auth
+  useEffect(() => {
+    const unsubscribe = subscribeAuthChanges((user) => {
+      setAuthenticated(!!user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   // Handle responsiveness toggles
   useEffect(() => {
@@ -31,6 +36,11 @@ export default function AdminLayout() {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
+  // Redirect if not authenticated (route guard check)
+  if (!authenticated) {
+    return <Navigate to="/admin/login" replace />;
+  }
 
   return (
     <div className="h-screen bg-slate-50 flex overflow-hidden font-sans">
@@ -58,7 +68,7 @@ export default function AdminLayout() {
         />
 
         {/* Dynamic Nested Screen Content */}
-        <main className="flex-grow p-6 overflow-y-auto">
+        <main className="flex-grow p-4 md:p-6 overflow-y-auto">
           <Outlet />
         </main>
 

@@ -18,19 +18,29 @@ export default function Login() {
     }
   });
 
-  const onSubmit = (data) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (data) => {
     setAuthError('');
-    const success = adminService.login(data.username, data.password);
-    if (success) {
-      navigate('/admin/dashboard');
-    } else {
-      setAuthError('Invalid Username or Password');
+    setIsLoading(true);
+    try {
+      const success = await adminService.login(data.username, data.password);
+      if (success) {
+        navigate('/admin/dashboard');
+      } else {
+        setAuthError('Invalid Username or Password');
+      }
+    } catch (err) {
+      console.error(err);
+      setAuthError('An authentication error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleForgotPassword = (e) => {
     e.preventDefault();
-    alert('Password recovery is disabled in trial mode. Please use username: "admin" and password: "trailone".');
+    alert('Please ask your system administrator to reset your password in Firebase Console.');
   };
 
   return (
@@ -122,13 +132,13 @@ export default function Login() {
             </a>
           </div>
 
-          {/* Submit Action */}
           <Button
             type="submit"
             variant="gold"
-            className="w-full py-3.5 font-bold rounded-xl mt-4 cursor-pointer transition-transform active:scale-[0.98]"
+            disabled={isLoading}
+            className="w-full py-3.5 font-bold rounded-xl mt-4 cursor-pointer transition-transform active:scale-[0.98] disabled:opacity-50"
           >
-            Access Control Panel
+            {isLoading ? "Signing In..." : "Access Control Panel"}
           </Button>
 
         </form>

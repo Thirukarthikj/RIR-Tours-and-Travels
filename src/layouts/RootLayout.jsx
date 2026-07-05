@@ -12,7 +12,7 @@ export default function RootLayout() {
       <Navbar />
 
       {/* Main Page Area */}
-      <main className="flex-grow pt-[72px] md:pt-0">
+      <main className="flex-grow pt-0">
         <Outlet />
       </main>
 

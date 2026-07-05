@@ -28,18 +28,20 @@ export default function Profile() {
   });
 
   useEffect(() => {
-    const data = adminService.getProfile();
-    setProfile(data);
-    setValue('name', data.name);
-    setValue('email', data.email);
-    setValue('avatarUrl', data.avatarUrl);
+    adminService.getProfile().then(data => {
+      setProfile(data);
+      setValue('name', data.name);
+      setValue('email', data.email);
+      setValue('avatarUrl', data.avatarUrl);
+    });
   }, [setValue]);
 
   const avatarUrlVal = watch('avatarUrl');
 
-  const onSubmitProfile = (data) => {
-    adminService.saveProfile(data);
-    setProfile(data);
+  const onSubmitProfile = async (data) => {
+    const payload = profile && profile.id ? { id: profile.id, ...data } : data;
+    const saved = await adminService.saveProfile(payload);
+    setProfile(saved);
     setSaveSuccess(true);
     setTimeout(() => setSaveSuccess(false), 3000);
   };
@@ -114,7 +116,7 @@ export default function Profile() {
               </div>
 
               {/* Image Uploader */}
-              <div className="col-span-2 pt-2 border-t border-gray-100">
+              <div className="col-span-1 md:col-span-2 pt-2 border-t border-gray-100">
                 <ImageUploader
                   value={avatarUrlVal}
                   onChange={(val) => setValue('avatarUrl', val)}

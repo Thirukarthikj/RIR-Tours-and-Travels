@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RiUploadCloudLine, RiLink, RiCheckLine, RiImageAddLine } from 'react-icons/ri';
+import { uploadToCloudinary } from '../../services/firebase/cloudinary';
 
 export default function ImageUploader({ value, onChange, label = "Upload Image" }) {
   const [urlInput, setUrlInput] = useState('');
@@ -11,15 +12,22 @@ export default function ImageUploader({ value, onChange, label = "Upload Image" 
     { name: 'Tea Estate', url: 'https://images.unsplash.com/photo-1590050752117-238cb0612b1b?q=80&w=600' }
   ];
 
+  const [isUploading, setIsUploading] = useState(false);
+
   // Read local file as base64 data url for localStorage persistence
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        onChange(reader.result);
-      };
-      reader.readAsDataURL(file);
+      setIsUploading(true);
+      try {
+        const url = await uploadToCloudinary(file);
+        onChange(url);
+      } catch (err) {
+        console.error("Cloudinary upload error:", err);
+        alert("Image upload failed: " + err.message);
+      } finally {
+        setIsUploading(false);
+      }
     }
   };
 
@@ -63,13 +71,23 @@ export default function ImageUploader({ value, onChange, label = "Upload Image" 
           {/* File Upload Tab */}
           {activeTab === 'upload' && (
             <label className="w-full h-28 border-2 border-dashed border-gray-200 hover:border-gold rounded-xl flex flex-col items-center justify-center gap-1.5 cursor-pointer bg-white transition-colors">
-              <RiUploadCloudLine className="text-3xl text-gray-400" />
-              <span className="text-xs font-bold text-gray-500">Choose File or Drop Here</span>
-              <span className="text-[9px] text-gray-400 uppercase">JPG, PNG, WebP (Max 1MB)</span>
+              {isUploading ? (
+                <>
+                  <div className="w-8 h-8 border-3 border-gold border-t-transparent rounded-full animate-spin mb-1"></div>
+                  <span className="text-xs font-bold text-gold">Uploading to cloud...</span>
+                </>
+              ) : (
+                <>
+                  <RiUploadCloudLine className="text-3xl text-gray-400" />
+                  <span className="text-xs font-bold text-gray-500">Choose File or Drop Here</span>
+                  <span className="text-[9px] text-gray-400 uppercase">JPG, PNG, WebP (Max 1MB)</span>
+                </>
+              )}
               <input
                 type="file"
                 accept="image/*"
                 onChange={handleFileChange}
+                disabled={isUploading}
                 className="hidden"
               />
             </label>

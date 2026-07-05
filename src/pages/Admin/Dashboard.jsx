@@ -14,21 +14,25 @@ export default function Dashboard() {
   const [recentPackages, setRecentPackages] = useState([]);
 
   useEffect(() => {
-    // Load live counts from local state adminService
-    const packsList = adminService.getPackages();
-    const cabsList = adminService.getVehicles();
-    const galleryList = adminService.getGallery();
-    const enquiriesList = adminService.getEnquiries();
+    // Load live counts from Firestore asynchronously
+    Promise.all([
+      adminService.getPackages(),
+      adminService.getVehicles(),
+      adminService.getGallery(),
+      adminService.getEnquiries()
+    ]).then(([packsList, cabsList, galleryList, enquiriesList]) => {
+      setMetrics({
+        packages: packsList.length,
+        vehicles: cabsList.length,
+        gallery: galleryList.length,
+        enquiries: enquiriesList.length
+      });
 
-    setMetrics({
-      packages: packsList.length,
-      vehicles: cabsList.length,
-      gallery: galleryList.length,
-      enquiries: enquiriesList.length
+      setRecentEnquiries(enquiriesList.slice(0, 4));
+      setRecentPackages(packsList.slice(0, 4));
+    }).catch(err => {
+      console.error("Dashboard metrics loading error:", err);
     });
-
-    setRecentEnquiries(enquiriesList.slice(0, 4));
-    setRecentPackages(packsList.slice(0, 4));
   }, []);
 
   const cards = [
@@ -243,7 +247,7 @@ export default function Dashboard() {
                 <div key={pkg.id} className="flex items-center justify-between gap-4 p-3 hover:bg-slate-50 rounded-xl border border-transparent hover:border-gray-100 transition-all">
                   <div className="flex items-center gap-3">
                     <img 
-                      src={pkg.image} 
+                      src={pkg.image || 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=200'} 
                       alt={pkg.title} 
                       className="w-10 h-10 rounded-lg object-cover bg-slate-100 flex-shrink-0"
                     />
@@ -252,9 +256,11 @@ export default function Dashboard() {
                       <span className="text-[10px] text-gray-400 block">{pkg.duration} • {pkg.region}</span>
                     </div>
                   </div>
-                  <span className="text-xs font-bold text-gold leading-tight">
-                    {pkg.price ? `₹${pkg.price}` : 'Featured'}
-                  </span>
+                  {pkg.tag && (
+                    <span className="text-[9px] font-bold bg-gold/10 text-gold px-2 py-0.5 rounded uppercase leading-none">
+                      {pkg.tag}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>

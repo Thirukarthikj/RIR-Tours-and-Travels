@@ -1,22 +1,6 @@
 import { PACKAGES, FLEET_EXTENDED, GALLERY_EXTENDED } from '../constants';
-
-// Helper to interact with LocalStorage
-const getStoredData = (key, defaultData) => {
-  const data = localStorage.getItem(key);
-  if (!data) {
-    localStorage.setItem(key, JSON.stringify(defaultData));
-    return defaultData;
-  }
-  try {
-    return JSON.parse(data);
-  } catch (e) {
-    return defaultData;
-  }
-};
-
-const setStoredData = (key, data) => {
-  localStorage.setItem(key, JSON.stringify(data));
-};
+import { getDocuments, addDocument, updateDocument, deleteDocument } from './firebase/firestore';
+import { loginAdmin, logoutAdmin } from './firebase/auth';
 
 // Seeding Initial Enquiries if empty
 const DEFAULT_ENQUIRIES = [
@@ -48,7 +32,7 @@ const DEFAULT_SETTINGS = {
   companyName: "RIR Tours & Travels",
   phone: "+91 44 2456 7890",
   email: "info@rirtours.com",
-  whatsapp: "+91 98400 12345",
+  whatsapp: "+91 93425 53805",
   address: "42 Luxury Drive, Anna Salai, Chennai, Tamil Nadu 600002",
   googleMaps: "https://goo.gl/maps/example",
   facebook: "https://facebook.com/rirtours",
@@ -67,16 +51,18 @@ const DEFAULT_PROFILE = {
 
 export const adminService = {
   // --- Auth Session ---
-  login(username, password) {
-    if (username === 'admin' && password === 'trailone') {
-      localStorage.setItem('rir_admin_auth', 'true');
+  async login(username, password) {
+    try {
+      await loginAdmin(username, password);
       return true;
+    } catch (e) {
+      console.error("Auth login failure:", e);
+      return false;
     }
-    return false;
   },
 
-  logout() {
-    localStorage.removeItem('rir_admin_auth');
+  async logout() {
+    await logoutAdmin();
   },
 
   isAuthenticated() {
@@ -84,143 +70,134 @@ export const adminService = {
   },
 
   // --- Packages CRUD ---
-  getPackages() {
-    return getStoredData('rir_packages', PACKAGES);
+  async getPackages() {
+    return getDocuments('packages', 'createdDate', PACKAGES);
   },
 
-  savePackage(pkg) {
-    const list = this.getPackages();
+  async savePackage(pkg) {
     if (pkg.id) {
-      // Update
-      const idx = list.findIndex(p => p.id === pkg.id);
-      if (idx !== -1) {
-        list[idx] = { ...list[idx], ...pkg };
-      }
+      await updateDocument('packages', pkg.id, pkg);
+      return pkg;
     } else {
-      // Add
-      pkg.id = "pkg-" + Date.now();
-      pkg.createdDate = new Date().toISOString().split('T')[0];
-      list.unshift(pkg);
+      const cleanPkg = {
+        ...pkg,
+        createdDate: new Date().toISOString().split('T')[0]
+      };
+      return addDocument('packages', cleanPkg);
     }
-    setStoredData('rir_packages', list);
-    return pkg;
   },
 
-  deletePackage(id) {
-    let list = this.getPackages();
-    list = list.filter(p => p.id !== id);
-    setStoredData('rir_packages', list);
-    return true;
+  async deletePackage(id) {
+    return deleteDocument('packages', id);
   },
 
   // --- Vehicles CRUD ---
-  getVehicles() {
-    return getStoredData('rir_vehicles', FLEET_EXTENDED);
+  async getVehicles() {
+    return getDocuments('vehicles', '', FLEET_EXTENDED);
   },
 
-  saveVehicle(v) {
-    const list = this.getVehicles();
+  async saveVehicle(v) {
     if (v.id) {
-      // Update
-      const idx = list.findIndex(item => item.id === v.id);
-      if (idx !== -1) {
-        list[idx] = { ...list[idx], ...v };
-      }
+      await updateDocument('vehicles', v.id, v);
+      return v;
     } else {
-      // Add
-      v.id = "veh-" + Date.now();
-      list.unshift(v);
+      return addDocument('vehicles', v);
     }
-    setStoredData('rir_vehicles', list);
-    return v;
   },
 
-  deleteVehicle(id) {
-    let list = this.getVehicles();
-    list = list.filter(item => item.id !== id);
-    setStoredData('rir_vehicles', list);
-    return true;
+  async deleteVehicle(id) {
+    return deleteDocument('vehicles', id);
   },
 
   // --- Gallery CRUD ---
-  getGallery() {
-    return getStoredData('rir_gallery', GALLERY_EXTENDED);
+  async getGallery() {
+    return getDocuments('gallery', '', GALLERY_EXTENDED);
   },
 
-  saveGallery(g) {
-    const list = this.getGallery();
+  async saveGallery(g) {
     if (g.id) {
-      const idx = list.findIndex(item => item.id === g.id);
-      if (idx !== -1) {
-        list[idx] = { ...list[idx], ...g };
-      }
+      await updateDocument('gallery', String(g.id), g);
+      return g;
     } else {
-      g.id = Date.now();
-      list.unshift(g);
+      const cleanG = {
+        ...g,
+        createdDate: new Date().toISOString().split('T')[0]
+      };
+      return addDocument('gallery', cleanG);
     }
-    setStoredData('rir_gallery', list);
-    return g;
   },
 
-  deleteGallery(id) {
-    let list = this.getGallery();
-    list = list.filter(item => item.id !== id);
-    setStoredData('rir_gallery', list);
-    return true;
+  async deleteGallery(id) {
+    return deleteDocument('gallery', String(id));
   },
 
   // --- Enquiries CRUD ---
-  getEnquiries() {
-    return getStoredData('rir_enquiries', DEFAULT_ENQUIRIES);
+  async getEnquiries() {
+    return getDocuments('enquiries', 'date', DEFAULT_ENQUIRIES);
   },
 
-  addEnquiry(enq) {
-    const list = this.getEnquiries();
+  async addEnquiry(enq) {
     const newEnq = {
-      id: "enq-" + Date.now(),
       date: new Date().toISOString(),
       status: "New",
       ...enq
     };
-    list.unshift(newEnq);
-    setStoredData('rir_enquiries', list);
-    return newEnq;
+    return addDocument('enquiries', newEnq);
   },
 
-  updateEnquiryStatus(id, status) {
-    const list = this.getEnquiries();
-    const idx = list.findIndex(item => item.id === id);
-    if (idx !== -1) {
-      list[idx].status = status;
-      setStoredData('rir_enquiries', list);
-    }
-    return true;
+  async updateEnquiryStatus(id, status) {
+    return updateDocument('enquiries', id, { status });
   },
 
-  deleteEnquiry(id) {
-    let list = this.getEnquiries();
-    list = list.filter(item => item.id !== id);
-    setStoredData('rir_enquiries', list);
-    return true;
+  async deleteEnquiry(id) {
+    return deleteDocument('enquiries', id);
   },
 
   // --- Settings CRUD ---
-  getSettings() {
-    return getStoredData('rir_settings', DEFAULT_SETTINGS);
+  async getSettings() {
+    const list = await getDocuments('settings', '', [DEFAULT_SETTINGS]);
+    if (Array.isArray(list)) {
+      return list[0] || DEFAULT_SETTINGS;
+    }
+    return list || DEFAULT_SETTINGS;
   },
 
-  saveSettings(settings) {
-    setStoredData('rir_settings', settings);
-    return settings;
+  async saveSettings(settings) {
+    if (settings.id) {
+      await updateDocument('settings', settings.id, settings);
+      return settings;
+    } else {
+      const list = await getDocuments('settings', '', []);
+      if (Array.isArray(list) && list.length > 0) {
+        await updateDocument('settings', list[0].id, settings);
+        return { id: list[0].id, ...settings };
+      } else {
+        return addDocument('settings', settings);
+      }
+    }
   },
 
   // --- Profile CRUD ---
-  getProfile() {
-    return getStoredData('rir_profile', DEFAULT_PROFILE);
+  async getProfile() {
+    const list = await getDocuments('profile', '', [DEFAULT_PROFILE]);
+    if (Array.isArray(list)) {
+      return list[0] || DEFAULT_PROFILE;
+    }
+    return list || DEFAULT_PROFILE;
   },
 
-  saveProfile(profile) {
-    setStoredData('rir_profile', profile);
-    return profile;
+  async saveProfile(profile) {
+    if (profile.id) {
+      await updateDocument('profile', profile.id, profile);
+      return profile;
+    } else {
+      const list = await getDocuments('profile', '', []);
+      if (Array.isArray(list) && list.length > 0) {
+        await updateDocument('profile', list[0].id, profile);
+        return { id: list[0].id, ...profile };
+      } else {
+        return addDocument('profile', profile);
+      }
+    }
   }
 };
