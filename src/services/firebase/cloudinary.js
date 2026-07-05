@@ -21,7 +21,7 @@ export const uploadToCloudinary = async (file) => {
           if (errData && errData.error && errData.error.message) {
             errMsg = errData.error.message;
           }
-        } catch (jsonErr) {
+        } catch {
           // ignore
         }
         throw new Error(errMsg);

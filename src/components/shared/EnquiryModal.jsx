@@ -4,11 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RiCloseLine, RiCheckboxCircleFill } from 'react-icons/ri';
 import { Input, Textarea, Select } from '../common/Input';
 import Button from '../common/Button';
+import { useSettings } from '../../contexts/SettingsContext';
 import { submitEnquiry } from '../../services/enquiryService';
+import { adminService } from '../../services/adminService';
 
 export default function EnquiryModal({ isOpen, onClose, initialData = null }) {
+  const { settings } = useSettings();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [whatsappNumber, setWhatsappNumber] = useState(settings?.whatsapp || '');
 
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm({
     defaultValues: {
@@ -42,11 +46,38 @@ export default function EnquiryModal({ isOpen, onClose, initialData = null }) {
     setIsSubmitted(false);
   }, [initialData, isOpen, setValue, reset]);
 
+  // Load dynamic WhatsApp number from Firestore settings if configured
+  useEffect(() => {
+    adminService.getSettings().then(settings => {
+      if (settings && settings.whatsapp) {
+        setWhatsappNumber(settings.whatsapp);
+      }
+    }).catch(() => {});
+  }, []);
+
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
       const res = await submitEnquiry(data);
       if (res.success) {
+        // Format WhatsApp message text
+        const messageText = `Hello RIR Tours & Travels! 👋
+
+I have submitted an enquiry:
+*Name:* ${data.fullName}
+*Phone:* ${data.phone}
+*Email:* ${data.email || 'N/A'}
+*Service/Package:* ${data.service}
+*Message:* ${data.message}
+
+Please confirm availability and details. Thank you!`;
+
+        const phoneDigits = whatsappNumber.replace(/\D/g, '');
+        const whatsappUrl = `https://wa.me/${phoneDigits}?text=${encodeURIComponent(messageText)}`;
+
+        // Open WhatsApp chat in a new tab
+        window.open(whatsappUrl, 'rir_whatsapp');
+
         setIsSubmitted(true);
         reset();
       }
@@ -58,13 +89,27 @@ export default function EnquiryModal({ isOpen, onClose, initialData = null }) {
   };
 
   const serviceOptions = [
-    { value: "Madurai & Rameshwaram", label: "Madurai & Rameshwaram Package" },
-    { value: "Ooty & Kodaikanal", label: "Ooty & Kodaikanal Package" },
-    { value: "Coastal Tamil Nadu", label: "Coastal Tamil Nadu Package" },
-    { value: "Spiritual Temple Tours", label: "Spiritual Temple Tours Package" },
+    { value: "Munnar Hills & Tea Estates", label: "Munnar Hills & Tea Estates Package" },
+    { value: "Ooty Botanic & Lake Getaway", label: "Ooty Botanic & Lake Getaway Package" },
+    { value: "Kodaikanal Misty Peaks", label: "Kodaikanal Misty Peaks Package" },
+    { value: "Kodaikanal Valley Sightseeing", label: "Kodaikanal Valley Sightseeing (Local)" },
+    { value: "Kodaikanal Classic City Tour", label: "Kodaikanal Classic City Tour (Local)" },
+    { value: "Kodaikanal Forest & Wild Tour", label: "Kodaikanal Forest & Wild Tour (Local)" },
+    { value: "Kodaikanal Trekking & Adventure", label: "Kodaikanal Trekking & Adventure (Local)" },
+    { value: "Kodaikanal Mannavanur Village Eco Tour", label: "Kodaikanal Mannavanur Village Eco Tour (Local)" },
+    { value: "Yercaud Emerald Escapes", label: "Yercaud Emerald Escapes Package" },
+    { value: "Thekkady Wildlife & Spice Tour", label: "Thekkady Wildlife & Spice Tour Package" },
+    { value: "Kanyakumari Sunrise & Heritage", label: "Kanyakumari Sunrise & Heritage Package" },
+    { value: "Rameshwaram & Dhanushkodi Island", label: "Rameshwaram & Dhanushkodi Island Package" },
+    { value: "Thiruchendur Murugan Sea Temple", label: "Thiruchendur Murugan Sea Temple Package" },
+    { value: "Madurai Meenakshi & Palace Heritage", label: "Madurai Meenakshi & Palace Heritage Package" },
+    { value: "Trichy Rockfort & Srirangam", label: "Trichy Rockfort & Srirangam Package" },
+    { value: "Tirupati Balaji VIP Pilgrimage", label: "Tirupati Balaji VIP Pilgrimage Package" },
+    { value: "Trivandrum Padmanabhaswamy & Kovalam", label: "Trivandrum Padmanabhaswamy & Kovalam Package" },
+    { value: "Arupadaiveedu Murugan Temple Tour", label: "Arupadaiveedu Murugan Temple Tour Package" },
     { value: "Toyota Innova Hycross", label: "Toyota Innova Hycross (Fleet)" },
-    { value: "Mercedes E-Class", label: "Mercedes E-Class (Fleet)" },
-    { value: "Luxury Traveller", label: "Luxury Traveller (Fleet)" },
+    { value: "Toyota Fortuner / SUV", label: "Toyota Fortuner / SUV (Fleet)" },
+    { value: "Luxury Tempo Traveller", label: "Luxury Tempo Traveller (Fleet)" },
     { value: "Custom Bespoke Tour", label: "Custom Bespoke Tour Plan" },
     { value: "Airport Transfer / Drop", label: "Airport Drop / Pick-up" }
   ];

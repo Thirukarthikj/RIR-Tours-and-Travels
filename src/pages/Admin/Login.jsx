@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { RiLockLine, RiUserLine, RiEyeLine, RiEyeOffLine, RiErrorWarningLine } from 'react-icons/ri';
@@ -9,6 +9,13 @@ export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [authError, setAuthError] = useState('');
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (adminService.isAuthenticated()) {
+      navigate('/admin/dashboard', { replace: true });
+    }
+  }, [navigate]);
   
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
@@ -142,11 +149,6 @@ export default function Login() {
           </Button>
 
         </form>
-
-        {/* Console Footnote info */}
-        <div className="text-center text-[10px] text-gray-400">
-          Demo Access: <span className="text-gold-light">admin</span> / <span className="text-gold-light">trailone</span>
-        </div>
 
       </div>
     </div>

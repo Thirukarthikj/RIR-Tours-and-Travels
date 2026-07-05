@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { RiAddLine, RiEdit2Line, RiDeleteBin6Line, RiSearchLine, RiEyeLine, RiEyeOffLine } from 'react-icons/ri';
 import { adminService } from '../../services/adminService';
 import GalleryForm from '../../components/forms/GalleryForm';
+import { GALLERY_EXTENDED } from '../../constants';
 
 export default function Gallery() {
-  const [gallery, setGallery] = useState([]);
+  const [gallery, setGallery] = useState(GALLERY_EXTENDED);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingPhoto, setEditingPhoto] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -44,7 +45,7 @@ export default function Gallery() {
     fetchGallery();
   };
 
-  const categories = ['All', 'Fleet', 'Destinations', 'Events'];
+  const categories = ['All', 'Fleet', 'Destinations', 'Spiritual'];
 
   // Filter & Search Logic
   const filteredGallery = gallery.filter(item => {

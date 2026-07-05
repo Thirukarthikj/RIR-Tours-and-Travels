@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RiEyeLine, RiCompassLine, RiUserStarLine, RiCarWashingLine, RiCustomerService2Line, RiDoubleQuotesL } from 'react-icons/ri';
-import { motion } from 'framer-motion';
+import { RiEyeLine, RiCompassLine, RiUserStarLine, RiCarWashingLine, RiCustomerService2Line } from 'react-icons/ri';
 
 // Reusable Components
 import Button from '../../components/common/Button';
@@ -35,7 +34,7 @@ export default function About() {
             Our Legacy
           </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-display leading-tight max-w-4xl mx-auto mb-8">
-            Redefining Luxury Travel in Tamil Nadu
+            Redefining Luxury Travel in Tamil Nadu, Kerala & Bengaluru
           </h1>
           <div>
             <Button
@@ -172,7 +171,7 @@ export default function About() {
             Whether it's a spiritual pilgrimage, a coastal escape, or high-stakes business tour, let RIR Tours and Travels manage the details while you enjoy the journey.
           </h2>
           <p className="text-sm text-gray-500 max-w-xl mx-auto leading-relaxed font-sans">
-            Our luxury fleet and experienced guides are waiting. Let us customize your road tour across Tamil Nadu.
+            Our luxury fleet and experienced guides are waiting. Let us customize your road tour across Tamil Nadu, Kerala, and Bengaluru.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-4">

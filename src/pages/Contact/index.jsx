@@ -7,10 +7,12 @@ import { RiMapPin2Line, RiPhoneLine, RiWhatsappLine, RiMailLine, RiTimeLine, RiF
 import { Input, Textarea, Select } from '../../components/common/Input';
 import Button from '../../components/common/Button';
 import SectionTitle from '../../components/common/SectionTitle';
-import { CONTACT_INFO, CONTACT_FAQS } from '../../constants';
+import { CONTACT_FAQS } from '../../constants';
+import { useSettings } from '../../contexts/SettingsContext';
 import { submitEnquiry } from '../../services/enquiryService';
 
 export default function Contact() {
+  const { settings: CONTACT_INFO } = useSettings();
   const [openFaq, setOpenFaq] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -114,7 +116,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-0.5">
                   <h3 className="text-xs font-bold text-[#25D366] uppercase tracking-wide">WhatsApp</h3>
-                  <a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-[#25D366] transition-colors font-medium font-sans">{CONTACT_INFO.whatsapp}</a>
+                  <a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`} target="rir_whatsapp" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-[#25D366] transition-colors font-medium font-sans">{CONTACT_INFO.whatsapp}</a>
                 </div>
               </div>
 
@@ -146,13 +148,13 @@ export default function Contact() {
             <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,33,64,0.02)] space-y-4">
               <h3 className="text-sm font-bold text-primary uppercase tracking-wide">Follow Our Journeys</h3>
               <div className="flex space-x-4">
-                <a href={CONTACT_INFO.socials.facebook} target="_blank" rel="noopener noreferrer" className="bg-slate-50 border border-slate-100 text-gray-400 hover:text-primary hover:bg-slate-100 p-2.5 rounded-lg text-lg transition-all" aria-label="Facebook">
+                <a href={CONTACT_INFO.socials.facebook} target="rir_facebook" rel="noopener noreferrer" className="bg-slate-50 border border-slate-100 text-gray-400 hover:text-primary hover:bg-slate-100 p-2.5 rounded-lg text-lg transition-all" aria-label="Facebook">
                   <RiFacebookCircleLine />
                 </a>
-                <a href={CONTACT_INFO.socials.instagram} target="_blank" rel="noopener noreferrer" className="bg-slate-50 border border-slate-100 text-gray-400 hover:text-primary hover:bg-slate-100 p-2.5 rounded-lg text-lg transition-all" aria-label="Instagram">
+                <a href={CONTACT_INFO.socials.instagram} target="rir_instagram" rel="noopener noreferrer" className="bg-slate-50 border border-slate-100 text-gray-400 hover:text-primary hover:bg-slate-100 p-2.5 rounded-lg text-lg transition-all" aria-label="Instagram">
                   <RiInstagramLine />
                 </a>
-                <a href={CONTACT_INFO.socials.youtube} target="_blank" rel="noopener noreferrer" className="bg-slate-50 border border-slate-100 text-gray-400 hover:text-primary hover:bg-slate-100 p-2.5 rounded-lg text-lg transition-all" aria-label="YouTube">
+                <a href={CONTACT_INFO.socials.youtube} target="rir_youtube" rel="noopener noreferrer" className="bg-slate-50 border border-slate-100 text-gray-400 hover:text-primary hover:bg-slate-100 p-2.5 rounded-lg text-lg transition-all" aria-label="YouTube">
                   <RiYoutubeLine />
                 </a>
               </div>
@@ -263,7 +265,7 @@ export default function Contact() {
       <section className="py-20 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle
-            tag="Our Presence in Tamil Nadu"
+            tag="Our Service Network"
             title="Strategically Located to Serve You"
             subtitle="Explore our locations covering the heritage networks and coastal lines of the South."
           />
@@ -273,7 +275,7 @@ export default function Contact() {
             
             {/* Custom stylized map graphic representing Tamil Nadu and branches */}
             <svg viewBox="0 0 800 500" className="w-full max-w-3xl h-auto relative z-10 select-none">
-              {/* Simplified contour representation of Tamil Nadu coast */}
+              {/* Simplified contour representation of Tamil Nadu/South India coast */}
               <path 
                 d="M380,50 L440,100 L470,180 L520,240 L530,280 L540,320 L510,380 L460,420 L400,450 L340,430 L310,380 L290,320 L270,260 L280,200 L300,120 L350,70 Z" 
                 fill="#E2E8F0" 
@@ -307,6 +309,28 @@ export default function Contact() {
                 <rect x="510" y="200" width="160" height="50" rx="8" fill="white" stroke="#16A34A" strokeWidth="1.5" />
                 <text x="522" y="220" fill="#16A34A" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Coastal Desk</text>
                 <text x="522" y="235" fill="#64748B" fontSize="9" fontFamily="sans-serif">Mahabalipuram Branch</text>
+              </g>
+
+              {/* Kerala Desk (Munnar & Alleppey) */}
+              <g className="cursor-pointer">
+                <circle cx="340" cy="360" r="15" fill="#0EA5E9" className="animate-ping opacity-15" />
+                <circle cx="340" cy="360" r="8" fill="#0EA5E9" />
+                <circle cx="340" cy="360" r="4" fill="#B45309" />
+                {/* Pointer Card */}
+                <rect x="170" y="335" width="160" height="50" rx="8" fill="white" stroke="#0EA5E9" strokeWidth="1.5" />
+                <text x="182" y="355" fill="#0EA5E9" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Kerala Desk</text>
+                <text x="182" y="370" fill="#64748B" fontSize="9" fontFamily="sans-serif">Cochin & Munnar Branch</text>
+              </g>
+
+              {/* Bengaluru Hub */}
+              <g className="cursor-pointer">
+                <circle cx="370" cy="150" r="15" fill="#8B5CF6" className="animate-ping opacity-15" />
+                <circle cx="370" cy="150" r="8" fill="#8B5CF6" />
+                <circle cx="370" cy="150" r="4" fill="#B45309" />
+                {/* Pointer Card */}
+                <rect x="200" y="115" width="160" height="50" rx="8" fill="white" stroke="#8B5CF6" strokeWidth="1.5" />
+                <text x="212" y="135" fill="#8B5CF6" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Bengaluru Hub</text>
+                <text x="212" y="150" fill="#64748B" fontSize="9" fontFamily="sans-serif">Garden City Desk</text>
               </g>
 
               {/* Legend details */}

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLine, RiWhatsappLine } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NAV_LINKS, CONTACT_INFO } from '../../constants';
+import { NAV_LINKS } from '../../constants';
+import { useSettings } from '../../contexts/SettingsContext';
 import Button from './Button';
 
 export default function Navbar() {
+  const { settings: CONTACT_INFO } = useSettings();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -91,7 +93,7 @@ export default function Navbar() {
         {/* WhatsApp CTA Action */}
         <div className="hidden md:block">
           <Button
-            onClick={() => window.open(whatsappUrl, '_blank')}
+            onClick={() => window.open(whatsappUrl, 'rir_whatsapp')}
             variant={showDarkStyles ? "outlineWhite" : "primary"}
             size="md"
             icon={<RiWhatsappLine className="text-lg text-[#25D366]" />}
@@ -137,7 +139,7 @@ export default function Navbar() {
               ))}
               <hr className="border-gray-100 my-2" />
               <Button
-                onClick={() => window.open(whatsappUrl, '_blank')}
+                onClick={() => window.open(whatsappUrl, 'rir_whatsapp')}
                 variant="whatsapp"
                 size="lg"
                 icon={<RiWhatsappLine className="text-xl" />}

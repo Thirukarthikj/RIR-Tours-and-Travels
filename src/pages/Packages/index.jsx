@@ -4,13 +4,13 @@ import { RiCloseLine, RiTimeLine, RiCarLine, RiStarFill, RiCheckLine, RiCompassL
 
 // Reusable Components
 import Button from '../../components/common/Button';
-import SectionTitle from '../../components/common/SectionTitle';
 import PackageCard from '../../components/shared/PackageCard';
 import EnquiryModal from '../../components/shared/EnquiryModal';
 import { getPackages } from '../../services/packageService';
-import { CONTACT_INFO } from '../../constants';
+import { useSettings } from '../../contexts/SettingsContext';
 
 export default function Packages() {
+  const { settings: CONTACT_INFO } = useSettings();
   const [packagesList, setPackagesList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
@@ -60,7 +60,7 @@ export default function Packages() {
   };
 
   const phoneDigits = CONTACT_INFO.whatsapp.replace(/\D/g, '');
-  const chatUrl = `https://wa.me/${phoneDigits}?text=${encodeURIComponent("Hello! I want to talk to a travel expert about planning my road trip in Tamil Nadu.")}`;
+  const chatUrl = `https://wa.me/${phoneDigits}?text=${encodeURIComponent("Hello! I want to talk to a travel expert about planning my road trip in Tamil Nadu, Kerala, and Bengaluru.")}`;
 
   return (
     <div className="overflow-hidden font-sans bg-slate-50 min-h-screen">
@@ -78,7 +78,7 @@ export default function Packages() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-3">
           <span className="text-xs font-bold text-gold-light uppercase tracking-widest">Curated Journeys</span>
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold font-display leading-tight">
-            Discover the Soul of <span className="italic text-gold-light">Tamil Nadu</span>
+            Discover the Soul of <span className="italic text-gold-light">Tamil Nadu, Kerala & Bengaluru</span>
           </h1>
         </div>
       </section>
@@ -99,6 +99,7 @@ export default function Packages() {
               <option value="Spiritual">Spiritual</option>
               <option value="Hill Station">Hill Station</option>
               <option value="Coastal">Coastal</option>
+              <option value="Heritage">Heritage</option>
             </select>
           </div>
 
@@ -190,7 +191,7 @@ export default function Packages() {
               Get Custom Quote
             </Button>
             <Button
-              onClick={() => window.open(chatUrl, '_blank')}
+              onClick={() => window.open(chatUrl, 'rir_whatsapp')}
               variant="outlineWhite"
               size="lg"
               className="w-full sm:w-auto font-bold rounded-full cursor-pointer"

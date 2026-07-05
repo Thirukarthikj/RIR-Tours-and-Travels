@@ -46,7 +46,7 @@ export default function ExportButton({ data, fileName = "export-data" }) {
       return;
     }
 
-    const printWindow = window.open("", "_blank");
+    const printWindow = window.open("", "rir_print_window");
     const title = fileName.replace(/-/g, ' ').toUpperCase();
     
     const tableHeaders = Object.keys(data[0])

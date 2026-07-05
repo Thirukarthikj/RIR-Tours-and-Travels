@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiFacebookCircleFill, RiInstagramFill, RiYoutubeFill, RiMapPin2Line, RiPhoneLine, RiMailLine } from 'react-icons/ri';
-import { CONTACT_INFO } from '../../constants';
+import { useSettings } from '../../contexts/SettingsContext';
 
 export default function Footer() {
+  const { settings: CONTACT_INFO } = useSettings();
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-primary text-white pt-16 pb-8 border-t border-white/5 font-sans">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -16,16 +19,16 @@ export default function Footer() {
             </span>
           </Link>
           <p className="text-sm text-gray-300 leading-relaxed max-w-sm">
-            Crafting luxury road journeys across the rich heritage of Tamil Nadu since 2014. Dedicated to convenience, security, safety, and cultural heritage.
+            Crafting luxury road journeys across the rich heritage of Tamil Nadu, Kerala, and Bengaluru since 2014. Dedicated to convenience, security, safety, and cultural heritage.
           </p>
           <div className="flex space-x-4 pt-2">
-            <a href={CONTACT_INFO.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="Facebook">
+            <a href={CONTACT_INFO.socials.facebook} target="rir_facebook" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="Facebook">
               <RiFacebookCircleFill />
             </a>
-            <a href={CONTACT_INFO.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="Instagram">
+            <a href={CONTACT_INFO.socials.instagram} target="rir_instagram" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="Instagram">
               <RiInstagramFill />
             </a>
-            <a href={CONTACT_INFO.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="YouTube">
+            <a href={CONTACT_INFO.socials.youtube} target="rir_youtube" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xl transition-colors" aria-label="YouTube">
               <RiYoutubeFill />
             </a>
           </div>
@@ -92,7 +95,7 @@ export default function Footer() {
 
       {/* Legal & GST Details */}
       <div className="max-w-7xl mx-auto px-6 text-center text-xs text-gray-400 space-y-2.5">
-        <p>© 2026 RIR Tours and Travels. All rights reserved. Crafted for luxury.</p>
+        <p>{CONTACT_INFO.footerText || `© ${currentYear} ${CONTACT_INFO.name}. All rights reserved. Crafted for luxury.`}</p>
         <p className="flex justify-center flex-wrap gap-x-6 gap-y-1 opacity-70">
           <span>GSTIN: {CONTACT_INFO.gstin}</span>
           <span>PAN: {CONTACT_INFO.pan}</span>

@@ -4,7 +4,7 @@ import { RiUserLine, RiBriefcaseLine, RiSettings3Line } from 'react-icons/ri';
 import Button from '../common/Button';
 
 export default function VehicleCard({ vehicle, onEnquire }) {
-  const { name, category, tag, seats, bags, amenities, image, description } = vehicle;
+  const { name, category, tag, seats, bags, image, description } = vehicle;
 
   return (
     <motion.div

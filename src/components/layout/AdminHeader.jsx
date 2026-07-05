@@ -3,7 +3,7 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { RiMenu2Line, RiBellLine, RiArrowDownSLine, RiUserLine, RiSettings4Line, RiLogoutBoxRLine, RiArrowLeftLine } from 'react-icons/ri';
 import { adminService } from '../../services/adminService';
 
-export default function AdminHeader({ sidebarOpen, toggleSidebar, isMobile }) {
+export default function AdminHeader({ toggleSidebar, isMobile }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);

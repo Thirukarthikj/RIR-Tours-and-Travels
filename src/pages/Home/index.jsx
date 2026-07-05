@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-import { RiArrowRightLine, RiWhatsappLine, RiAddLine, RiSubtractLine, RiMapPin2Line, RiCompass3Line, RiShieldUserLine } from 'react-icons/ri';
+import { RiArrowRightLine, RiWhatsappLine, RiAddLine, RiSubtractLine } from 'react-icons/ri';
 
 // Swiper Styles
 import 'swiper/css';
@@ -14,27 +14,21 @@ import 'swiper/css/pagination';
 import Button from '../../components/common/Button';
 import SectionTitle from '../../components/common/SectionTitle';
 import ServiceCard from '../../components/shared/ServiceCard';
-import VehicleCard from '../../components/shared/VehicleCard';
-import GalleryCard from '../../components/shared/GalleryCard';
-import TestimonialCard from '../../components/shared/TestimonialCard';
 import EnquiryModal from '../../components/shared/EnquiryModal';
-import { SERVICES, STATS, FLEET, TESTIMONIALS, FAQS, CONTACT_INFO, PACKAGES, POPULAR_CATEGORIES } from '../../constants';
-import { getGalleryImages } from '../../services/galleryService';
+import { SERVICES, STATS, FLEET, FAQS, POPULAR_CATEGORIES } from '../../constants';
+import { useSettings } from '../../contexts/SettingsContext';
 import { subscribeNewsletter } from '../../services/enquiryService';
 
 export default function Home() {
+  const { settings: CONTACT_INFO } = useSettings();
   const navigate = useNavigate();
-  const [gallery, setGallery] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
   const [email, setEmail] = useState('');
   const [newsletterMsg, setNewsletterMsg] = useState('');
 
-  // Fetch gallery images
-  useEffect(() => {
-    getGalleryImages().then(res => setGallery(res.slice(0, 3))); // display top 3 escapes initially
-  }, []);
+
 
   const handleOpenModal = (data = null) => {
     setModalData(data);
@@ -146,7 +140,7 @@ export default function Home() {
                     Explore Packages
                   </Button>
                   <Button 
-                    onClick={() => window.open(whatsappUrl, '_blank')}
+                    onClick={() => window.open(whatsappUrl, 'rir_whatsapp')}
                     variant="outlineWhite"
                     size="lg"
                     icon={<RiWhatsappLine className="text-xl text-[#25D366]" />}
@@ -258,7 +252,7 @@ export default function Home() {
             spaceBetween={24}
             slidesPerView={1}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
-            loop={true}
+            loop={FLEET.length > 3}
             pagination={{ clickable: true, el: '.fleet-swiper-pagination' }}
             breakpoints={{
               640: { slidesPerView: 1.5 },
@@ -271,40 +265,41 @@ export default function Home() {
             {FLEET.map((vehicle) => (
               <SwiperSlide key={vehicle.id}>
                 <div 
-                  className="relative overflow-hidden rounded-2xl group cursor-pointer shadow-lg h-[350px] md:h-[480px] w-full bg-slate-50 border border-gray-100"
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col text-left group cursor-pointer h-[380px] md:h-[450px]"
                   onClick={() => handleOpenModal(vehicle)}
                 >
-                  {/* Vehicle Hero Image */}
-                  <img
-                    src={vehicle.image}
-                    alt={vehicle.name}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  
-                  {/* Scrim Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
-                  
-                  {/* Category Tag */}
-                  {vehicle.tag && (
-                    <span className="absolute top-4 right-4 bg-gold-light/95 backdrop-blur-sm text-primary font-sans text-[10px] font-bold px-2.5 py-1.5 rounded-md uppercase tracking-widest shadow-sm">
-                      {vehicle.tag}
-                    </span>
-                  )}
+                  {/* Vehicle Image Frame */}
+                  <div className="h-44 md:h-56 overflow-hidden relative bg-slate-100 flex-shrink-0">
+                    <img
+                      src={vehicle.image}
+                      alt={vehicle.name}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    {vehicle.tag && (
+                      <span className="absolute top-4 right-4 bg-gold text-white font-sans text-[10px] font-bold px-2.5 py-1 rounded shadow-md uppercase tracking-wider">
+                        {vehicle.tag}
+                      </span>
+                    )}
+                  </div>
 
-                  {/* Overlaid details */}
-                  <div className="absolute bottom-0 left-0 w-full p-6 text-left text-white flex flex-col justify-end z-10">
-                    <span className="text-[10px] font-bold tracking-widest text-gold-light uppercase font-sans mb-1 block">
-                      {vehicle.category}
-                    </span>
-                    <h3 className="text-xl md:text-2xl font-bold font-display leading-tight mb-2">
-                      {vehicle.name}
-                    </h3>
-                    
-                    {/* Micro detail line expanding on hover */}
-                    <div className="h-0 opacity-0 group-hover:h-8 group-hover:opacity-100 transition-all duration-300 flex items-center justify-between mt-2 pt-2 border-t border-white/10 text-xs font-sans text-gray-300">
+                  {/* Card Details Body */}
+                  <div className="p-5 flex-grow flex flex-col justify-between">
+                    <div className="space-y-2">
+                      <span className="text-[10px] font-bold tracking-widest text-gold uppercase font-sans block">
+                        {vehicle.category}
+                      </span>
+                      <h3 className="text-lg md:text-xl font-bold font-display text-primary leading-tight line-clamp-1">
+                        {vehicle.name}
+                      </h3>
+                      <p className="text-xs text-gray-500 font-sans line-clamp-2 leading-relaxed">
+                        {vehicle.description}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100 text-xs font-sans text-gray-500">
                       <span>Seats: {vehicle.seats} | Bags: {vehicle.bags}</span>
-                      <span className="text-gold-light font-bold">Enquire Now →</span>
+                      <span className="text-gold font-bold group-hover:translate-x-1 transition-transform duration-300">Enquire Now →</span>
                     </div>
                   </div>
                 </div>

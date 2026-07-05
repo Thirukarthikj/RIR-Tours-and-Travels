@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import { RiArrowRightSLine, RiImageLine } from 'react-icons/ri';
 
 // Components & Constants
 import Button from '../../components/common/Button';
-import SectionTitle from '../../components/common/SectionTitle';
+
 import GalleryCard from '../../components/shared/GalleryCard';
 import EnquiryModal from '../../components/shared/EnquiryModal';
 import { GALLERY_EXTENDED } from '../../constants';
@@ -15,7 +15,7 @@ export default function Gallery() {
   const [activeTab, setActiveTab] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const tabs = ['All', 'Fleet', 'Destinations', 'Events'];
+  const tabs = ['All', 'Fleet', 'Destinations', 'Spiritual'];
 
   const filteredImages = activeTab === 'All'
     ? GALLERY_EXTENDED

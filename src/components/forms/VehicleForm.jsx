@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
-import { RiSave3Line, RiDeleteBin6Line, RiAddLine } from 'react-icons/ri';
+import { RiSave3Line, RiDeleteBin6Line } from 'react-icons/ri';
 import ImageUploader from '../common/ImageUploader';
 
 export default function VehicleForm({ initialData, onSave, onCancel }) {

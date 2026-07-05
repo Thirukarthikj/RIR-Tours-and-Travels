@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { RiUploadCloudLine, RiLink, RiCheckLine, RiImageAddLine } from 'react-icons/ri';
-import { uploadToCloudinary } from '../../services/firebase/cloudinary';
+import { RiUploadCloudLine, RiLink, RiCheckLine } from 'react-icons/ri';
+import { uploadFile } from '../../services/firebase/storage';
 
 export default function ImageUploader({ value, onChange, label = "Upload Image" }) {
   const [urlInput, setUrlInput] = useState('');
@@ -20,7 +20,7 @@ export default function ImageUploader({ value, onChange, label = "Upload Image" 
     if (file) {
       setIsUploading(true);
       try {
-        const url = await uploadToCloudinary(file);
+        const url = await uploadFile(file, `uploads/${Date.now()}_${file.name}`);
         onChange(url);
       } catch (err) {
         console.error("Cloudinary upload error:", err);

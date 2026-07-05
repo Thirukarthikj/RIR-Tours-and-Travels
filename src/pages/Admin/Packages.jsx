@@ -3,9 +3,10 @@ import { RiAddLine } from 'react-icons/ri';
 import { adminService } from '../../services/adminService';
 import DataTable from '../../components/common/DataTable';
 import PackageForm from '../../components/forms/PackageForm';
+import { PACKAGES } from '../../constants';
 
 export default function Packages() {
-  const [packages, setPackages] = useState([]);
+  const [packages, setPackages] = useState(PACKAGES);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingPackage, setEditingPackage] = useState(null);
 
@@ -101,7 +102,7 @@ export default function Packages() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold font-display text-primary">Package Management</h1>
-            <p className="text-xs text-gray-400 mt-1">Configure and manage public-facing road trip tours across Tamil Nadu</p>
+            <p className="text-xs text-gray-400 mt-1">Configure and manage public-facing road trip tours across Tamil Nadu, Kerala, and Bengaluru</p>
           </div>
           <button
             onClick={handleCreateNew}

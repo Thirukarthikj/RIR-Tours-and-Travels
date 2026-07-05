@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { RiWhatsappLine } from 'react-icons/ri';
-import { CONTACT_INFO } from '../../constants';
+import { RiWhatsappLine, RiCloseLine } from 'react-icons/ri';
+import { useSettings } from '../../contexts/SettingsContext';
 
 export default function FloatingWhatsApp() {
+  const { settings: CONTACT_INFO } = useSettings();
+  const [isOpen, setIsOpen] = useState(false);
   const phoneDigits = CONTACT_INFO.whatsapp.replace(/\D/g, '');
   const encodedText = encodeURIComponent("Hello RIR Tours & Travels! I'm visiting your website and would like to enquire about your services.");
   const whatsappUrl = `https://wa.me/${phoneDigits}?text=${encodedText}`;
@@ -11,7 +13,7 @@ export default function FloatingWhatsApp() {
   return (
     <motion.a
       href={whatsappUrl}
-      target="_blank"
+      target="rir_whatsapp"
       rel="noopener noreferrer"
       className="fixed bottom-24 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20BA56] transition-colors cursor-pointer flex items-center justify-center"
       initial={{ scale: 0, opacity: 0 }}

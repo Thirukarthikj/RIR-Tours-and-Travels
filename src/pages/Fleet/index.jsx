@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { RiUserLine, RiBriefcaseLine, RiWindyLine, RiWifiLine, RiShieldCheckLine, RiUserStarLine, RiCustomerService2Line, RiArrowRightSLine } from 'react-icons/ri';
 
 // Components & Constants
 import Button from '../../components/common/Button';
-import SectionTitle from '../../components/common/SectionTitle';
+
 import EnquiryModal from '../../components/shared/EnquiryModal';
 import { FLEET_EXTENDED } from '../../constants';
 import { getVehicles } from '../../services/vehicleService';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RiMailLine, RiPhoneLine, RiEyeLine, RiDeleteBin6Line, RiMessage2Line, RiCheckLine, RiMailSendLine, RiCloseLine } from 'react-icons/ri';
+import { RiMailLine, RiPhoneLine, RiDeleteBin6Line, RiCheckLine, RiMailSendLine, RiCloseLine } from 'react-icons/ri';
 import { adminService } from '../../services/adminService';
 import DataTable from '../../components/common/DataTable';
 
