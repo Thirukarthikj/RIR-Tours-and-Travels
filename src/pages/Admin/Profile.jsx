@@ -43,6 +43,10 @@ export default function Profile() {
     const saved = await adminService.saveProfile(payload);
     setProfile(saved);
     setSaveSuccess(true);
+    
+    // Dispatch custom event to notify AdminHeader to refresh
+    window.dispatchEvent(new Event('profileUpdated'));
+    
     setTimeout(() => setSaveSuccess(false), 3000);
   };
 

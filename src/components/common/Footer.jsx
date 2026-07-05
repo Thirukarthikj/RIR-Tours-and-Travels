@@ -75,9 +75,16 @@ export default function Footer() {
         {/* Contact Info */}
         <div className="text-left space-y-3.5">
           <h3 className="text-sm font-semibold tracking-wider uppercase text-gold-light mb-4">Contact Us</h3>
-          <div className="flex items-start space-x-3 text-sm text-gray-300">
-            <RiMapPin2Line className="text-gold-light text-lg shrink-0 mt-0.5" />
-            <span>{CONTACT_INFO.address}</span>
+          <div className="flex items-start gap-4">
+            <RiMapPin2Line className="text-gold-light mt-1 flex-shrink-0 text-xl" />
+            <div className="text-gray-300 leading-relaxed text-sm">
+              <p>{CONTACT_INFO.address}</p>
+              {CONTACT_INFO.googleMaps && (
+                <a href={CONTACT_INFO.googleMaps} target="rir_map" rel="noopener noreferrer" className="inline-block mt-1.5 text-[11px] font-bold text-gold-light hover:underline">
+                  View on Google Maps →
+                </a>
+              )}
+            </div>
           </div>
           <div className="flex items-center space-x-3 text-sm text-gray-300">
             <RiPhoneLine className="text-gold-light text-lg shrink-0" />

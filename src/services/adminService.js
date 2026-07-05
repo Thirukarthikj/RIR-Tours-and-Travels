@@ -34,7 +34,7 @@ const DEFAULT_SETTINGS = {
   email: "info@rirtours.com",
   whatsapp: "+91 93425 53805",
   address: "42 Luxury Drive, Anna Salai, Chennai, Tamil Nadu 600002",
-  googleMaps: "https://goo.gl/maps/example",
+  googleMaps: "https://maps.app.goo.gl/jfDDXBKQgqqmHM6k6",
   facebook: "https://facebook.com/rirtours",
   instagram: "https://instagram.com/rirtours",
   youtube: "https://youtube.com/rirtours",

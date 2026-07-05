@@ -92,6 +92,11 @@ export default function Contact() {
               <div className="space-y-1">
                 <h3 className="text-sm font-bold text-primary uppercase tracking-wide">Our Office</h3>
                 <p className="text-xs md:text-sm text-gray-500 leading-relaxed font-sans">{CONTACT_INFO.address}</p>
+                {CONTACT_INFO.googleMaps && (
+                  <a href={CONTACT_INFO.googleMaps} target="rir_map" rel="noopener noreferrer" className="inline-block mt-2 text-[11px] font-bold text-gold hover:underline">
+                    View on Google Maps →
+                  </a>
+                )}
               </div>
             </div>
 

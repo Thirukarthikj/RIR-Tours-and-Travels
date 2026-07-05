@@ -11,10 +11,17 @@ export default function AdminHeader({ toggleSidebar, isMobile }) {
   const [profile, setProfile] = useState({ name: 'Admin', avatarUrl: '' });
 
   useEffect(() => {
-    adminService.getProfile().then(data => {
-      setProfile(data);
-    });
-  }, [location.pathname]); // Update profile name/avatar if edited
+    const fetchProfile = () => {
+      adminService.getProfile().then(data => {
+        setProfile(data);
+      });
+    };
+
+    fetchProfile();
+
+    window.addEventListener('profileUpdated', fetchProfile);
+    return () => window.removeEventListener('profileUpdated', fetchProfile);
+  }, [location.pathname]);
 
   const getPageTitle = () => {
     const path = location.pathname;

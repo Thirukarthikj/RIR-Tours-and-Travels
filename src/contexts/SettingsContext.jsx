@@ -23,6 +23,7 @@ export const SettingsProvider = ({ children }) => {
             phone: data.phone || STATIC_CONTACT_INFO.phone,
             whatsapp: data.whatsapp || STATIC_CONTACT_INFO.whatsapp,
             email: data.email || STATIC_CONTACT_INFO.email,
+            googleMaps: data.googleMaps || "https://maps.app.goo.gl/jfDDXBKQgqqmHM6k6",
             footerText: data.footerText || "© 2026 RIR Tours and Travels. All rights reserved.",
             socials: {
               facebook: data.facebook || STATIC_CONTACT_INFO.socials.facebook,
