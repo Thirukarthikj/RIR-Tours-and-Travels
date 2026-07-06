@@ -32,16 +32,16 @@ const checkConnection = () => {
       isFirestoreOffline = true;
       connPromise = Promise.resolve(false);
     } else if (db) {
-      const colRef = collection(db, '_conn_test_');
+      const colRef = collection(db, 'settings');
       const q = query(colRef, limit(1));
-      connPromise = withTimeout(getDocs(q), 1200)
+      connPromise = withTimeout(getDocs(q), 15000)
         .then(() => {
           isFirestoreOffline = false;
           return true;
         })
-        .catch(() => {
+        .catch((e) => {
           isFirestoreOffline = true;
-          console.warn("Firestore database is unreachable or unconfigured. Falling back to offline LocalStorage mode.");
+          console.warn("Firestore database is unreachable or unconfigured. Falling back to offline LocalStorage mode.", e);
           return false;
         });
     } else {

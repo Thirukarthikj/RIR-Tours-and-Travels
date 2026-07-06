@@ -100,6 +100,16 @@ export default function SettingsForm({ initialData, onSave }) {
             </div>
 
             <div className="space-y-1">
+              <label className="text-xs font-semibold text-gray-500">YouTube URL</label>
+              <input type="text" {...register('youtube')} placeholder="https://youtube.com/..." className="w-full px-4 py-2.5 bg-slate-50 border border-gray-150 rounded-xl text-xs font-semibold outline-none text-primary" />
+            </div>
+
+            <div className="space-y-1">
+              <label className="text-xs font-semibold text-gray-500">Business Hours</label>
+              <input type="text" {...register('hours')} placeholder="Mon-Sat, 9AM-8PM" className="w-full px-4 py-2.5 bg-slate-50 border border-gray-150 rounded-xl text-xs font-semibold outline-none text-primary" />
+            </div>
+
+            <div className="space-y-1">
               <label className="text-xs font-semibold text-gray-500">Footer Copyright Label</label>
               <input type="text" {...register('footerText')} placeholder="© 2026 RIR Travels..." className="w-full px-4 py-2.5 bg-slate-50 border border-gray-150 rounded-xl text-xs font-semibold outline-none text-primary" />
             </div>
