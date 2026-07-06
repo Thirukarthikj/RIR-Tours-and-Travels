@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,6 +20,8 @@ import { SERVICES, STATS, CAB, FAQS, POPULAR_CATEGORIES, PACKAGES } from '../../
 import PackageCard from '../../components/shared/PackageCard';
 import { useSettings } from '../../contexts/SettingsContext';
 import { subscribeNewsletter } from '../../services/enquiryService';
+import { getPackages } from '../../services/packageService';
+import { getVehicles } from '../../services/vehicleService';
 
 export default function Home() {
   const { settings: CONTACT_INFO } = useSettings();
@@ -30,6 +32,19 @@ export default function Home() {
   const [email, setEmail] = useState('');
   const [newsletterMsg, setNewsletterMsg] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const [packagesList, setPackagesList] = useState(PACKAGES);
+  const [cabList, setCabList] = useState(CAB);
+
+  useEffect(() => {
+    getPackages().then(res => {
+      if (Array.isArray(res) && res.length > 0) setPackagesList(res);
+    }).catch(console.error);
+
+    getVehicles().then(res => {
+      if (Array.isArray(res) && res.length > 0) setCabList(res);
+    }).catch(console.error);
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -214,7 +229,7 @@ export default function Home() {
             spaceBetween={24}
             slidesPerView={1}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
-            loop={CAB.length > 3}
+            loop={cabList.length > 3}
             pagination={{ clickable: true, el: '.cab-swiper-pagination' }}
             breakpoints={{
               640: { slidesPerView: 1.5 },
@@ -224,7 +239,7 @@ export default function Home() {
             }}
             className="w-full pb-4"
           >
-            {CAB.map((vehicle) => (
+            {cabList.map((vehicle) => (
               <SwiperSlide key={vehicle.id}>
                 <div 
                   className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col text-left group cursor-pointer h-[380px] md:h-[450px]"
@@ -307,7 +322,7 @@ export default function Home() {
             }}
             className="w-full pb-4"
           >
-            {PACKAGES.filter(p => p.id.startsWith('kodai-')).slice(0, 5).map((pkg) => (
+            {packagesList.filter(p => p.id.startsWith('kodai-')).slice(0, 5).map((pkg) => (
               <SwiperSlide key={pkg.id}>
                 <PackageCard
                   pkg={pkg}

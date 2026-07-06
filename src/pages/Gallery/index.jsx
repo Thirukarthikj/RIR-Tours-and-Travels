@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { RiArrowRightSLine, RiImageLine } from 'react-icons/ri';
@@ -9,6 +9,7 @@ import Button from '../../components/common/Button';
 import GalleryCard from '../../components/shared/GalleryCard';
 import EnquiryModal from '../../components/shared/EnquiryModal';
 import { GALLERY_EXTENDED } from '../../constants';
+import { getGalleryImages } from '../../services/galleryService';
 
 export default function Gallery() {
   const navigate = useNavigate();
@@ -17,9 +18,19 @@ export default function Gallery() {
 
   const tabs = ['All', 'Cab', 'Destinations', 'Spiritual'];
 
+  const [images, setImages] = useState(GALLERY_EXTENDED);
+
+  useEffect(() => {
+    getGalleryImages().then(res => {
+      if (Array.isArray(res) && res.length > 0) {
+        setImages(res);
+      }
+    }).catch(err => console.error("Error loading gallery:", err));
+  }, []);
+
   const filteredImages = activeTab === 'All'
-    ? GALLERY_EXTENDED
-    : GALLERY_EXTENDED.filter(img => img.category === activeTab);
+    ? images
+    : images.filter(img => img.category === activeTab);
 
   return (
     <div className="overflow-hidden font-sans bg-slate-50 min-h-screen">
