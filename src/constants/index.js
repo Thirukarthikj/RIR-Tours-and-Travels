@@ -101,6 +101,142 @@ export const FLEET = [
 // Tour Packages List
 export const PACKAGES = [
   {
+    id: "kodai-valley-tour",
+    title: "Tour No. 1 (Valley Tour)",
+    tag: "Valley Tour",
+    rating: 4.8,
+    duration: "1 Day",
+    vehicle: "Etios / Innova",
+    region: "Hill Station",
+    tourType: "Local Tour",
+    highlights: [
+      "Coaker's Walk",
+      "Upper Lake View",
+      "Moier Point",
+      "Pine Tree Forest",
+      "Devil's Kichen (Guna Cave)",
+      "Pillar Rocks",
+      "Green Valley View",
+      "Golf Course",
+      "Pambar Falls",
+      "Shopping & Lunch Break",
+      "Brayant Park",
+      "Kodai Lake"
+    ],
+    description: "Explore the signature valley viewpoints of Kodaikanal. Walk misty paths at Coaker's Walk, visit deep pine forests, and stand in awe of the towering Pillar Rocks.",
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg"
+  },
+  {
+    id: "kodai-city-tour",
+    title: "Tour No. 2 (City Tour)",
+    tag: "City Tour",
+    rating: 4.6,
+    duration: "1 Day",
+    vehicle: "Etios / Innova",
+    region: "Hill Station",
+    tourType: "Local Tour",
+    highlights: [
+      "Jain Temple",
+      "Kurinji Andaver Temple",
+      "Chettiar Park",
+      "Palani View",
+      "Kodai City View",
+      "7D Theatre",
+      "Science Museum",
+      "Silver Falls",
+      "Lake & Park"
+    ],
+    description: "Take a relaxed drive through Kodaikanal's main town attractions. Explore historical temples, beautiful public flower gardens, and local museums.",
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246361/Desktop_wallpaper_-_Serene_mountain_road_xmpyv4.jpg"
+  },
+  {
+    id: "kodai-wild-tour",
+    title: "Tour No. 3 (Wild Tour)",
+    tag: "Wild Tour",
+    rating: 4.7,
+    duration: "1 Day",
+    vehicle: "Etios / Innova",
+    region: "Hill Station",
+    tourType: "Local Tour",
+    highlights: [
+      "Silent Valley View",
+      "Fire Tower",
+      "Berijam Lake View",
+      "Caps Fly View",
+      "Herbal Forest",
+      "Berijam Lake",
+      "Shopping",
+      "Kodai Lake"
+    ],
+    description: "Venture deep into Kodaikanal's protected forest zones. Experience the serene beauty of Berijam Lake and high-altitude wild pine views under a special forest permit.",
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_31_wayanad_pnyroq.jpg"
+  },
+  {
+    id: "kodai-trekking-tour",
+    title: "Tour No. 4 (Trekking Tour)",
+    tag: "Trekking Tour",
+    rating: 4.8,
+    duration: "1 Day",
+    vehicle: "Etios / Innova",
+    region: "Hill Station",
+    tourType: "Local Tour",
+    highlights: [
+      "La Saleth Church",
+      "Vattakkanal Falls",
+      "Pambar Falls",
+      "Mountain Beauty",
+      "Dolphine Nose",
+      "Echo Rock",
+      "500 Year Old Tree",
+      "Shopping",
+      "Brayant Park",
+      "Lake Boating"
+    ],
+    description: "A trekking trail for nature lovers. Hike to the famous Dolphin Nose rock ledge overlooking deep valley drops, hear echoes at the canyon, and cross streams.",
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246354/imgi_16_kotagiri_mmkg42.jpg"
+  },
+  {
+    id: "kodai-village-tour",
+    title: "Tour No. 5 (Village Tour)",
+    tag: "Village Tour",
+    rating: 4.9,
+    duration: "1 Day",
+    vehicle: "Etios / Innova",
+    region: "Hill Station",
+    tourType: "Local Tour",
+    highlights: [
+      "Observatory Pine Forest",
+      "Rose Garden",
+      "Poombarai Village View",
+      "Poombarai Village",
+      "Mahalakshmi Temple",
+      "Kulanthi velappar Temple",
+      "Palani View",
+      "Mannavanur Sheep Farm",
+      "Rabit Farm",
+      "Mannavanur Lake"
+    ],
+    description: "Discover Kodaikanal's countryside. Visit the terraced agriculture valleys of Poombarai village, walk around the grasslands of Mannavanur Lake, and tour animal farms.",
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_29_valparai_agdcal.jpg"
+  },
+  {
+    id: "kodaikanal-misty",
+    title: "Kodaikanal Misty Peaks",
+    tag: "Scenic Drive",
+    rating: 4.7,
+    duration: "3 Days / 2 Nights",
+    vehicle: "Toyota Fortuner",
+    region: "Hill Station",
+    tourType: "Luxury Fleet",
+    highlights: [
+      "Coaker's Walk Heritage Trail",
+      "Kodaikanal Lake Cycling",
+      "Pillar Rocks Panoramic View"
+    ],
+    description: "Experience Kodaikanal's fresh pine forests, misty valleys, and calm lake. A scenic tour focusing on peaceful relaxation and customized nature trails.",
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg"
+  },
+  {
     id: "munnar-hills",
     title: "Munnar Hills & Tea Estates",
     tag: "Hills Escape",
@@ -134,23 +270,7 @@ export const PACKAGES = [
     description: "Known as the Queen of Hill Stations, enjoy Ooty's colonial heritage gardens, scenic viewpoints, and peaceful boating, accompanied by luxury private transport.",
     image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_22_ooty_mwiwte.jpg"
   },
-  {
-    id: "kodaikanal-misty",
-    title: "Kodaikanal Misty Peaks",
-    tag: "Scenic Drive",
-    rating: 4.7,
-    duration: "3 Days / 2 Nights",
-    vehicle: "Toyota Fortuner",
-    region: "Hill Station",
-    tourType: "Luxury Fleet",
-    highlights: [
-      "Coaker's Walk Heritage Trail",
-      "Kodaikanal Lake Cycling",
-      "Pillar Rocks Panoramic View"
-    ],
-    description: "Experience Kodaikanal's fresh pine forests, misty valleys, and calm lake. A scenic tour focusing on peaceful relaxation and customized nature trails.",
-    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg"
-  },
+  
   {
     id: "yercaud-hills",
     title: "Yercaud Emerald Escapes",
@@ -320,98 +440,7 @@ export const PACKAGES = [
     ],
     description: "An executive group pilgrimage covering all six holy hill abodes of Lord Murugan across Tamil Nadu (Palani, Swamimalai, Thiruthani, Pazhamudircholai, Thiruparankundram, Thiruchendur).",
     image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_5_arupadaiveedu_t3cyhi.jpg"
-  },
-  {
-    id: "kodai-valley-tour",
-    title: "Kodaikanal Valley Sightseeing",
-    tag: "Valley Tour",
-    rating: 4.8,
-    duration: "1 Day",
-    vehicle: "Etios: ₹2500 | Innova: ₹3000",
-    region: "Hill Station",
-    tourType: "Local Tour",
-    highlights: [
-      "Coaker's Walk & Upper Lake View",
-      "Pine Forest & Pillar Rocks",
-      "Guna Cave (Devil's Kitchen)",
-      "Pambar Falls & Bryant Park"
-    ],
-    description: "Explore the signature valley viewpoints of Kodaikanal. Walk misty paths at Coaker's Walk, visit deep pine forests, and stand in awe of the towering Pillar Rocks.",
-    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg"
-  },
-  {
-    id: "kodai-city-tour",
-    title: "Kodaikanal Classic City Tour",
-    tag: "City Tour",
-    rating: 4.6,
-    duration: "1 Day",
-    vehicle: "Etios: ₹2000 | Innova: ₹2500",
-    region: "Hill Station",
-    tourType: "Local Tour",
-    highlights: [
-      "Jain Temple & Kurinji Andavar Temple",
-      "Chettiar Park & Palani View Point",
-      "Science Museum & 7D Theatre Visit",
-      "Silver Falls Scenic Stop"
-    ],
-    description: "Take a relaxed drive through Kodaikanal's main town attractions. Explore historical temples, beautiful public flower gardens, and local museums.",
-    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246361/Desktop_wallpaper_-_Serene_mountain_road_xmpyv4.jpg"
-  },
-  {
-    id: "kodai-wild-tour",
-    title: "Kodaikanal Forest & Wild Tour",
-    tag: "Wild Tour",
-    rating: 4.7,
-    duration: "1 Day",
-    vehicle: "Etios: ₹3000 | Innova: ₹3500",
-    region: "Hill Station",
-    tourType: "Local Tour",
-    highlights: [
-      "Silent Valley View & Fire Tower",
-      "Berijam Lake Forest Permit Drive",
-      "Caps Fly View & Herbal Forest Walk",
-      "Peaceful Kodai Lake Boating"
-    ],
-    description: "Venture deep into Kodaikanal's protected forest zones. Experience the serene beauty of Berijam Lake and high-altitude wild pine views under a special forest permit.",
-    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_31_wayanad_pnyroq.jpg"
-  },
-  {
-    id: "kodai-trekking-tour",
-    title: "Kodaikanal Trekking & Adventure",
-    tag: "Trekking Tour",
-    rating: 4.8,
-    duration: "1 Day",
-    vehicle: "Etios: ₹2500 | Innova: ₹3000",
-    region: "Hill Station",
-    tourType: "Local Tour",
-    highlights: [
-      "La Saleth Church Heritage Stop",
-      "Vattakanal Falls & Dolphin Nose Walk",
-      "Echo Rock & Pambar Falls Trail",
-      "500-Year-Old Tree Photo Stop"
-    ],
-    description: "A trekking trail for nature lovers. Hike to the famous Dolphin Nose rock ledge overlooking deep valley drops, hear echoes at the canyon, and cross streams.",
-    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246354/imgi_16_kotagiri_mmkg42.jpg"
-  },
-  {
-    id: "kodai-village-tour",
-    title: "Kodaikanal Mannavanur Village Eco Tour",
-    tag: "Village Tour",
-    rating: 4.9,
-    duration: "1 Day",
-    vehicle: "Etios: ₹3000 | Innova: ₹3500",
-    region: "Hill Station",
-    tourType: "Local Tour",
-    highlights: [
-      "Observatory Pine Forest Walk",
-      "Poombarai Village & Temple View",
-      "Mannavanur Sheep Farm & Rabbit Farm",
-      "Mannavanur Lake Grassland Trail"
-    ],
-    description: "Discover Kodaikanal's countryside. Visit the terraced agriculture valleys of Poombarai village, walk around the grasslands of Mannavanur Lake, and tour animal farms.",
-    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_29_valparai_agdcal.jpg"
-  }
-];
+  }];
 
 // Testimonials Data
 export const TESTIMONIALS = [

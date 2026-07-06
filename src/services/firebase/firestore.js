@@ -104,11 +104,11 @@ export const getDocuments = async (collectionName, orderByField = '', seedData =
       } catch (error) {
         console.error(`Error fetching collection ${collectionName} from Firestore:`, error);
         isFirestoreOffline = true;
-        return getStoredData(`rir_v2_${collectionName}`, seedData || []);
+        return getStoredData(`rir_v4_${collectionName}`, seedData || []);
       }
     }
   }
-  return getStoredData(`rir_v2_${collectionName}`, seedData || []);
+  return getStoredData(`rir_v4_${collectionName}`, seedData || []);
 };
 
 export const addDocument = async (collectionName, data) => {
@@ -126,10 +126,10 @@ export const addDocument = async (collectionName, data) => {
     }
   }
   // LocalStorage Fallback
-  const list = getStoredData(`rir_v2_${collectionName}`, []);
+  const list = getStoredData(`rir_v4_${collectionName}`, []);
   const newItem = { id: `${collectionName.slice(0, 3)}-` + Date.now(), ...data };
   list.unshift(newItem);
-  setStoredData(`rir_v2_${collectionName}`, list);
+  setStoredData(`rir_v4_${collectionName}`, list);
   return newItem;
 };
 
@@ -149,11 +149,11 @@ export const updateDocument = async (collectionName, docId, data) => {
     }
   }
   // LocalStorage Fallback
-  const list = getStoredData(`rir_v2_${collectionName}`, []);
+  const list = getStoredData(`rir_v4_${collectionName}`, []);
   const idx = list.findIndex(item => item.id === docId);
   if (idx !== -1) {
     list[idx] = { ...list[idx], ...data };
-    setStoredData(`rir_v2_${collectionName}`, list);
+    setStoredData(`rir_v4_${collectionName}`, list);
     return true;
   }
   return false;
@@ -174,8 +174,8 @@ export const deleteDocument = async (collectionName, docId) => {
     }
   }
   // LocalStorage Fallback
-  let list = getStoredData(`rir_v2_${collectionName}`, []);
+  let list = getStoredData(`rir_v4_${collectionName}`, []);
   list = list.filter(item => item.id !== docId);
-  setStoredData(`rir_v2_${collectionName}`, list);
+  setStoredData(`rir_v4_${collectionName}`, list);
   return true;
 };
