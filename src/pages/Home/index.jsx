@@ -15,7 +15,9 @@ import Button from '../../components/common/Button';
 import SectionTitle from '../../components/common/SectionTitle';
 import ServiceCard from '../../components/shared/ServiceCard';
 import EnquiryModal from '../../components/shared/EnquiryModal';
-import { SERVICES, STATS, FLEET, FAQS, POPULAR_CATEGORIES } from '../../constants';
+import SEOMeta, { localBusinessSchema, faqSchema } from '../../components/common/SEOMeta';
+import { SERVICES, STATS, CAB, FAQS, POPULAR_CATEGORIES, PACKAGES } from '../../constants';
+import PackageCard from '../../components/shared/PackageCard';
 import { useSettings } from '../../contexts/SettingsContext';
 import { subscribeNewsletter } from '../../services/enquiryService';
 
@@ -66,7 +68,7 @@ export default function Home() {
     {
       image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783185824/imgi_5_kerala-trip-packages_iboeoi.jpg",
       title: "Experience Luxury in the Land of Temples",
-      subtitle: "Curated travel experiences across Tamil Nadu's spiritual heartlands, serene coasts, and misty hills. A professional-driven fleet."
+      subtitle: "Curated travel experiences across Tamil Nadu's spiritual heartlands, serene coasts, and misty hills. A professional-driven cab."
     },
     {
       image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783185825/imgi_7_vibrant-kerala-tour-packages_whrahw.jpg",
@@ -82,6 +84,15 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden font-sans">
+      <SEOMeta
+        title="Kodaikanal Tour Packages, Cab Booking & Taxi Service"
+        description="RIR Tours and Travels – Best tour operator in Kodaikanal. Book Kodaikanal tour packages, cab booking, taxi service, sightseeing tours & one way drop. Call +91 93425 53805."
+        canonical="/"
+        schemas={[
+          localBusinessSchema(),
+          faqSchema(FAQS.map(f => ({ question: f.question, answer: f.answer }))),
+        ]}
+      />
       
       {/* 1. Hero Banner Carousel */}
       <section className="relative h-[85vh] md:h-screen w-full bg-primary-dark">
@@ -179,12 +190,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Fleet Section (Visual Auto-Scrolling Showcase) */}
-      <section id="fleet" className="py-20 bg-white border-b border-gray-50">
+      {/* 4. Cab Section (Visual Auto-Scrolling Showcase) */}
+      <section id="cab" className="py-20 bg-white border-b border-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <SectionTitle
-              tag="Elite Fleet"
+              tag="Elite Cab"
               title="Travel in the Pinnacle of Comfort"
               align="left"
               className="mb-0 max-w-2xl"
@@ -193,7 +204,7 @@ export default function Home() {
               to="/packages" 
               className="inline-flex items-center text-sm font-bold text-primary hover:text-gold transition-colors font-sans py-2"
             >
-              View Full Fleet <RiArrowRightLine className="ml-2" />
+              View Full Cab <RiArrowRightLine className="ml-2" />
             </Link>
           </div>
 
@@ -203,8 +214,8 @@ export default function Home() {
             spaceBetween={24}
             slidesPerView={1}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
-            loop={FLEET.length > 3}
-            pagination={{ clickable: true, el: '.fleet-swiper-pagination' }}
+            loop={CAB.length > 3}
+            pagination={{ clickable: true, el: '.cab-swiper-pagination' }}
             breakpoints={{
               640: { slidesPerView: 1.5 },
               768: { slidesPerView: 2 },
@@ -213,7 +224,7 @@ export default function Home() {
             }}
             className="w-full pb-4"
           >
-            {FLEET.map((vehicle) => (
+            {CAB.map((vehicle) => (
               <SwiperSlide key={vehicle.id}>
                 <div 
                   className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col text-left group cursor-pointer h-[380px] md:h-[450px]"
@@ -259,11 +270,56 @@ export default function Home() {
           </Swiper>
 
           {/* Swiper Pagination indicator slot */}
-          <div className="fleet-swiper-pagination flex justify-center mt-6 gap-1.5" />
+          <div className="cab-swiper-pagination flex justify-center mt-6 gap-1.5" />
         </div>
       </section>
 
 
+      {/* Most Booked Packages Section */}
+      <section className="py-20 bg-[#F8FAFC] border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <SectionTitle
+              tag="Most Booked"
+              title="Our Most Popular Kodaikanal Packages"
+              align="left"
+              className="mb-0 max-w-2xl"
+            />
+            <Link 
+              to="/kodaikanal-tour-packages" 
+              className="inline-flex items-center text-sm font-bold text-primary hover:text-gold transition-colors font-sans py-2"
+            >
+              View All Kodaikanal Tours <RiArrowRightLine className="ml-2" />
+            </Link>
+          </div>
+
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            pagination={{ clickable: true, el: '.packages-swiper-pagination' }}
+            breakpoints={{
+              640: { slidesPerView: 1.5 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="w-full pb-4"
+          >
+            {PACKAGES.filter(p => p.id.startsWith('kodai-')).slice(0, 5).map((pkg) => (
+              <SwiperSlide key={pkg.id}>
+                <PackageCard
+                  pkg={pkg}
+                  onDetails={() => navigate('/kodaikanal-tour-packages')}
+                  onEnquire={() => handleOpenModal(pkg)}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="packages-swiper-pagination flex justify-center mt-6 gap-1.5" />
+        </div>
+      </section>
 
       {/* Popular Packages Category Section */}
       <section className="py-20 bg-white border-b border-gray-100">
@@ -395,7 +451,7 @@ export default function Home() {
             Join Our Exclusive Travel Circle
           </h2>
           <p className="text-sm md:text-base text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed font-sans">
-            Get early access to travel itineraries, seasonal package discounts, and luxury fleet updates.
+            Get early access to travel itineraries, seasonal package discounts, and luxury cab updates.
           </p>
 
           <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto items-center justify-center">

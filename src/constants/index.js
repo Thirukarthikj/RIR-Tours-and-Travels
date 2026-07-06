@@ -2,7 +2,7 @@
 export const NAV_LINKS = [
   { label: 'Services', path: '/#services' },
   { label: 'Packages', path: '/packages' },
-  { label: 'Cab', path: '/fleet' },
+  { label: 'Cab', path: '/cab' },
   { label: 'About', path: '/about' },
   { label: 'Gallery', path: '/gallery' },
   { label: 'Contact', path: '/contact' }
@@ -58,11 +58,11 @@ export const STATS = [
   { value: "15k+", label: "Trips Completed" },
   { value: "10k+", label: "Happy Clients" },
   { value: "12+", label: "Years Experience" },
-  { value: "45+", label: "Luxury Fleet" }
+  { value: "45+", label: "Luxury Cab" }
 ];
 
-// Vehicle Fleet List
-export const FLEET = [
+// Vehicle Cab List
+export const CAB = [
   {
     id: "innova-hycross",
     name: "Toyota Innova Hycross",
@@ -227,7 +227,7 @@ export const PACKAGES = [
     duration: "3 Days / 2 Nights",
     vehicle: "Toyota Fortuner",
     region: "Hill Station",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Coaker's Walk Heritage Trail",
       "Kodaikanal Lake Cycling",
@@ -244,7 +244,7 @@ export const PACKAGES = [
     duration: "3 Days / 2 Nights",
     vehicle: "Toyota Innova Crysta",
     region: "Hill Station",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Private Tea Factory Tour",
       "Eravikulam National Park Visit",
@@ -261,7 +261,7 @@ export const PACKAGES = [
     duration: "3 Days / 2 Nights",
     vehicle: "Premium Sedan",
     region: "Hill Station",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Nilgiri Toy Train Ride",
       "Doddabetta Peak Viewpoint",
@@ -279,7 +279,7 @@ export const PACKAGES = [
     duration: "2 Days / 1 Night",
     vehicle: "Toyota Etios",
     region: "Hill Station",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Emerald Lake Boating",
       "Pagoda Point Sunset",
@@ -296,7 +296,7 @@ export const PACKAGES = [
     duration: "3 Days / 2 Nights",
     vehicle: "Toyota Innova Hycross",
     region: "Hill Station",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Periyar Lake Wildlife Cruise",
       "Guided Spice Plantation Tour",
@@ -313,7 +313,7 @@ export const PACKAGES = [
     duration: "2 Days / 1 Night",
     vehicle: "Premium SUV",
     region: "Coastal",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Vivekananda Rock Memorial Ferry",
       "Thiruvalluvar Statue Visit",
@@ -330,7 +330,7 @@ export const PACKAGES = [
     duration: "3 Days / 2 Nights",
     vehicle: "Seven Luxury Cars",
     region: "Spiritual",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Pamban Bridge Scenic Crossing",
       "22 Sacred Wells Bathing Ritual",
@@ -347,7 +347,7 @@ export const PACKAGES = [
     duration: "2 Days / 1 Night",
     vehicle: "Premium Sedan",
     region: "Spiritual",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Nazhikinaru Sacred Well Darshan",
       "Shoreline Temple Sunrise Walk",
@@ -364,7 +364,7 @@ export const PACKAGES = [
     duration: "2 Days / 1 Night",
     vehicle: "Toyota Innova Crysta",
     region: "Spiritual",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Meenakshi Amman VIP Darshan",
       "Thirumalai Nayakkar Palace Show",
@@ -381,7 +381,7 @@ export const PACKAGES = [
     duration: "2 Days / 1 Night",
     vehicle: "Toyota Etios",
     region: "Spiritual",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Srirangam Temple VIP Darshan",
       "Rockfort Uchchi Pillayar Climb",
@@ -398,7 +398,7 @@ export const PACKAGES = [
     duration: "2 Days / 1 Night",
     vehicle: "Toyota Fortuner",
     region: "Spiritual",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Special Entry VIP Darshan Tickets",
       "Tirumala Hills Chauffeur Escort",
@@ -415,7 +415,7 @@ export const PACKAGES = [
     duration: "3 Days / 2 Nights",
     vehicle: "Premium Sedan",
     region: "Coastal",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Sree Padmanabhaswamy Temple Darshan",
       "Kovalam Beach Resort Stay",
@@ -432,7 +432,7 @@ export const PACKAGES = [
     duration: "6 Days / 5 Nights",
     vehicle: "Luxury Tempo Traveller",
     region: "Spiritual",
-    tourType: "Luxury Fleet",
+    tourType: "Luxury Cab",
     highlights: [
       "Visit All 6 Sacred Abodes",
       "VIP Archana & Pooja Assistance",
@@ -467,7 +467,7 @@ export const FAQS = [
   {
     id: 1,
     question: "How do I book a tour with RIR?",
-    answer: "You can book directly via our website by sending an enquiry, or call/WhatsApp our 24/7 concierge team. We will tailor the package and fleet to match your specifications."
+    answer: "You can book directly via our website by sending an enquiry, or call/WhatsApp our 24/7 concierge team. We will tailor the package and cab to match your specifications."
   },
   {
     id: 2,
@@ -486,7 +486,7 @@ export const CONTACT_FAQS = [
   {
     id: 1,
     question: "Do you provide airport transfers?",
-    answer: "Yes, we offer premium airport transfers in our luxury fleet for all major airports across Tamil Nadu, Kerala, and Bengaluru (including Chennai, Coimbatore, Cochin, and Bangalore airports)."
+    answer: "Yes, we offer premium airport transfers in our luxury cab for all major airports across Tamil Nadu, Kerala, and Bengaluru (including Chennai, Coimbatore, Cochin, and Bangalore airports)."
   },
   {
     id: 2,
@@ -524,7 +524,7 @@ export const POPULAR_CATEGORIES = [
   }
 ];
 
-export const FLEET_EXTENDED = [
+export const CAB_EXTENDED = [
   {
     id: "hatchback",
     name: "Maruti Swift / Indica",
@@ -615,7 +615,7 @@ export const GALLERY_EXTENDED = [
   {
     id: 1,
     title: "RIR Tours Premium Banner",
-    category: "Fleet",
+    category: "Cab",
     url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_33_tours-bnr_xpvnob.jpg"
   },
   {
@@ -633,7 +633,7 @@ export const GALLERY_EXTENDED = [
   {
     id: 4,
     title: "Sunset Road Trip Gallery",
-    category: "Fleet",
+    category: "Cab",
     url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_61_home_gallery2_yg9c7i.webp"
   },
   {

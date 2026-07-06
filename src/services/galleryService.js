@@ -1,10 +1,10 @@
 import { getDocuments } from './firebase/firestore';
 
 const GALLERY_IMAGES = [
-  { id: 1, title: "RIR Tours Premium Banner", category: "Fleet", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_33_tours-bnr_xpvnob.jpg", status: "Visible" },
+  { id: 1, title: "RIR Tours Premium Banner", category: "Cab", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_33_tours-bnr_xpvnob.jpg", status: "Visible" },
   { id: 2, title: "Serene Mountain Road Drive", category: "Destinations", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246361/Desktop_wallpaper_-_Serene_mountain_road_xmpyv4.jpg", status: "Visible" },
   { id: 3, title: "Cherrapunji Meghalaya Tour", category: "Destinations", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246360/imgi_77_meghalaya-tour-packag-cherrapunji-aspire-holidays-chennai_gv1sji.webp", status: "Visible" },
-  { id: 4, title: "Sunset Road Trip Gallery", category: "Fleet", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_61_home_gallery2_yg9c7i.webp", status: "Visible" },
+  { id: 4, title: "Sunset Road Trip Gallery", category: "Cab", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_61_home_gallery2_yg9c7i.webp", status: "Visible" },
   { id: 5, title: "Domestic Tour Highlights", category: "Destinations", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246357/imgi_32_domestic_k4q21e.webp", status: "Visible" },
   { id: 6, title: "Starry Night Scenic Drive", category: "Destinations", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246358/imgi_17_1752825137530-275145032-Tuscan_Nightscape_Under_Starry_Skies_knhcro.webp", status: "Visible" },
   { id: 7, title: "Wayanad Kerala Green Hills", category: "Destinations", url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_31_wayanad_pnyroq.jpg", status: "Visible" },

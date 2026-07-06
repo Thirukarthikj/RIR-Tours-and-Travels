@@ -1,0 +1,30 @@
+{
+  "renames": [
+    "D:\\project\\Travel\\Code\\src\\pages\\Fleet\\index.jsx"
+  ],
+  "modifications": [
+    "D:\\project\\Travel\\Code\\src\\components\\common\\Footer.jsx",
+    "D:\\project\\Travel\\Code\\src\\components\\common\\Navbar.jsx",
+    "D:\\project\\Travel\\Code\\src\\components\\forms\\GalleryForm.jsx",
+    "D:\\project\\Travel\\Code\\src\\components\\shared\\EnquiryModal.jsx",
+    "D:\\project\\Travel\\Code\\src\\constants\\index.js",
+    "D:\\project\\Travel\\Code\\src\\pages\\About\\index.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Admin\\Dashboard.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Admin\\Gallery.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Admin\\Vehicles.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Contact\\index.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Fleet\\index.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Gallery\\index.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Home\\index.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\LandingPages\\KodaiCabBooking.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\LandingPages\\KodaiOneWayDrop.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\LandingPages\\KodaiTaxiService.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\LandingPages\\KodaiTourOperator.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\LandingPages\\KodaiTourPackages.jsx",
+    "D:\\project\\Travel\\Code\\src\\pages\\Packages\\index.jsx",
+    "D:\\project\\Travel\\Code\\src\\routes\\index.jsx",
+    "D:\\project\\Travel\\Code\\src\\services\\adminService.js",
+    "D:\\project\\Travel\\Code\\src\\services\\galleryService.js",
+    "D:\\project\\Travel\\Code\\src\\services\\vehicleService.js"
+  ]
+}

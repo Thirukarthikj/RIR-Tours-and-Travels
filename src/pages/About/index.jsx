@@ -63,7 +63,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold font-display text-primary mb-4">Our Mission</h3>
                 <p className="text-sm md:text-base text-gray-500 font-sans leading-relaxed">
-                  To deliver unparalleled travel experiences through meticulous planning, premium fleet management, and absolute local dedication. We target the gold standard for bespoke tourism and corporate transit solutions in South India, treating every guest as family.
+                  To deliver unparalleled travel experiences through meticulous planning, premium cab management, and absolute local dedication. We target the gold standard for bespoke tourism and corporate transit solutions in South India, treating every guest as family.
                 </p>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800"
-                alt="Luxury fleet driving on scenic road"
+                alt="Luxury cab driving on scenic road"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -142,7 +142,7 @@ export default function About() {
               <div className="bg-secondary/10 text-secondary w-12 h-12 rounded-full flex items-center justify-center">
                 <RiCarWashingLine className="text-xl" />
               </div>
-              <h3 className="text-lg font-bold font-display text-primary">Premium Fleet</h3>
+              <h3 className="text-lg font-bold font-display text-primary">Premium Cab</h3>
               <p className="text-xs md:text-sm text-gray-500 font-sans leading-relaxed">
                 From sleek executive sedans to spacious luxury coaches, our vehicles are impeccably maintained and equipped with high-end amenities.
               </p>
@@ -171,7 +171,7 @@ export default function About() {
             Whether it's a spiritual pilgrimage, a coastal escape, or high-stakes business tour, let RIR Tours and Travels manage the details while you enjoy the journey.
           </h2>
           <p className="text-sm text-gray-500 max-w-xl mx-auto leading-relaxed font-sans">
-            Our luxury fleet and experienced guides are waiting. Let us customize your road tour across Tamil Nadu, Kerala, and Bengaluru.
+            Our luxury cab and experienced guides are waiting. Let us customize your road tour across Tamil Nadu, Kerala, and Bengaluru.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-4">
@@ -189,7 +189,7 @@ export default function About() {
               size="lg"
               className="w-full sm:w-auto font-bold rounded-full cursor-pointer"
             >
-              How Our Fleet
+              How Our Cab
             </Button>
           </div>
         </div>

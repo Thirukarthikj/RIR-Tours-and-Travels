@@ -71,7 +71,7 @@ export default function GalleryForm({ initialData, onSave, onCancel }) {
               {...register('category')}
               className="w-full px-4 py-2.5 bg-slate-50 border border-gray-150 rounded-xl text-xs font-semibold outline-none focus:border-gold text-primary cursor-pointer"
             >
-              <option value="Fleet">Fleet</option>
+              <option value="Cab">Cab</option>
               <option value="Destinations">Destinations</option>
               <option value="Events">Events</option>
             </select>

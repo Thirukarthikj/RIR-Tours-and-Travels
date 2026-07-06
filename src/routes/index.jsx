@@ -11,9 +11,18 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import Packages from '../pages/Packages';
 import Contact from '../pages/Contact';
-import Fleet from '../pages/Fleet';
+import Cab from '../pages/Cab';
 import Gallery from '../pages/Gallery';
 import NotFound from '../pages/NotFound';
+
+// SEO Landing Pages – Kodaikanal
+import KodaiTourPackages from '../pages/LandingPages/KodaiTourPackages';
+import KodaiCabBooking from '../pages/LandingPages/KodaiCabBooking';
+import KodaiTaxiService from '../pages/LandingPages/KodaiTaxiService';
+import KodaiOneWayDrop from '../pages/LandingPages/KodaiOneWayDrop';
+import MaduraiToKodaiTaxi from '../pages/LandingPages/MaduraiToKodaiTaxi';
+import KodaiSightseeing from '../pages/LandingPages/KodaiSightseeing';
+import KodaiTourOperator from '../pages/LandingPages/KodaiTourOperator';
 
 // Admin Pages
 import AdminLogin from '../pages/Admin/Login';
@@ -35,8 +44,18 @@ export default function AppRoutes() {
         <Route path="about" element={<About />} />
         <Route path="packages" element={<Packages />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="fleet" element={<Fleet />} />
+        <Route path="cab" element={<Cab />} />
         <Route path="gallery" element={<Gallery />} />
+
+        {/* Kodaikanal SEO Landing Pages */}
+        <Route path="kodaikanal-tour-packages" element={<KodaiTourPackages />} />
+        <Route path="kodaikanal-cab-booking" element={<KodaiCabBooking />} />
+        <Route path="kodaikanal-taxi-service" element={<KodaiTaxiService />} />
+        <Route path="kodaikanal-one-way-drop" element={<KodaiOneWayDrop />} />
+        <Route path="madurai-to-kodaikanal-taxi" element={<MaduraiToKodaiTaxi />} />
+        <Route path="kodaikanal-sightseeing" element={<KodaiSightseeing />} />
+        <Route path="kodaikanal-tour-operator" element={<KodaiTourOperator />} />
+
         <Route path="*" element={<NotFound />} />
       </Route>
 
@@ -65,3 +84,4 @@ export default function AppRoutes() {
     </Routes>
   );
 }
+

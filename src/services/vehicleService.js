@@ -1,6 +1,6 @@
-import { FLEET_EXTENDED } from '../constants';
+import { CAB_EXTENDED } from '../constants';
 import { getDocuments } from './firebase/firestore';
 
 export const getVehicles = async () => {
-  return getDocuments('vehicles', '', FLEET_EXTENDED);
+  return getDocuments('vehicles', '', CAB_EXTENDED);
 };

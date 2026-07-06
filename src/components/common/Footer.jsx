@@ -42,7 +42,7 @@ export default function Footer() {
               <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link>
             </li>
             <li>
-              <a href="/#fleet" className="text-gray-300 hover:text-white transition-colors">Luxury Fleet</a>
+              <a href="/#cab" className="text-gray-300 hover:text-white transition-colors">Luxury Cab</a>
             </li>
             <li>
               <a href="/#services" className="text-gray-300 hover:text-white transition-colors">Temple Tours</a>
@@ -53,21 +53,30 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Legal / Policies */}
+        {/* Kodaikanal Services */}
         <div className="text-left">
-          <h3 className="text-sm font-semibold tracking-wider uppercase text-gold-light mb-4">Policies</h3>
+          <h3 className="text-sm font-semibold tracking-wider uppercase text-gold-light mb-4">Kodaikanal Services</h3>
           <ul className="space-y-2.5 text-sm">
             <li>
-              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Safety Policies</span>
+              <Link to="/kodaikanal-tour-packages" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Tour Packages</Link>
             </li>
             <li>
-              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
+              <Link to="/kodaikanal-cab-booking" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Cab Booking</Link>
             </li>
             <li>
-              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Terms of Service</span>
+              <Link to="/kodaikanal-taxi-service" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Taxi Service</Link>
             </li>
             <li>
-              <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">Refund Policy</span>
+              <Link to="/kodaikanal-sightseeing" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Sightseeing</Link>
+            </li>
+            <li>
+              <Link to="/kodaikanal-one-way-drop" className="text-gray-300 hover:text-white transition-colors">One Way Drop Taxi</Link>
+            </li>
+            <li>
+              <Link to="/madurai-to-kodaikanal-taxi" className="text-gray-300 hover:text-white transition-colors">Madurai to Kodaikanal Taxi</Link>
+            </li>
+            <li>
+              <Link to="/kodaikanal-tour-operator" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Tour Operator</Link>
             </li>
           </ul>
         </div>

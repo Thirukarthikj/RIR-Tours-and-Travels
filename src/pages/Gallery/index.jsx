@@ -15,7 +15,7 @@ export default function Gallery() {
   const [activeTab, setActiveTab] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const tabs = ['All', 'Fleet', 'Destinations', 'Spiritual'];
+  const tabs = ['All', 'Cab', 'Destinations', 'Spiritual'];
 
   const filteredImages = activeTab === 'All'
     ? GALLERY_EXTENDED
@@ -103,11 +103,11 @@ export default function Gallery() {
                   Enquire Now
                 </Button>
                 <Button
-                  onClick={() => navigate('/fleet')}
+                  onClick={() => navigate('/cab')}
                   variant="outline"
                   className="px-8 py-3.5 font-bold rounded-xl flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  View Fleet <RiArrowRightSLine className="text-lg" />
+                  View Cab <RiArrowRightSLine className="text-lg" />
                 </Button>
               </div>
             </div>

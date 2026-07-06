@@ -1,4 +1,4 @@
-import { PACKAGES, FLEET_EXTENDED, GALLERY_EXTENDED } from '../constants';
+import { PACKAGES, CAB_EXTENDED, GALLERY_EXTENDED } from '../constants';
 import { getDocuments, addDocument, updateDocument, deleteDocument } from './firebase/firestore';
 import { loginAdmin, logoutAdmin } from './firebase/auth';
 
@@ -93,7 +93,7 @@ export const adminService = {
 
   // --- Vehicles CRUD ---
   async getVehicles() {
-    return getDocuments('vehicles', '', FLEET_EXTENDED);
+    return getDocuments('vehicles', '', CAB_EXTENDED);
   },
 
   async saveVehicle(v) {

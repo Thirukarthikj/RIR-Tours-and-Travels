@@ -3,10 +3,10 @@ import { RiAddLine } from 'react-icons/ri';
 import { adminService } from '../../services/adminService';
 import DataTable from '../../components/common/DataTable';
 import VehicleForm from '../../components/forms/VehicleForm';
-import { FLEET_EXTENDED } from '../../constants';
+import { CAB_EXTENDED } from '../../constants';
 
 export default function Vehicles() {
-  const [vehicles, setVehicles] = useState(FLEET_EXTENDED);
+  const [vehicles, setVehicles] = useState(CAB_EXTENDED);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingVehicle, setEditingVehicle] = useState(null);
 

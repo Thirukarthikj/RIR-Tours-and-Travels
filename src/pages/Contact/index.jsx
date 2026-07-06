@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   const serviceOptions = [
-    { value: "Luxury Fleet Rental", label: "Luxury Fleet Rental" },
+    { value: "Luxury Cab Rental", label: "Luxury Cab Rental" },
     { value: "Temple Tours Package", label: "Temple Tours Package" },
     { value: "Coastal Escapes Package", label: "Coastal Escapes Package" },
     { value: "Airport Transfer / Drops", label: "Airport Transfer / Drops" },

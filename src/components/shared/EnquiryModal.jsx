@@ -107,9 +107,9 @@ Please confirm availability and details. Thank you!`;
     { value: "Tirupati Balaji VIP Pilgrimage", label: "Tirupati Balaji VIP Pilgrimage Package" },
     { value: "Trivandrum Padmanabhaswamy & Kovalam", label: "Trivandrum Padmanabhaswamy & Kovalam Package" },
     { value: "Arupadaiveedu Murugan Temple Tour", label: "Arupadaiveedu Murugan Temple Tour Package" },
-    { value: "Toyota Innova Hycross", label: "Toyota Innova Hycross (Fleet)" },
-    { value: "Toyota Fortuner / SUV", label: "Toyota Fortuner / SUV (Fleet)" },
-    { value: "Luxury Tempo Traveller", label: "Luxury Tempo Traveller (Fleet)" },
+    { value: "Toyota Innova Hycross", label: "Toyota Innova Hycross (Cab)" },
+    { value: "Toyota Fortuner / SUV", label: "Toyota Fortuner / SUV (Cab)" },
+    { value: "Luxury Tempo Traveller", label: "Luxury Tempo Traveller (Cab)" },
     { value: "Custom Bespoke Tour", label: "Custom Bespoke Tour Plan" },
     { value: "Airport Transfer / Drop", label: "Airport Drop / Pick-up" }
   ];

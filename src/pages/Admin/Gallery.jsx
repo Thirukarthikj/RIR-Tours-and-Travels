@@ -45,7 +45,7 @@ export default function Gallery() {
     fetchGallery();
   };
 
-  const categories = ['All', 'Fleet', 'Destinations', 'Spiritual'];
+  const categories = ['All', 'Cab', 'Destinations', 'Spiritual'];
 
   // Filter & Search Logic
   const filteredGallery = gallery.filter(item => {

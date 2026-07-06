@@ -37,7 +37,7 @@ export default function Dashboard() {
 
   const cards = [
     { label: 'Active Packages', value: metrics.packages, icon: RiRoadMapLine, bg: 'bg-blue-500/10 text-blue-600', link: '/admin/packages' },
-    { label: 'Cab Fleet Size', value: metrics.vehicles, icon: RiTaxiLine, bg: 'bg-amber-500/10 text-amber-600', link: '/admin/vehicles' },
+    { label: 'Cab Cab Size', value: metrics.vehicles, icon: RiTaxiLine, bg: 'bg-amber-500/10 text-amber-600', link: '/admin/vehicles' },
     { label: 'Gallery Portfolio', value: metrics.gallery, icon: RiImageLine, bg: 'bg-emerald-500/10 text-emerald-600', link: '/admin/gallery' },
     { label: 'Client Enquiries', value: metrics.enquiries, icon: RiMessage2Line, bg: 'bg-indigo-500/10 text-indigo-600', link: '/admin/enquiries' },
   ];

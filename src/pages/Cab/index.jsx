@@ -6,11 +6,11 @@ import { RiUserLine, RiBriefcaseLine, RiWindyLine, RiWifiLine, RiShieldCheckLine
 import Button from '../../components/common/Button';
 
 import EnquiryModal from '../../components/shared/EnquiryModal';
-import { FLEET_EXTENDED } from '../../constants';
+import { CAB_EXTENDED } from '../../constants';
 import { getVehicles } from '../../services/vehicleService';
 
-export default function Fleet() {
-  const [vehicles, setVehicles] = useState(FLEET_EXTENDED);
+export default function Cab() {
+  const [vehicles, setVehicles] = useState(CAB_EXTENDED);
   const [activeCategory, setActiveCategory] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalPresetData, setModalPresetData] = useState(null);
@@ -27,7 +27,7 @@ export default function Fleet() {
 
   const categories = ['All', 'Hatchback', 'Sedan', 'SUV', 'Tempo Traveller', 'Luxury Coach'];
 
-  const filteredFleet = activeCategory === 'All'
+  const filteredCab = activeCategory === 'All'
     ? vehicles
     : vehicles.filter(v => v.category === activeCategory);
 
@@ -51,10 +51,10 @@ export default function Fleet() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 space-y-3">
           <span className="text-xs font-bold text-gold-light uppercase tracking-widest">
-            Our Premium Fleet
+            Our Premium Cab
           </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-display leading-tight">
-            Our Premium Fleet
+            Our Premium Cab
           </h1>
         </div>
       </section>
@@ -79,7 +79,7 @@ export default function Fleet() {
       {/* 3. Cards Grid Section */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredFleet.map((vehicle) => (
+          {filteredCab.map((vehicle) => (
             <motion.div
               key={vehicle.id}
               layout

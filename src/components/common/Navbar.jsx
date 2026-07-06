@@ -41,7 +41,7 @@ export default function Navbar() {
     return location.pathname === path;
   };
 
-  const isDarkHeaderPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/contact' || location.pathname === '/fleet' || location.pathname === '/packages' || location.pathname === '/gallery';
+  const isDarkHeaderPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/contact' || location.pathname === '/cab' || location.pathname === '/packages' || location.pathname === '/gallery';
   const showDarkStyles = isDarkHeaderPage && !isScrolled;
 
   return (
