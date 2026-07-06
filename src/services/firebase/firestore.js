@@ -34,7 +34,7 @@ const checkConnection = () => {
     } else if (db) {
       const colRef = collection(db, 'settings');
       const q = query(colRef, limit(1));
-      connPromise = withTimeout(getDocs(q), 15000)
+      connPromise = withTimeout(getDocs(q), 3000)
         .then(() => {
           isFirestoreOffline = false;
           return true;

@@ -4,7 +4,6 @@ import SEOLandingLayout from './SEOLandingLayout';
 
 const RELATED_LINKS = [
   { label: 'Kodaikanal Tour Packages', path: '/kodaikanal-tour-packages' },
-  { label: 'Kodaikanal Cab Booking', path: '/kodaikanal-cab-booking' },
   { label: 'Kodaikanal Taxi Service', path: '/kodaikanal-taxi-service' },
   { label: 'Kodaikanal One Way Drop', path: '/kodaikanal-one-way-drop' },
   { label: 'Madurai to Kodaikanal Taxi', path: '/madurai-to-kodaikanal-taxi' },
@@ -74,7 +73,7 @@ export default function KodaiTourOperator() {
           </p>
           <h3 className="text-lg font-bold text-primary mt-4 mb-2">Cab & Cab Management</h3>
           <p>
-            As the leading <Link to="/kodaikanal-cab-booking" className="text-primary font-semibold hover:underline">cab service in Kodaikanal</Link>, RIR Tours maintains a diverse cab of well-serviced vehicles. Toyota Etios for budget-conscious couples, Innova for comfortable family travel, Fortuner for luxury seekers, and Tempo Travellers for large groups. All vehicles undergo regular mechanical servicing, safety inspections, and interior sanitization.
+            As the leading <Link to="/cab" className="text-primary font-semibold hover:underline">cab service in Kodaikanal</Link>, RIR Tours maintains a diverse cab of well-serviced vehicles. Toyota Etios for budget-conscious couples, Innova for comfortable family travel, Fortuner for luxury seekers, and Tempo Travellers for large groups. All vehicles undergo regular mechanical servicing, safety inspections, and interior sanitization.
           </p>
           <h3 className="text-lg font-bold text-primary mt-4 mb-2">Airport & Station Transfers</h3>
           <p>

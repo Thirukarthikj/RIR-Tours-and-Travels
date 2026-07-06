@@ -61,9 +61,6 @@ export default function Footer() {
               <Link to="/kodaikanal-tour-packages" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Tour Packages</Link>
             </li>
             <li>
-              <Link to="/kodaikanal-cab-booking" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Cab Booking</Link>
-            </li>
-            <li>
               <Link to="/kodaikanal-taxi-service" className="text-gray-300 hover:text-white transition-colors">Kodaikanal Taxi Service</Link>
             </li>
             <li>

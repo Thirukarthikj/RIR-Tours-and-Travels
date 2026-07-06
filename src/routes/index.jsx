@@ -17,7 +17,6 @@ import NotFound from '../pages/NotFound';
 
 // SEO Landing Pages – Kodaikanal
 import KodaiTourPackages from '../pages/LandingPages/KodaiTourPackages';
-import KodaiCabBooking from '../pages/LandingPages/KodaiCabBooking';
 import KodaiTaxiService from '../pages/LandingPages/KodaiTaxiService';
 import KodaiOneWayDrop from '../pages/LandingPages/KodaiOneWayDrop';
 import MaduraiToKodaiTaxi from '../pages/LandingPages/MaduraiToKodaiTaxi';
@@ -49,7 +48,6 @@ export default function AppRoutes() {
 
         {/* Kodaikanal SEO Landing Pages */}
         <Route path="kodaikanal-tour-packages" element={<KodaiTourPackages />} />
-        <Route path="kodaikanal-cab-booking" element={<KodaiCabBooking />} />
         <Route path="kodaikanal-taxi-service" element={<KodaiTaxiService />} />
         <Route path="kodaikanal-one-way-drop" element={<KodaiOneWayDrop />} />
         <Route path="madurai-to-kodaikanal-taxi" element={<MaduraiToKodaiTaxi />} />

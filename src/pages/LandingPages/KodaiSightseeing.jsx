@@ -4,7 +4,6 @@ import SEOLandingLayout from './SEOLandingLayout';
 
 const RELATED_LINKS = [
   { label: 'Kodaikanal Tour Packages', path: '/kodaikanal-tour-packages' },
-  { label: 'Kodaikanal Cab Booking', path: '/kodaikanal-cab-booking' },
   { label: 'Kodaikanal Taxi Service', path: '/kodaikanal-taxi-service' },
   { label: 'Kodaikanal One Way Drop', path: '/kodaikanal-one-way-drop' },
   { label: 'Madurai to Kodaikanal Taxi', path: '/madurai-to-kodaikanal-taxi' },
@@ -120,7 +119,7 @@ export default function KodaiSightseeing() {
             <li><strong>Day 5 – City Tour:</strong> Jain Temple → Kurinji Andavar Temple → Chettiar Park → Palani View → Kodai City View → 7D Theatre → Science Museum → Silver Falls → Lake & Park</li>
           </ul>
           <p className="mt-3">
-            For shorter trips, we recommend prioritizing the Valley Tour (Day 1) and either the Wild Tour or Trekking Tour as your second choice. <Link to="/kodaikanal-cab-booking" className="text-primary font-semibold hover:underline">Book your Kodaikanal cab</Link> with RIR Tours for any combination of tours.
+            For shorter trips, we recommend prioritizing the Valley Tour (Day 1) and either the Wild Tour or Trekking Tour as your second choice. <Link to="/cab" className="text-primary font-semibold hover:underline">Book your Kodaikanal cab</Link> with RIR Tours for any combination of tours.
           </p>
         </>
       ),

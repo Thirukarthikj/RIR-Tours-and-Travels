@@ -164,17 +164,12 @@ export const adminService = {
 
   async saveSettings(settings) {
     let result;
-    // Check if the current settings ID is a real Firebase ID (usually 20 chars).
-    // LocalStorage fallback creates IDs like 'set-12345678'
-    const isLocalId = settings.id && settings.id.startsWith('set-');
-    
-    if (settings.id && !isLocalId) {
+    if (settings.id) {
       await updateDocument('settings', settings.id, settings);
       result = settings;
     } else {
       const list = await getDocuments('settings', '', []);
       if (Array.isArray(list) && list.length > 0) {
-        // Update the FIRST real document found in Firebase
         await updateDocument('settings', list[0].id, settings);
         result = { id: list[0].id, ...settings };
       } else {

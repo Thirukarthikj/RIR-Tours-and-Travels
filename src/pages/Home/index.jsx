@@ -290,6 +290,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Kodaikanal Highlight Banner */}
+      <section className="bg-primary text-white py-16 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-cover opacity-20 bg-center" style={{ backgroundImage: `url('https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg')` }} />
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6">
+          <span className="text-xs font-bold text-gold-light uppercase tracking-widest">Featured Destination</span>
+          <h2 className="text-2xl md:text-4xl font-bold font-display leading-tight">
+            Explore the Princess of Hill Stations - Kodaikanal
+          </h2>
+          <p className="text-sm md:text-base text-gray-300 max-w-xl mx-auto leading-relaxed font-sans">
+            Experience the misty mountains, pristine lakes, and lush forests with our specially curated Kodaikanal tour packages and dedicated cab services.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-2">
+            <Button
+              onClick={() => navigate('/kodaikanal-tour-packages')}
+              variant="gold"
+              size="lg"
+              className="w-full sm:w-auto font-bold rounded-full cursor-pointer"
+            >
+              View Kodaikanal Packages
+            </Button>
+            <Button
+              onClick={() => navigate('/cab')}
+              variant="outlineWhite"
+              size="lg"
+              className="w-full sm:w-auto font-bold rounded-full cursor-pointer"
+            >
+              View Cab Fleet
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Most Booked Packages Section */}
       <section className="py-20 bg-[#F8FAFC] border-b border-gray-100">

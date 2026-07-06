@@ -4,7 +4,6 @@ import SEOLandingLayout from './SEOLandingLayout';
 
 const RELATED_LINKS = [
   { label: 'Kodaikanal Tour Packages', path: '/kodaikanal-tour-packages' },
-  { label: 'Kodaikanal Cab Booking', path: '/kodaikanal-cab-booking' },
   { label: 'Kodaikanal Taxi Service', path: '/kodaikanal-taxi-service' },
   { label: 'Kodaikanal Sightseeing Packages', path: '/kodaikanal-sightseeing' },
   { label: 'Madurai to Kodaikanal Taxi', path: '/madurai-to-kodaikanal-taxi' },
