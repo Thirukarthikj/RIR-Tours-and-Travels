@@ -5,8 +5,8 @@ import { db } from './config';
 let isFirestoreOffline = false;
 let connPromise = null;
 
-// Helper to wrap promises with a timeout (default 4 seconds)
-const withTimeout = (promise, timeoutMs = 4000) => {
+// Helper to wrap promises with a timeout (default 10 seconds)
+const withTimeout = (promise, timeoutMs = 10000) => {
   return new Promise((resolve, reject) => {
     const timer = setTimeout(() => {
       reject(new Error("Database operation timed out"));
@@ -34,7 +34,7 @@ const checkConnection = () => {
     } else if (db) {
       const colRef = collection(db, 'settings');
       const q = query(colRef, limit(1));
-      connPromise = withTimeout(getDocs(q), 3000)
+      connPromise = withTimeout(getDocs(q), 10000)
         .then(() => {
           isFirestoreOffline = false;
           return true;

@@ -156,6 +156,7 @@ export const adminService = {
   // --- Settings CRUD ---
   async getSettings() {
     const list = await getDocuments('settings', '', [DEFAULT_SETTINGS]);
+    console.log("adminService.getSettings() list:", list);
     if (Array.isArray(list)) {
       return list[0] || DEFAULT_SETTINGS;
     }
