@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-import { RiArrowRightLine, RiWhatsappLine, RiAddLine, RiSubtractLine } from 'react-icons/ri';
+import { RiArrowRightLine, RiWhatsappLine, RiAddLine, RiSubtractLine, RiSearchLine } from 'react-icons/ri';
 
 // Swiper Styles
 import 'swiper/css';
@@ -27,8 +27,13 @@ export default function Home() {
   const [modalData, setModalData] = useState(null);
   const [email, setEmail] = useState('');
   const [newsletterMsg, setNewsletterMsg] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
-
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    navigate(`/packages?search=${encodeURIComponent(searchQuery)}`);
+  };
 
   const handleOpenModal = (data = null) => {
     setModalData(data);
@@ -155,76 +160,22 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Popular Packages Category Section */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 text-left">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary mb-8">
-            Popular Packages
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {POPULAR_CATEGORIES.map((cat) => (
-              <div 
-                key={cat.id} 
-                className={`relative overflow-hidden rounded-2xl group cursor-pointer shadow-md ${cat.cols} aspect-[4/3] md:aspect-auto md:h-80`}
-                onClick={() => navigate('/packages')}
-              >
-                {/* Background Image */}
-                <img 
-                  src={cat.image} 
-                  alt={cat.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
-                
-                {/* Dark Scrim overlay */}
-                <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors duration-300" />
-                
-                {/* Centered Content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-white z-10">
-                  <h3 className="text-xl md:text-3xl font-bold font-display leading-tight max-w-sm mb-3">
-                    {cat.title}
-                  </h3>
-                  <span className="inline-block bg-[#FACC15] text-[#002140] text-[10px] font-black font-sans px-4 py-2 rounded shadow-sm tracking-widest uppercase">
-                    {cat.count}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Services Section */}
-      <section id="services" className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionTitle
-            tag="Our Services"
-            title="Tailored Travel Solutions for Every Journey"
-            subtitle="From simple airport drops to monthly luxury car leases and custom pilgrimages, we ensure every mile is travel in absolute comfort."
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICES.map((srv) => (
-              <ServiceCard key={srv.id} service={srv} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Stats Banner Section */}
-      <section className="bg-primary text-white py-12 border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {STATS.map((stat, idx) => (
-            <div key={idx} className="space-y-1">
-              <span className="text-3xl md:text-5xl font-bold font-display text-gold-light block">
-                {stat.value}
-              </span>
-              <span className="text-xs md:text-sm font-semibold tracking-wider text-gray-300 uppercase block">
-                {stat.label}
-              </span>
-            </div>
-          ))}
+      {/* Search Bar Section */}
+      <section className="bg-white py-6 border-b border-gray-100 shadow-sm relative z-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <form onSubmit={handleSearch} className="flex items-center bg-gray-50 rounded-full p-1 sm:p-2 shadow-inner border border-gray-200 w-full">
+            <RiSearchLine className="text-gray-400 text-lg sm:text-xl ml-3 sm:ml-4 shrink-0" />
+            <input
+              type="text"
+              placeholder="Search destinations, packages..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="flex-grow min-w-0 w-full bg-transparent border-none outline-none px-2 sm:px-4 py-2 text-sm sm:text-base text-primary font-sans focus:ring-0 placeholder:text-sm sm:placeholder:text-base"
+            />
+            <Button type="submit" variant="primary" className="rounded-full px-4 sm:px-6 py-2 shrink-0 text-sm sm:text-base cursor-pointer">
+              Search
+            </Button>
+          </form>
         </div>
       </section>
 
@@ -313,6 +264,79 @@ export default function Home() {
       </section>
 
 
+
+      {/* Popular Packages Category Section */}
+      <section className="py-20 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 text-left">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-primary mb-8">
+            Popular Packages
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {POPULAR_CATEGORIES.map((cat) => (
+              <div 
+                key={cat.id} 
+                className={`relative overflow-hidden rounded-2xl group cursor-pointer shadow-md ${cat.cols} aspect-[4/3] md:aspect-auto md:h-80`}
+                onClick={() => navigate('/packages')}
+              >
+                {/* Background Image */}
+                <img 
+                  src={cat.image} 
+                  alt={cat.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                />
+                
+                {/* Dark Scrim overlay */}
+                <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors duration-300" />
+                
+                {/* Centered Content */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-white z-10">
+                  <h3 className="text-xl md:text-3xl font-bold font-display leading-tight max-w-sm mb-3">
+                    {cat.title}
+                  </h3>
+                  <span className="inline-block bg-[#FACC15] text-[#002140] text-[10px] font-black font-sans px-4 py-2 rounded shadow-sm tracking-widest uppercase">
+                    {cat.count}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Services Section */}
+      <section id="services" className="py-20 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionTitle
+            tag="Our Services"
+            title="Tailored Travel Solutions for Every Journey"
+            subtitle="From simple airport drops to monthly luxury car leases and custom pilgrimages, we ensure every mile is travel in absolute comfort."
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SERVICES.map((srv) => (
+              <ServiceCard key={srv.id} service={srv} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Stats Banner Section */}
+      <section className="bg-primary text-white py-12 border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {STATS.map((stat, idx) => (
+            <div key={idx} className="space-y-1">
+              <span className="text-3xl md:text-5xl font-bold font-display text-gold-light block">
+                {stat.value}
+              </span>
+              <span className="text-xs md:text-sm font-semibold tracking-wider text-gray-300 uppercase block">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* 7. FAQ Accordion Section */}
       <section className="py-20 bg-[#F8FAFC] border-t border-gray-100">
