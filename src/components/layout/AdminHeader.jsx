@@ -119,11 +119,9 @@ export default function AdminHeader({ toggleSidebar, isMobile }) {
             onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
             className="flex items-center gap-2.5 hover:bg-slate-50 p-1.5 rounded-lg transition-colors focus:outline-none cursor-pointer"
           >
-            <img
-              src={profile.avatarUrl || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200'}
-              alt="Avatar Profile"
-              className="w-8 h-8 rounded-lg object-cover shadow-sm bg-slate-100"
-            />
+            <div className="w-8 h-8 rounded-lg shadow-sm bg-slate-100 flex items-center justify-center text-primary">
+              <RiUserLine className="text-lg" />
+            </div>
             {!isMobile && (
               <div className="flex items-center gap-1.5">
                 <div className="text-left">
