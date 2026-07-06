@@ -7,7 +7,7 @@ import Button from '../../components/common/Button';
 import PackageCard from '../../components/shared/PackageCard';
 import EnquiryModal from '../../components/shared/EnquiryModal';
 import { getPackages } from '../../services/packageService';
-import { useSettings } from '../../contexts/SettingsContext';
+import { useSettings } from '../../hooks/useSettings';
 
 export default function Packages() {
   const { settings: CONTACT_INFO } = useSettings();

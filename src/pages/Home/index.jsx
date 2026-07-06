@@ -15,10 +15,11 @@ import Button from '../../components/common/Button';
 import SectionTitle from '../../components/common/SectionTitle';
 import ServiceCard from '../../components/shared/ServiceCard';
 import EnquiryModal from '../../components/shared/EnquiryModal';
-import SEOMeta, { localBusinessSchema, faqSchema } from '../../components/common/SEOMeta';
+import SEOMeta from '../../components/common/SEOMeta';
+import { localBusinessSchema, faqSchema } from '../../utils/schema';
 import { SERVICES, STATS, CAB, FAQS, POPULAR_CATEGORIES, PACKAGES } from '../../constants';
 import PackageCard from '../../components/shared/PackageCard';
-import { useSettings } from '../../contexts/SettingsContext';
+import { useSettings } from '../../hooks/useSettings';
 import { subscribeNewsletter } from '../../services/enquiryService';
 import { getPackages } from '../../services/packageService';
 import { getVehicles } from '../../services/vehicleService';
@@ -323,7 +324,7 @@ export default function Home() {
             className="w-full pb-4"
           >
             {packagesList.filter(p => p.id.startsWith('kodai-')).slice(0, 5).map((pkg) => (
-              <SwiperSlide key={pkg.id}>
+              <SwiperSlide key={pkg.id} className="!h-auto">
                 <PackageCard
                   pkg={pkg}
                   onDetails={() => navigate('/kodaikanal-tour-packages')}

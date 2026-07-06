@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RiCloseLine, RiCheckboxCircleFill } from 'react-icons/ri';
 import { Input, Textarea, Select } from '../common/Input';
 import Button from '../common/Button';
-import { useSettings } from '../../contexts/SettingsContext';
+import { useSettings } from '../../hooks/useSettings';
 import { submitEnquiry } from '../../services/enquiryService';
 import { adminService } from '../../services/adminService';
 

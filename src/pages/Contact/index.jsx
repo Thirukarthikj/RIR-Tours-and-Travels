@@ -8,7 +8,7 @@ import { Input, Textarea, Select } from '../../components/common/Input';
 import Button from '../../components/common/Button';
 import SectionTitle from '../../components/common/SectionTitle';
 import { CONTACT_FAQS } from '../../constants';
-import { useSettings } from '../../contexts/SettingsContext';
+import { useSettings } from '../../hooks/useSettings';
 import { submitEnquiry } from '../../services/enquiryService';
 
 export default function Contact() {
@@ -36,6 +36,15 @@ export default function Contact() {
     try {
       const res = await submitEnquiry(data);
       if (res.success) {
+        // Format WhatsApp message text
+        const messageText = `Hello RIR Tours & Travels! 👋\n\nI have submitted an enquiry:\n*Name:* ${data.fullName}\n*Phone:* ${data.phone}\n*Email:* ${data.email || 'N/A'}\n*Interested Service:* ${data.service}\n*Message:* ${data.message}\n\nPlease confirm availability and details. Thank you!`;
+
+        const phoneDigits = CONTACT_INFO.whatsapp.replace(/\D/g, '');
+        const whatsappUrl = `https://wa.me/${phoneDigits}?text=${encodeURIComponent(messageText)}`;
+        
+        // Open WhatsApp chat in a new tab
+        window.open(whatsappUrl, 'rir_whatsapp');
+
         setIsSuccess(true);
         reset();
       }

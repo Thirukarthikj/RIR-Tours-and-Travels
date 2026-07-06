@@ -63,10 +63,24 @@ const getStoredData = (key, defaultData) => {
     const parsed = JSON.parse(data);
     if (Array.isArray(defaultData)) {
       if (!Array.isArray(parsed)) return [parsed];
+      
+      let hasChanges = false;
       // Self-heal: if cache is empty but defaultData has items (prevents stuck empty state)
       if (parsed.length === 0 && defaultData.length > 0) {
         localStorage.setItem(key, JSON.stringify(defaultData));
         return defaultData;
+      }
+      
+      // Self-heal: merge any new items from defaultData that are missing in localStorage
+      defaultData.forEach(defaultItem => {
+        if (defaultItem.id && !parsed.find(p => p.id === defaultItem.id)) {
+          parsed.push(defaultItem);
+          hasChanges = true;
+        }
+      });
+      
+      if (hasChanges) {
+        localStorage.setItem(key, JSON.stringify(parsed));
       }
     }
     return parsed;

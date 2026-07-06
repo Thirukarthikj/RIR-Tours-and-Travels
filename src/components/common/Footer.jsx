@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiFacebookCircleFill, RiInstagramFill, RiYoutubeFill, RiMapPin2Line, RiPhoneLine, RiMailLine } from 'react-icons/ri';
-import { useSettings } from '../../contexts/SettingsContext';
+import { useSettings } from '../../hooks/useSettings';
 
 export default function Footer() {
   const { settings: CONTACT_INFO } = useSettings();

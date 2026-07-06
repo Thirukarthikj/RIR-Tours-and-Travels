@@ -11,16 +11,20 @@ import { useEffect } from 'react';
  * @param {Array} options.schemas - Array of JSON-LD schema objects
  */
 export default function useDocumentHead({ title, meta = [], canonical, schemas = [] }) {
+  const metaStr = JSON.stringify(meta);
+  const schemasStr = JSON.stringify(schemas);
+
   useEffect(() => {
-    // Set title
     if (title) {
       document.title = title;
     }
 
     const managedElements = [];
+    const parsedMeta = JSON.parse(metaStr);
+    const parsedSchemas = JSON.parse(schemasStr);
 
     // Set/update meta tags
-    meta.forEach(({ name, property, content }) => {
+    parsedMeta.forEach(({ name, property, content }) => {
       const attr = property ? 'property' : 'name';
       const attrValue = property || name;
       let el = document.querySelector(`meta[${attr}="${attrValue}"]`);
@@ -37,7 +41,6 @@ export default function useDocumentHead({ title, meta = [], canonical, schemas =
 
     // Set canonical
     let canonicalEl = document.querySelector('link[rel="canonical"]');
-    const hadCanonical = !!canonicalEl;
     if (canonical) {
       if (!canonicalEl) {
         canonicalEl = document.createElement('link');
@@ -50,7 +53,7 @@ export default function useDocumentHead({ title, meta = [], canonical, schemas =
 
     // Set JSON-LD schemas
     const schemaEls = [];
-    schemas.forEach((schema) => {
+    parsedSchemas.forEach((schema) => {
       const script = document.createElement('script');
       script.type = 'application/ld+json';
       script.textContent = JSON.stringify(schema);
@@ -67,5 +70,5 @@ export default function useDocumentHead({ title, meta = [], canonical, schemas =
         if (el.parentNode) el.parentNode.removeChild(el);
       });
     };
-  }, [title, canonical, JSON.stringify(meta), JSON.stringify(schemas)]);
+  }, [title, canonical, metaStr, schemasStr]);
 }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { RiWhatsappLine, RiArrowRightLine, RiAddLine, RiSubtractLine, RiMapPinLine, RiTimeLine, RiPhoneLine } from 'react-icons/ri';
+import { RiWhatsappLine, RiArrowRightLine, RiAddLine, RiSubtractLine, RiPhoneLine } from 'react-icons/ri';
 import Button from '../../components/common/Button';
 import EnquiryModal from '../../components/shared/EnquiryModal';
-import SEOMeta, { localBusinessSchema, serviceSchema, faqSchema, breadcrumbSchema } from '../../components/common/SEOMeta';
-import { useSettings } from '../../contexts/SettingsContext';
+import SEOMeta from '../../components/common/SEOMeta';
+import { localBusinessSchema, serviceSchema, faqSchema, breadcrumbSchema } from '../../utils/schema';
+import { useSettings } from '../../hooks/useSettings';
 
 /**
  * SEOLandingLayout – Shared layout for all Kodaikanal SEO landing pages.

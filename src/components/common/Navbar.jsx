@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLine, RiWhatsappLine } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '../../constants';
-import { useSettings } from '../../contexts/SettingsContext';
+import { useSettings } from '../../hooks/useSettings';
 import Button from './Button';
 
 export default function Navbar() {

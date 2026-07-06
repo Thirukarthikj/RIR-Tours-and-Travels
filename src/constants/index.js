@@ -608,6 +608,42 @@ export const CAB_EXTENDED = [
     extra: "Entertainment",
     pills: ["Reclining Seats", "Reading Lights"],
     image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246345/imgi_9_tempo_obexg0.jpg"
+  },
+  {
+    id: "jeep-4x4",
+    name: "Mahindra Thar / Jeep 4x4",
+    category: "SUV",
+    tag: "Adventure SUV",
+    seats: "4+1 Seats",
+    ac: "Open Top / AC",
+    bags: "2 Bags",
+    extra: "4x4 Drive",
+    pills: ["Off-Road Capability", "Adventure Drive"],
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783316965/jeep_xk0ppu.png"
+  },
+  {
+    id: "mini-bus",
+    name: "Luxury Mini Bus",
+    category: "Luxury Coach",
+    tag: "Group Tour",
+    seats: "20-25 Seats",
+    ac: "Central AC",
+    bags: "Large Storage",
+    extra: "PA System",
+    pills: ["Pushback Seats", "Experienced Driver"],
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783317862/mini_bus_rn8ulh.png"
+  },
+  {
+    id: "coach-van",
+    name: "Luxury Coach Van",
+    category: "Luxury Coach",
+    tag: "Executive Travel",
+    seats: "10-14 Seats",
+    ac: "Dual AC",
+    bags: "Ample Storage",
+    extra: "Premium Interiors",
+    pills: ["Comfort Ride", "Corporate Tours"],
+    image: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783318114/coach_van_xqikfy.png"
   }
 ];
 

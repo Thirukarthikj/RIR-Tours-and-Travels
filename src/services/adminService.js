@@ -163,18 +163,23 @@ export const adminService = {
   },
 
   async saveSettings(settings) {
+    let result;
     if (settings.id) {
       await updateDocument('settings', settings.id, settings);
-      return settings;
+      result = settings;
     } else {
       const list = await getDocuments('settings', '', []);
       if (Array.isArray(list) && list.length > 0) {
         await updateDocument('settings', list[0].id, settings);
-        return { id: list[0].id, ...settings };
+        result = { id: list[0].id, ...settings };
       } else {
-        return addDocument('settings', settings);
+        result = await addDocument('settings', settings);
       }
     }
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('rir_settings_updated', { detail: result }));
+    }
+    return result;
   },
 
   // --- Profile CRUD ---

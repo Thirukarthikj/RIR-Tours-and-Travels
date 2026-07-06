@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { RiWhatsappLine, RiCloseLine } from 'react-icons/ri';
-import { useSettings } from '../../contexts/SettingsContext';
+import { RiWhatsappLine } from 'react-icons/ri';
+import { useSettings } from '../../hooks/useSettings';
 
 export default function FloatingWhatsApp() {
   const { settings: CONTACT_INFO } = useSettings();
-  const [isOpen, setIsOpen] = useState(false);
   const phoneDigits = CONTACT_INFO.whatsapp.replace(/\D/g, '');
   const encodedText = encodeURIComponent("Hello RIR Tours & Travels! I'm visiting your website and would like to enquire about your services.");
   const whatsappUrl = `https://wa.me/${phoneDigits}?text=${encodedText}`;

@@ -8,7 +8,7 @@ export default function PackageCard({ pkg, onDetails, onEnquire }) {
 
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,33,64,0.06)] border border-gray-100 overflow-hidden flex flex-col text-left group"
+      className="h-full bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,33,64,0.06)] border border-gray-100 overflow-hidden flex flex-col text-left group"
       whileHover={{ y: -6, boxShadow: "0_15px_35px_-8px_rgba(0,33,64,0.12)" }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
     >
