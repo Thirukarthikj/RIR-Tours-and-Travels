@@ -127,7 +127,7 @@ export default function Packages() {
               onChange={(e) => setTourTypeFilter(e.target.value)}
               className="w-full px-4 py-3 bg-slate-50 border border-gray-100 rounded-xl text-xs font-semibold outline-none text-gray-700"
             >
-              <option value="">Luxury Cab</option>
+              <option value="">All Tour Types</option>
               <option value="Custom Plan">Custom Plan</option>
             </select>
           </div>

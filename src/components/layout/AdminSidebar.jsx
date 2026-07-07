@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { RiDashboardLine, RiRoadMapLine, RiTaxiLine, RiGalleryLine, RiMessage2Line, RiSettings4Line, RiUserLine, RiLogoutBoxRLine, RiCloseLine } from 'react-icons/ri';
+import { RiDashboardLine, RiRoadMapLine, RiTaxiLine, RiGalleryLine, RiMessage2Line, RiSettings4Line, RiUserLine, RiLogoutBoxRLine, RiCloseLine, RiLandscapeLine } from 'react-icons/ri';
 import { adminService } from '../../services/adminService';
 
 export default function AdminSidebar({ isOpen, toggleSidebar, isMobile }) {
@@ -9,6 +9,7 @@ export default function AdminSidebar({ isOpen, toggleSidebar, isMobile }) {
   const menuItems = [
     { label: 'Dashboard', path: '/admin/dashboard', icon: RiDashboardLine },
     { label: 'Packages', path: '/admin/packages', icon: RiRoadMapLine },
+    { label: 'Kodai Content', path: '/admin/kodai-content', icon: RiLandscapeLine },
     { label: 'Cab Management', path: '/admin/vehicles', icon: RiTaxiLine },
     { label: 'Gallery', path: '/admin/gallery', icon: RiGalleryLine },
     { label: 'Enquiries', path: '/admin/enquiries', icon: RiMessage2Line },

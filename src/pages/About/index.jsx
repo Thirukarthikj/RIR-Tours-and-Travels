@@ -61,9 +61,9 @@ export default function About() {
                 <div className="bg-primary/5 text-primary w-12 h-12 rounded-xl flex items-center justify-center mb-6">
                   <RiCompassLine className="text-2xl" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold font-display text-primary mb-4">Our Mission</h3>
+                <h3 className="text-2xl md:text-3xl font-bold font-display text-primary mb-4">Our Mission & Legacy</h3>
                 <p className="text-sm md:text-base text-gray-500 font-sans leading-relaxed">
-                  To deliver unparalleled travel experiences through meticulous planning, premium cab management, and absolute local dedication. We target the gold standard for bespoke tourism and corporate transit solutions in South India, treating every guest as family.
+                  Running from 1984 to the present years, we continue to deliver unparalleled travel experiences through meticulous planning, premium cab management, and absolute local dedication. We target the gold standard for bespoke tourism and corporate transit solutions in South India, treating every guest as family.
                 </p>
               </div>
             </div>
@@ -106,10 +106,10 @@ export default function About() {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold font-display text-primary mb-4">Our Vision</h3>
                   <p className="text-sm md:text-base text-gray-500 font-sans leading-relaxed mb-6">
-                    To be recognized as the premier luxury travel partner in South India, setting the gold standard for bespoke tourism and corporate transit solutions by 2030.
+                    Building on our legacy since 1984, our vision is to be recognized as the premier luxury travel partner in South India, setting the gold standard for bespoke tourism and corporate transit solutions.
                   </p>
                 </div>
-                <div className="text-xs text-gold font-bold tracking-wider uppercase font-sans">Strategic Horizon 2030</div>
+                <div className="text-xs text-gold font-bold tracking-wider uppercase font-sans">Serving Since 1984</div>
               </div>
             </div>
 

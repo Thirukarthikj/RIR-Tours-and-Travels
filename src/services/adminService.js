@@ -71,7 +71,7 @@ export const adminService = {
 
   // --- Packages CRUD ---
   async getPackages() {
-    return getDocuments('packages', 'createdDate', PACKAGES);
+    return getDocuments('packages', '', PACKAGES);
   },
 
   async savePackage(pkg) {
@@ -205,5 +205,27 @@ export const adminService = {
         return addDocument('profile', profile);
       }
     }
+  },
+
+  // --- Kodai Content Specific CRUD ---
+  async getKodaiData(collectionName, seedData = null) {
+    return getDocuments(collectionName, '', seedData);
+  },
+
+  async saveKodaiData(collectionName, data) {
+    if (data.id) {
+      await updateDocument(collectionName, data.id, data);
+      return data;
+    } else {
+      const cleanData = {
+        ...data,
+        createdDate: new Date().toISOString().split('T')[0]
+      };
+      return addDocument(collectionName, cleanData);
+    }
+  },
+
+  async deleteKodaiData(collectionName, id) {
+    return deleteDocument(collectionName, id);
   }
 };

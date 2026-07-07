@@ -130,7 +130,7 @@ export default function Cab() {
 
                   {/* Highlight pill tags */}
                   <div className="flex flex-wrap gap-2 pt-4">
-                    {vehicle.pills.map((pill, idx) => (
+                    {vehicle.pills?.map((pill, idx) => (
                       <span
                         key={idx}
                         className="text-[9px] font-bold tracking-wider bg-secondary/10 text-secondary-dark px-2.5 py-1 rounded uppercase font-sans"

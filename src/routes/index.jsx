@@ -27,6 +27,7 @@ import KodaiTourOperator from '../pages/LandingPages/KodaiTourOperator';
 import AdminLogin from '../pages/Admin/Login';
 import AdminDashboard from '../pages/Admin/Dashboard';
 import AdminPackages from '../pages/Admin/Packages';
+import AdminKodaiContent from '../pages/Admin/AdminKodaiContent';
 import AdminVehicles from '../pages/Admin/Vehicles';
 import AdminGallery from '../pages/Admin/Gallery';
 import AdminEnquiries from '../pages/Admin/Enquiries';
@@ -72,6 +73,7 @@ export default function AppRoutes() {
         <Route index element={<Navigate to="/admin/dashboard" replace />} />
         <Route path="dashboard" element={<AdminDashboard />} />
         <Route path="packages" element={<AdminPackages />} />
+        <Route path="kodai-content" element={<AdminKodaiContent />} />
         <Route path="vehicles" element={<AdminVehicles />} />
         <Route path="gallery" element={<AdminGallery />} />
         <Route path="enquiries" element={<AdminEnquiries />} />

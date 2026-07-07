@@ -785,5 +785,41 @@ export const GALLERY_EXTENDED = [
     title: "Kodaikanal Misty Peaks",
     category: "Destinations",
     url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg"
+  },
+  {
+    id: 24,
+    title: "Jeep Safari Jungle",
+    category: "Destinations",
+    url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396004/imgi_5_safari-jungle_nkyuqq.png"
+  },
+  {
+    id: 25,
+    title: "Off-Road Jeep Safari",
+    category: "Destinations",
+    url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396003/imgi_7_off-road-jeep-safari-in-kodaikanal_sbo2ae.webp"
+  },
+  {
+    id: 26,
+    title: "Kodaikanal Jeep Safari",
+    category: "Destinations",
+    url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396001/imgi_8_jeep-safari-in-kodaikanal_witqyd.jpg"
+  },
+  {
+    id: 27,
+    title: "Hidden Gems Jeep Safari",
+    category: "Destinations",
+    url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396002/imgi_6_top-5-hidden-gems-in-kodaikanal_fkcs10.webp"
+  },
+  {
+    id: 28,
+    title: "Jeep Safari Banner",
+    category: "Destinations",
+    url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396001/imgi_10_banner_fqurqj.jpg"
+  },
+  {
+    id: 29,
+    title: "Jeep Safari Trekking",
+    category: "Destinations",
+    url: "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396004/imgi_4_safari-trekking_u2yyil.png"
   }
 ];

@@ -86,20 +86,7 @@ export default function SEOLandingLayout({
           <span className="text-xs font-bold text-gold-light uppercase tracking-widest mb-3 block">{hero.tagline}</span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-display leading-[1.1] mb-5 max-w-3xl">{hero.heading}</h1>
           <p className="text-sm md:text-lg text-white/70 max-w-2xl leading-relaxed mb-8">{hero.subHeading}</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button onClick={() => setIsModalOpen(true)} variant="secondary" size="lg" className="font-bold cursor-pointer">
-              Book Now
-            </Button>
-            <Button
-              onClick={() => window.open(whatsappUrl, 'rir_whatsapp')}
-              variant="outlineWhite"
-              size="lg"
-              icon={<RiWhatsappLine className="text-xl text-[#25D366]" />}
-              className="font-bold cursor-pointer"
-            >
-              WhatsApp Booking
-            </Button>
-          </div>
+
         </div>
       </section>
 

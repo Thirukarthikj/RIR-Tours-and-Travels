@@ -11,8 +11,31 @@ export default function Packages() {
   const [editingPackage, setEditingPackage] = useState(null);
 
   const fetchPackages = () => {
-    adminService.getPackages().then(data => {
-      setPackages(data);
+    adminService.getPackages().then(async (data) => {
+      if (data.length > 20) {
+        console.log("Cleaning up duplicates...");
+        const seen = new Set();
+        const toKeep = [];
+        const toDelete = [];
+        for (const pkg of data) {
+          if (seen.has(pkg.title)) {
+            toDelete.push(pkg.id);
+          } else {
+            seen.add(pkg.title);
+            toKeep.push(pkg);
+          }
+        }
+        setPackages(toKeep);
+        
+        // Delete duplicates in the background to not freeze UI
+        for (let i = 0; i < toDelete.length; i++) {
+          await adminService.deletePackage(toDelete[i]);
+          if (i % 50 === 0) console.log(`Deleted ${i} duplicates...`);
+        }
+        console.log("Finished deleting all duplicates");
+      } else {
+        setPackages(data);
+      }
     });
   };
 

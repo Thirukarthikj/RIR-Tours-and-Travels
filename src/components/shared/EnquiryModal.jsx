@@ -12,7 +12,7 @@ export default function EnquiryModal({ isOpen, onClose, initialData = null }) {
   const { settings } = useSettings();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [whatsappNumber, setWhatsappNumber] = useState(settings?.whatsapp || '');
+  const [whatsappNumber, setWhatsappNumber] = useState(settings?.whatsapp || '+919443205497');
 
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm({
     defaultValues: {
@@ -29,10 +29,12 @@ export default function EnquiryModal({ isOpen, onClose, initialData = null }) {
     if (initialData) {
       if (initialData.title) {
         setValue('service', initialData.title);
-        setValue('message', `Hi, I am interested in booking the "${initialData.title}" package (${initialData.duration}). Please share customized pricing details.`);
+        const durationText = initialData.duration ? ` (${initialData.duration})` : '';
+        setValue('message', `Hi, I am interested in booking the "${initialData.title}" package${durationText}. Please share customized pricing details.`);
       } else if (initialData.name) {
         setValue('service', initialData.name);
-        setValue('message', `Hi, I am interested in renting the "${initialData.name}" (${initialData.category}). Please share tariff options.`);
+        const catText = initialData.category ? ` (${initialData.category})` : '';
+        setValue('message', `Hi, I am interested in renting the "${initialData.name}" cab${catText}. Please share tariff options.`);
       }
     } else {
       reset({
@@ -72,7 +74,7 @@ I have submitted an enquiry:
 
 Please confirm availability and details. Thank you!`;
 
-        const phoneDigits = whatsappNumber.replace(/\D/g, '');
+        const phoneDigits = whatsappNumber.replace(/\D/g, '') || '919443205497';
         const whatsappUrl = `https://wa.me/${phoneDigits}?text=${encodeURIComponent(messageText)}`;
 
         // Open WhatsApp chat in a new tab
