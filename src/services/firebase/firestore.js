@@ -1,10 +1,6 @@
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, orderBy, limit } from 'firebase/firestore';
 import { db } from './config';
 
-// Circuit breaker flag to bypass Firestore requests if a connection failure or timeout occurs
-let isFirestoreOffline = false;
-let connPromise = null;
-
 // Helper to wrap promises with a timeout (default 10 seconds)
 const withTimeout = (promise, timeoutMs = 10000) => {
   return new Promise((resolve, reject) => {
@@ -22,34 +18,6 @@ const withTimeout = (promise, timeoutMs = 10000) => {
         reject(err);
       });
   });
-};
-
-// Check connection health dynamically with a cached promise
-const checkConnection = () => {
-  if (!connPromise) {
-    const isOffline = typeof window !== 'undefined' && !navigator.onLine;
-    if (isOffline) {
-      isFirestoreOffline = true;
-      connPromise = Promise.resolve(false);
-    } else if (db) {
-      const colRef = collection(db, 'settings');
-      const q = query(colRef, limit(1));
-      connPromise = withTimeout(getDocs(q), 10000)
-        .then(() => {
-          isFirestoreOffline = false;
-          return true;
-        })
-        .catch((e) => {
-          isFirestoreOffline = true;
-          console.warn("Firestore database is unreachable or unconfigured. Falling back to offline LocalStorage mode.", e);
-          return false;
-        });
-    } else {
-      isFirestoreOffline = true;
-      connPromise = Promise.resolve(false);
-    }
-  }
-  return connPromise;
 };
 
 // Fallback logic to interact with LocalStorage when Firebase is not configured
@@ -95,31 +63,27 @@ const setStoredData = (key, data) => {
 
 export const getDocuments = async (collectionName, orderByField = '', seedData = null) => {
   if (db) {
-    const isOnline = await checkConnection();
-    if (isOnline && !isFirestoreOffline) {
-      try {
-        const colRef = collection(db, collectionName);
-        const q = orderByField ? query(colRef, orderBy(orderByField, 'desc')) : colRef;
-        
-        const snapshot = await withTimeout(getDocs(q));
-        const list = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    try {
+      const colRef = collection(db, collectionName);
+      const q = orderByField ? query(colRef, orderBy(orderByField, 'desc')) : colRef;
+      
+      const snapshot = await withTimeout(getDocs(q));
+      const list = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-        // Auto seed database if empty
-        if (list.length === 0 && seedData) {
-          console.log(`Seeding empty Firestore collection: ${collectionName}`);
-          for (const item of seedData) {
-            const { id: _id, ...cleanItem } = item;
-            await withTimeout(addDoc(colRef, cleanItem));
-          }
-          const seededSnapshot = await withTimeout(getDocs(q));
-          return seededSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      // Auto seed database if empty
+      if (list.length === 0 && seedData) {
+        console.log(`Seeding empty Firestore collection: ${collectionName}`);
+        for (const item of seedData) {
+          const { id: _id, ...cleanItem } = item;
+          await withTimeout(addDoc(colRef, cleanItem));
         }
-        return list;
-      } catch (error) {
-        console.error(`Error fetching collection ${collectionName} from Firestore:`, error);
-        isFirestoreOffline = true;
-        return getStoredData(`rir_v4_${collectionName}`, seedData || []);
+        const seededSnapshot = await withTimeout(getDocs(q));
+        return seededSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       }
+      return list;
+    } catch (error) {
+      console.warn(`Error fetching collection ${collectionName} from Firestore. Falling back to local storage.`, error);
+      // Fall through to local storage below
     }
   }
   return getStoredData(`rir_v4_${collectionName}`, seedData || []);
@@ -127,16 +91,13 @@ export const getDocuments = async (collectionName, orderByField = '', seedData =
 
 export const addDocument = async (collectionName, data) => {
   if (db) {
-    const isOnline = await checkConnection();
-    if (isOnline && !isFirestoreOffline) {
-      try {
-        const colRef = collection(db, collectionName);
-        const docRef = await withTimeout(addDoc(colRef, data));
-        return { id: docRef.id, ...data };
-      } catch (error) {
-        console.error(`Error adding document to Firestore collection ${collectionName}:`, error);
-        isFirestoreOffline = true;
-      }
+    try {
+      const colRef = collection(db, collectionName);
+      const docRef = await withTimeout(addDoc(colRef, data));
+      return { id: docRef.id, ...data };
+    } catch (error) {
+      console.warn(`Error adding document to Firestore collection ${collectionName}. Falling back to local storage.`, error);
+      // Fall through to local storage below
     }
   }
   // LocalStorage Fallback
@@ -149,17 +110,14 @@ export const addDocument = async (collectionName, data) => {
 
 export const updateDocument = async (collectionName, docId, data) => {
   if (db) {
-    const isOnline = await checkConnection();
-    if (isOnline && !isFirestoreOffline) {
-      try {
-        const docRef = doc(db, collectionName, docId);
-        const { id: _id, ...cleanData } = data;
-        await withTimeout(updateDoc(docRef, cleanData));
-        return true;
-      } catch (error) {
-        console.error(`Error updating document ${docId} in Firestore collection ${collectionName}:`, error);
-        isFirestoreOffline = true;
-      }
+    try {
+      const docRef = doc(db, collectionName, docId);
+      const { id: _id, ...cleanData } = data;
+      await withTimeout(updateDoc(docRef, cleanData));
+      return true;
+    } catch (error) {
+      console.warn(`Error updating document ${docId} in Firestore collection ${collectionName}. Falling back to local storage.`, error);
+      // Fall through to local storage below
     }
   }
   // LocalStorage Fallback
@@ -175,16 +133,13 @@ export const updateDocument = async (collectionName, docId, data) => {
 
 export const deleteDocument = async (collectionName, docId) => {
   if (db) {
-    const isOnline = await checkConnection();
-    if (isOnline && !isFirestoreOffline) {
-      try {
-        const docRef = doc(db, collectionName, docId);
-        await withTimeout(deleteDoc(docRef));
-        return true;
-      } catch (error) {
-        console.error(`Error deleting document ${docId} from Firestore collection ${collectionName}:`, error);
-        isFirestoreOffline = true;
-      }
+    try {
+      const docRef = doc(db, collectionName, docId);
+      await withTimeout(deleteDoc(docRef));
+      return true;
+    } catch (error) {
+      console.warn(`Error deleting document ${docId} from Firestore collection ${collectionName}. Falling back to local storage.`, error);
+      // Fall through to local storage below
     }
   }
   // LocalStorage Fallback

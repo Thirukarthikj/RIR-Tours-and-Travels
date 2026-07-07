@@ -30,11 +30,8 @@ export default function About() {
 
         {/* Content */}
         <div className="relative z-10 h-full max-w-5xl mx-auto px-6 flex flex-col justify-center text-center text-white">
-          <span className="text-xs md:text-sm font-bold tracking-widest text-gold-light uppercase mb-3 block">
-            Our Legacy
-          </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-display leading-tight max-w-4xl mx-auto mb-8">
-            Redefining Luxury Travel in Tamil Nadu, Kerala & Bengaluru
+            Redefining Luxury Travel in Kodaikanal, Tamil Nadu, Kerala & Bengaluru
           </h1>
           <div>
             <Button
@@ -71,8 +68,8 @@ export default function About() {
             {/* Right Column: Visual Image */}
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=800"
-                alt="Luxury Car Interior facing temple"
+                src="https://res.cloudinary.com/vpjbovlg/image/upload/v1783396003/imgi_2_safari-family_tpdhnv.png"
+                alt="Safari Family"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

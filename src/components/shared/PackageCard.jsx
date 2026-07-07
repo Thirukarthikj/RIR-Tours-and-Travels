@@ -8,9 +8,10 @@ export default function PackageCard({ pkg, onDetails, onEnquire }) {
 
   return (
     <motion.div
-      className="h-full bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,33,64,0.06)] border border-gray-100 overflow-hidden flex flex-col text-left group"
+      className="h-full bg-white rounded-2xl shadow-[0_4px_25px_-5px_rgba(0,33,64,0.06)] border border-gray-100 overflow-hidden flex flex-col text-left group cursor-pointer"
       whileHover={{ y: -6, boxShadow: "0_15px_35px_-8px_rgba(0,33,64,0.12)" }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
+      onClick={() => onDetails && onDetails(pkg)}
     >
       {/* Top Media Cover */}
       <div className="relative h-64 overflow-hidden bg-slate-50">
@@ -83,7 +84,10 @@ export default function PackageCard({ pkg, onDetails, onEnquire }) {
             Details
           </Button>
           <Button
-            onClick={() => onEnquire && onEnquire(pkg)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onEnquire && onEnquire(pkg);
+            }}
             variant="secondary"
             className="w-full text-xs font-semibold py-2.5"
           >

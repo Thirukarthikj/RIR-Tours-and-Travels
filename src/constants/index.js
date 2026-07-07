@@ -55,9 +55,9 @@ export const SERVICES = [
 
 // Stats Data
 export const STATS = [
-  { value: "15k+", label: "Trips Completed" },
-  { value: "10k+", label: "Happy Clients" },
-  { value: "12+", label: "Years Experience" },
+  { value: "50k+", label: "Trips Completed" },
+  { value: "45k+", label: "Happy Clients" },
+  { value: "45+", label: "Years Experience" },
   { value: "45+", label: "Luxury Cab" }
 ];
 

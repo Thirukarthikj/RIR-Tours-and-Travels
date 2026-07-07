@@ -8,9 +8,10 @@ export default function VehicleCard({ vehicle, onEnquire }) {
 
   return (
     <motion.div
-      className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,33,64,0.05)] border border-gray-100 overflow-hidden flex flex-col text-left group"
+      className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,33,64,0.05)] border border-gray-100 overflow-hidden flex flex-col text-left group cursor-pointer"
       whileHover={{ y: -6, boxShadow: "0_12px_30px_-6px_rgba(0,33,64,0.1)" }}
       transition={{ duration: 0.3 }}
+      onClick={() => onEnquire && onEnquire(vehicle)}
     >
       {/* Visual Frame */}
       <div className="relative h-56 overflow-hidden bg-slate-100">
@@ -63,7 +64,10 @@ export default function VehicleCard({ vehicle, onEnquire }) {
 
         {/* Action button */}
         <Button
-          onClick={() => onEnquire && onEnquire(vehicle)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onEnquire && onEnquire(vehicle);
+          }}
           variant="outline"
           className="w-full font-semibold border-gray-200 text-primary hover:bg-primary hover:text-white"
         >

@@ -209,21 +209,14 @@ export default function Home() {
       {/* 4. Cab Section (Visual Auto-Scrolling Showcase) */}
       <section id="cab" className="py-20 bg-white border-b border-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div className="mb-12">
             <SectionTitle
               tag="Elite Cab"
               title="Travel in the Pinnacle of Comfort"
               align="left"
               className="mb-0 max-w-2xl"
             />
-            <Link 
-              to="/packages" 
-              className="inline-flex items-center text-sm font-bold text-primary hover:text-gold transition-colors font-sans py-2"
-            >
-              View Full Cab <RiArrowRightLine className="ml-2" />
-            </Link>
           </div>
-
           {/* Auto Scrolling Swiper */}
           <Swiper
             modules={[Autoplay, Pagination]}
@@ -287,6 +280,18 @@ export default function Home() {
 
           {/* Swiper Pagination indicator slot */}
           <div className="cab-swiper-pagination flex justify-center mt-6 gap-1.5" />
+
+          <div className="flex justify-center mt-10">
+            <Button
+              onClick={() => navigate('/cab')}
+              variant="outline"
+              className="font-bold rounded-full cursor-pointer px-8"
+              icon={<RiArrowRightLine />}
+              iconPosition="right"
+            >
+              View Full Cab
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -327,21 +332,14 @@ export default function Home() {
       {/* Most Booked Packages Section */}
       <section className="py-20 bg-[#F8FAFC] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div className="mb-12">
             <SectionTitle
               tag="Most Booked"
               title="Our Most Popular Kodaikanal Packages"
               align="left"
               className="mb-0 max-w-2xl"
             />
-            <Link 
-              to="/kodaikanal-tour-packages" 
-              className="inline-flex items-center text-sm font-bold text-primary hover:text-gold transition-colors font-sans py-2"
-            >
-              View All Kodaikanal Tours <RiArrowRightLine className="ml-2" />
-            </Link>
           </div>
-
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={24}
@@ -367,6 +365,18 @@ export default function Home() {
             ))}
           </Swiper>
           <div className="packages-swiper-pagination flex justify-center mt-6 gap-1.5" />
+
+          <div className="flex justify-center mt-10">
+            <Button
+              onClick={() => navigate('/kodaikanal-tour-packages')}
+              variant="outline"
+              className="font-bold rounded-full cursor-pointer px-8"
+              icon={<RiArrowRightLine />}
+              iconPosition="right"
+            >
+              View All Kodaikanal Tours
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -400,9 +410,6 @@ export default function Home() {
                   <h3 className="text-xl md:text-3xl font-bold font-display leading-tight max-w-sm mb-3">
                     {cat.title}
                   </h3>
-                  <span className="inline-block bg-[#FACC15] text-[#002140] text-[10px] font-black font-sans px-4 py-2 rounded shadow-sm tracking-widest uppercase">
-                    {cat.count}
-                  </span>
                 </div>
               </div>
             ))}

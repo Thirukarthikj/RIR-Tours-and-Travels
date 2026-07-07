@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RiMapPin2Line, RiPhoneLine, RiWhatsappLine, RiMailLine, RiTimeLine, RiFacebookCircleLine, RiInstagramLine, RiYoutubeLine, RiAddLine, RiSubtractLine, RiCheckboxCircleFill } from 'react-icons/ri';
 
 // Reusable Components
-import { Input, Textarea, Select } from '../../components/common/Input';
+import { Input, Textarea } from '../../components/common/Input';
 import Button from '../../components/common/Button';
 import SectionTitle from '../../components/common/SectionTitle';
 import { CONTACT_FAQS } from '../../constants';
@@ -37,7 +37,7 @@ export default function Contact() {
       const res = await submitEnquiry(data);
       if (res.success) {
         // Format WhatsApp message text
-        const messageText = `Hello RIR Tours & Travels! 👋\n\nI have submitted an enquiry:\n*Name:* ${data.fullName}\n*Phone:* ${data.phone}\n*Email:* ${data.email || 'N/A'}\n*Interested Service:* ${data.service}\n*Message:* ${data.message}\n\nPlease confirm availability and details. Thank you!`;
+        const messageText = `Hello RIR Tours & Travels! 👋\n\nI have submitted an enquiry:\n*Name:* ${data.fullName}\n*Phone:* ${data.phone}\n*Email:* ${data.email || 'N/A'}\n*Interested Service:* ${data.service || 'General Enquiry'}\n*Message:* ${data.message}\n\nPlease confirm availability and details. Thank you!`;
 
         const phoneDigits = CONTACT_INFO.whatsapp.replace(/\D/g, '');
         const whatsappUrl = `https://wa.me/${phoneDigits}?text=${encodeURIComponent(messageText)}`;
@@ -55,13 +55,6 @@ export default function Contact() {
     }
   };
 
-  const serviceOptions = [
-    { value: "Luxury Cab Rental", label: "Luxury Cab Rental" },
-    { value: "Temple Tours Package", label: "Temple Tours Package" },
-    { value: "Coastal Escapes Package", label: "Coastal Escapes Package" },
-    { value: "Airport Transfer / Drops", label: "Airport Transfer / Drops" },
-    { value: "Other / Bespoke Plan", label: "Other / Bespoke Plan" }
-  ];
 
   return (
     <div className="overflow-hidden font-sans bg-slate-50 min-h-screen">
@@ -242,14 +235,6 @@ export default function Contact() {
                   />
                 </div>
 
-                <Select
-                  label="Interested Service"
-                  id="service"
-                  required
-                  options={serviceOptions}
-                  error={errors.service?.message}
-                  {...register('service', { required: 'Please select a service' })}
-                />
 
                 <Textarea
                   label="Your Message"

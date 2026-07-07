@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RiCloseLine, RiCheckboxCircleFill } from 'react-icons/ri';
-import { Input, Textarea, Select } from '../common/Input';
+import { Input, Textarea } from '../common/Input';
 import Button from '../common/Button';
 import { useSettings } from '../../hooks/useSettings';
 import { submitEnquiry } from '../../services/enquiryService';
@@ -69,7 +69,7 @@ I have submitted an enquiry:
 *Name:* ${data.fullName}
 *Phone:* ${data.phone}
 *Email:* ${data.email || 'N/A'}
-*Service/Package:* ${data.service}
+*Service/Package:* ${data.service || 'General Enquiry'}
 *Message:* ${data.message}
 
 Please confirm availability and details. Thank you!`;
@@ -90,31 +90,6 @@ Please confirm availability and details. Thank you!`;
     }
   };
 
-  const serviceOptions = [
-    { value: "Munnar Hills & Tea Estates", label: "Munnar Hills & Tea Estates Package" },
-    { value: "Ooty Botanic & Lake Getaway", label: "Ooty Botanic & Lake Getaway Package" },
-    { value: "Kodaikanal Misty Peaks", label: "Kodaikanal Misty Peaks Package" },
-    { value: "Kodaikanal Valley Sightseeing", label: "Kodaikanal Valley Sightseeing (Local)" },
-    { value: "Kodaikanal Classic City Tour", label: "Kodaikanal Classic City Tour (Local)" },
-    { value: "Kodaikanal Forest & Wild Tour", label: "Kodaikanal Forest & Wild Tour (Local)" },
-    { value: "Kodaikanal Trekking & Adventure", label: "Kodaikanal Trekking & Adventure (Local)" },
-    { value: "Kodaikanal Mannavanur Village Eco Tour", label: "Kodaikanal Mannavanur Village Eco Tour (Local)" },
-    { value: "Yercaud Emerald Escapes", label: "Yercaud Emerald Escapes Package" },
-    { value: "Thekkady Wildlife & Spice Tour", label: "Thekkady Wildlife & Spice Tour Package" },
-    { value: "Kanyakumari Sunrise & Heritage", label: "Kanyakumari Sunrise & Heritage Package" },
-    { value: "Rameshwaram & Dhanushkodi Island", label: "Rameshwaram & Dhanushkodi Island Package" },
-    { value: "Thiruchendur Murugan Sea Temple", label: "Thiruchendur Murugan Sea Temple Package" },
-    { value: "Madurai Meenakshi & Palace Heritage", label: "Madurai Meenakshi & Palace Heritage Package" },
-    { value: "Trichy Rockfort & Srirangam", label: "Trichy Rockfort & Srirangam Package" },
-    { value: "Tirupati Balaji VIP Pilgrimage", label: "Tirupati Balaji VIP Pilgrimage Package" },
-    { value: "Trivandrum Padmanabhaswamy & Kovalam", label: "Trivandrum Padmanabhaswamy & Kovalam Package" },
-    { value: "Arupadaiveedu Murugan Temple Tour", label: "Arupadaiveedu Murugan Temple Tour Package" },
-    { value: "Toyota Innova Hycross", label: "Toyota Innova Hycross (Cab)" },
-    { value: "Toyota Fortuner / SUV", label: "Toyota Fortuner / SUV (Cab)" },
-    { value: "Luxury Tempo Traveller", label: "Luxury Tempo Traveller (Cab)" },
-    { value: "Custom Bespoke Tour", label: "Custom Bespoke Tour Plan" },
-    { value: "Airport Transfer / Drop", label: "Airport Drop / Pick-up" }
-  ];
 
   return (
     <AnimatePresence>
@@ -221,14 +196,6 @@ Please confirm availability and details. Thank you!`;
                     />
                   </div>
 
-                  <Select
-                    label="Interested Service / Package"
-                    id="service"
-                    required
-                    options={serviceOptions}
-                    error={errors.service?.message}
-                    {...register('service', { required: 'Please select a package/service' })}
-                  />
 
                   <Textarea
                     label="Your Message"

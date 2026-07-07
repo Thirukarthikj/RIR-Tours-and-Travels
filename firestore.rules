@@ -7,45 +7,63 @@ service cloud.firestore {
       return request.auth != null;
     }
 
-    // packages collection
+    // packages collection (Public read, Admin write)
     match /packages/{packageId} {
       allow read: if true;
-      allow write: if true;
+      allow write: if isAdmin();
     }
 
-    // vehicles collection
+    // vehicles collection (Public read, Admin write)
     match /vehicles/{vehicleId} {
       allow read: if true;
-      allow write: if true;
+      allow write: if isAdmin();
     }
 
-    // gallery collection
+    // gallery collection (Public read, Admin write)
     match /gallery/{imageId} {
       allow read: if true;
-      allow write: if true;
+      allow write: if isAdmin();
     }
 
-    // settings collection
+    // kodai collections (Public read, Admin write)
+    match /kodai_tours/{tourId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /kodai_safaris/{safariId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /kodai_stays/{stayId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /kodai_sightseeing/{sightseeingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // settings collection (Public read, Admin write)
     match /settings/{settingId} {
       allow read: if true;
-      allow write: if true;
+      allow write: if isAdmin();
     }
 
-    // enquiries collection
+    // enquiries collection (Public create, Admin read/update/delete)
     match /enquiries/{enquiryId} {
       allow create: if true;
-      allow read, update, delete: if true;
+      allow read, update, delete: if isAdmin();
     }
 
-    // newsletter collection
+    // newsletter collection (Public create, Admin read/update/delete)
     match /newsletter/{newsletterId} {
       allow create: if true;
-      allow read, update, delete: if true;
+      allow read, update, delete: if isAdmin();
     }
 
-    // profile collection
+    // profile collection (Admin only)
     match /profile/{profileId} {
-      allow read, write: if true;
+      allow read, write: if isAdmin();
     }
   }
 }
