@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged } from 'firebase/auth';
+import { signInWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
 import { auth } from './config';
 
 // Firebase authentication service implementation with mock fallback
@@ -42,6 +42,27 @@ export const getCurrentUser = () => {
   return localStorage.getItem('rir_admin_auth') === 'true' 
     ? { email: 'admin@rirtours.com', name: 'R. Raghuran' } 
     : null;
+};
+
+export const changeAdminPassword = async (oldPassword, newPassword) => {
+  if (auth && auth.currentUser) {
+    try {
+      const user = auth.currentUser;
+      const credential = EmailAuthProvider.credential(user.email, oldPassword);
+      await reauthenticateWithCredential(user, credential);
+      await updatePassword(user, newPassword);
+      return true;
+    } catch (error) {
+      console.error("Firebase Password Change Error:", error);
+      throw error;
+    }
+  } else {
+    // Mock Fallback
+    if (oldPassword === 'trailone') {
+      return true;
+    }
+    throw new Error("Invalid old password");
+  }
 };
 
 // Listen to auth changes

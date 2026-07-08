@@ -61,6 +61,11 @@ export const adminService = {
     }
   },
 
+  async changePassword(oldPassword, newPassword) {
+    const { changeAdminPassword } = await import('./firebase/auth');
+    return changeAdminPassword(oldPassword, newPassword);
+  },
+
   async logout() {
     await logoutAdmin();
   },

@@ -50,22 +50,25 @@ export default function Profile() {
     setTimeout(() => setSaveSuccess(false), 3000);
   };
 
-  const onSubmitPassword = (data) => {
+  const onSubmitPassword = async (data) => {
     setPasswordError('');
     setPasswordSuccess(false);
 
-    if (data.oldPassword !== 'trailone') {
-      setPasswordError('Invalid old password');
-      return;
-    }
     if (data.newPassword !== data.confirmPassword) {
       setPasswordError('New passwords do not match');
       return;
     }
 
-    setPasswordSuccess(true);
-    resetPass();
-    setTimeout(() => setPasswordSuccess(false), 3000);
+    try {
+      await adminService.changePassword(data.oldPassword, data.newPassword);
+      setPasswordSuccess(true);
+      resetPass();
+      setTimeout(() => setPasswordSuccess(false), 3000);
+    } catch (error) {
+      setPasswordError(error.message === 'Firebase: Error (auth/invalid-credential).' || error.message.includes('credential') 
+        ? 'Invalid old password' 
+        : error.message || 'Failed to change password');
+    }
   };
 
   return (

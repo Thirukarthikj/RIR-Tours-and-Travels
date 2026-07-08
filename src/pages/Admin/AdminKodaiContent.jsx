@@ -4,11 +4,13 @@ import { adminService } from '../../services/adminService';
 import DataTable from '../../components/common/DataTable';
 import { TourPackageForm, JeepSafariForm, StayForm, SightseeingForm } from '../../components/forms/KodaiForms';
 
+import { SEED_TOUR_PACKAGES, SEED_JEEP_SAFARIS, SEED_STAYS_DATA, SEED_DESTINATION_TOURS } from '../../constants/kodaiSeedData';
+
 const TABS = [
-  { id: 'packages', label: 'Tour Packages', icon: RiCompass3Line, collection: 'kodai_tours' },
-  { id: 'safari', label: 'Jeep Safari', icon: RiRoadsterLine, collection: 'kodai_safaris' },
-  { id: 'accommodation', label: 'Accommodations', icon: RiHotelBedLine, collection: 'kodai_stays' },
-  { id: 'sightseeing', label: 'Sightseeing', icon: RiMapPin2Line, collection: 'kodai_sightseeing' }
+  { id: 'packages', label: 'Tour Packages', icon: RiCompass3Line, collection: 'kodai_tours', seedData: SEED_TOUR_PACKAGES },
+  { id: 'safari', label: 'Jeep Safari', icon: RiRoadsterLine, collection: 'kodai_safaris', seedData: SEED_JEEP_SAFARIS },
+  { id: 'accommodation', label: 'Accommodations', icon: RiHotelBedLine, collection: 'kodai_stays', seedData: SEED_STAYS_DATA },
+  { id: 'sightseeing', label: 'Sightseeing', icon: RiMapPin2Line, collection: 'kodai_sightseeing', seedData: SEED_DESTINATION_TOURS }
 ];
 
 export default function AdminKodaiContent() {
@@ -20,7 +22,7 @@ export default function AdminKodaiContent() {
   const activeTabData = TABS.find(t => t.id === activeTab);
 
   const fetchData = () => {
-    adminService.getKodaiData(activeTabData.collection).then(res => setData(res));
+    adminService.getKodaiData(activeTabData.collection, activeTabData.seedData).then(res => setData(res));
   };
 
   useEffect(() => {
