@@ -30,7 +30,6 @@ export const SettingsProvider = ({ children }) => {
     const fetchSettings = async () => {
       try {
         const data = await adminService.getSettings();
-        console.log("Fetched Settings from adminService:", data);
         if (data) {
           syncData(data);
         }
