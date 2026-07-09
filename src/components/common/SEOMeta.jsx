@@ -1,7 +1,7 @@
 import React from 'react';
 import useDocumentHead from '../../hooks/useDocumentHead';
 
-const SITE_URL = 'https://www.rirtours.com';
+const SITE_URL = 'https://www.rirtoursandtravels.com';
 
 /**
  * SEOMeta – Reusable component for injecting SEO metadata into <head>.

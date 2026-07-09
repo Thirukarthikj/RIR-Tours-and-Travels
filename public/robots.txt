@@ -1,11 +1,11 @@
 # robots.txt – RIR Tours and Travels
-# https://www.rirtours.com
+# https://www.rirtoursandtravels.com
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.rirtours.com/sitemap.xml
+Sitemap: https://www.rirtoursandtravels.com/sitemap.xml
 
 # Disallow admin pages from crawling
 Disallow: /admin

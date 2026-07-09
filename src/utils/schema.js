@@ -1,4 +1,4 @@
-const SITE_URL = 'https://www.rirtours.com';
+const SITE_URL = 'https://www.rirtoursandtravels.com';
 
 export const localBusinessSchema = () => ({
   '@context': 'https://schema.org',

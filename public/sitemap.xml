@@ -1,71 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Pages -->
+
+  <!-- Home -->
   <url>
-    <loc>https://www.rirtours.com/</loc>
+    <loc>https://www.rirtoursandtravels.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Core Pages -->
   <url>
-    <loc>https://www.rirtours.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.rirtours.com/packages</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.rirtours.com/fleet</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.rirtours.com/gallery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.rirtours.com/contact</loc>
+    <loc>https://www.rirtoursandtravels.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Kodaikanal SEO Landing Pages -->
   <url>
-    <loc>https://www.rirtours.com/kodaikanal-tour-packages</loc>
+    <loc>https://www.rirtoursandtravels.com/packages</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://www.rirtours.com/kodaikanal-cab-booking</loc>
+    <loc>https://www.rirtoursandtravels.com/fleet</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rirtoursandtravels.com/gallery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rirtoursandtravels.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Kodaikanal SEO Pages -->
+  <url>
+    <loc>https://www.rirtoursandtravels.com/kodaikanal-tour-packages</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://www.rirtours.com/kodaikanal-taxi-service</loc>
+    <loc>https://www.rirtoursandtravels.com/kodaikanal-cab-booking</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://www.rirtours.com/kodaikanal-one-way-drop</loc>
+    <loc>https://www.rirtoursandtravels.com/kodaikanal-taxi-service</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rirtoursandtravels.com/kodaikanal-one-way-drop</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.rirtours.com/madurai-to-kodaikanal-taxi</loc>
+    <loc>https://www.rirtoursandtravels.com/madurai-to-kodaikanal-taxi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.rirtours.com/kodaikanal-sightseeing</loc>
+    <loc>https://www.rirtoursandtravels.com/kodaikanal-sightseeing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://www.rirtours.com/kodaikanal-tour-operator</loc>
+    <loc>https://www.rirtoursandtravels.com/kodaikanal-tour-operator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
 </urlset>
