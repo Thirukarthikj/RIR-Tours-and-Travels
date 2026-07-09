@@ -56,12 +56,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center space-x-1 cursor-pointer">
-          <span className={`text-2xl font-black font-display tracking-tight transition-colors duration-300 ${
-            showDarkStyles ? 'text-white' : 'text-primary'
-          }`}>
-            RIR <span className="text-gold-light">Tours</span>
-          </span>
+        <Link to="/" className="flex items-center cursor-pointer">
+          <img src="https://res.cloudinary.com/vpjbovlg/image/upload/v1783586932/logo_oxqykz.png" alt="RIR Tours Logo" className="h-10 md:h-12 w-auto object-contain" />
         </Link>
 
         {/* Desktop Menu */}

@@ -14,9 +14,7 @@ export default function Footer() {
         {/* Brand Information */}
         <div className="space-y-4 text-left">
           <Link to="/" className="inline-block">
-            <span className="text-2xl font-bold font-display tracking-tight text-white">
-              RIR <span className="text-gold-light">Tours</span>
-            </span>
+            <img src="https://res.cloudinary.com/vpjbovlg/image/upload/v1783586932/logo_oxqykz.png" alt="RIR Tours Logo" className="h-12 w-auto object-contain" />
           </Link>
           <p className="text-sm text-gray-300 leading-relaxed max-w-sm">
             Crafting luxury road journeys across the rich heritage of Tamil Nadu, Kerala, and Bengaluru since 2014. Dedicated to convenience, security, safety, and cultural heritage.

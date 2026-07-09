@@ -62,8 +62,8 @@ export default function Login() {
       <div className="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl p-8 md:p-10 text-white flex flex-col text-left space-y-8">
         
         {/* Brand/Logo header */}
-        <div className="text-center space-y-2">
-          <span className="text-xs font-bold text-gold-light uppercase tracking-widest">RIR Tours & Travels</span>
+        <div className="text-center space-y-2 flex flex-col items-center">
+          <img src="https://res.cloudinary.com/vpjbovlg/image/upload/v1783586932/logo_oxqykz.png" alt="RIR Tours Logo" className="h-16 w-auto object-contain mb-2" />
           <h2 className="text-3xl font-bold font-display leading-tight">Admin Console</h2>
           <p className="text-xs text-gray-300">Enter credential coordinates to enter control desk</p>
         </div>
