@@ -1,0 +1,1721 @@
+{
+  "packages": [
+    {
+      "id": "02zihPXuZUGMH8kPae57",
+      "vehicle": "Premium SUV",
+      "rating": 4.8,
+      "title": "Kanyakumari Sunrise & Heritage",
+      "region": "Coastal",
+      "tag": "Scenic Drive",
+      "duration": "2 Days / 1 Night",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_14_kanyakumari_csetx3.jpg",
+      "tourType": "Luxury Cab",
+      "description": "Stand at the southernmost tip of mainland India. Witness the Confluence of three oceans and enjoy historical tours of Padmanabhapuram Palace.",
+      "highlights": [
+        "Vivekananda Rock Memorial Ferry",
+        "Thiruvalluvar Statue Visit",
+        "Triveni Sangam Sunset View"
+      ]
+    },
+    {
+      "id": "05mjC71g2SGm6D8Qqyui",
+      "region": "Hill Station",
+      "title": "Ooty Botanic & Lake Getaway",
+      "vehicle": "Premium Sedan",
+      "rating": 4.8,
+      "tag": "Romantic Escape",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_22_ooty_mwiwte.jpg",
+      "duration": "3 Days / 2 Nights",
+      "highlights": [
+        "Nilgiri Toy Train Ride",
+        "Doddabetta Peak Viewpoint",
+        "Ooty Lake Private Boating"
+      ],
+      "description": "Known as the Queen of Hill Stations, enjoy Ooty's colonial heritage gardens, scenic viewpoints, and peaceful boating, accompanied by luxury private transport."
+    },
+    {
+      "id": "082Lp32FlAOn1sMgG2dg",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_30_yercaud_atq9eq.jpg",
+      "tourType": "Luxury Cab",
+      "duration": "2 Days / 1 Night",
+      "description": "Explore the quiet charm of Yercaud. Famous for its coffee plantations, botanical gardens, and panoramic views of Salem from the Shevaroy Hills.",
+      "highlights": [
+        "Emerald Lake Boating",
+        "Pagoda Point Sunset",
+        "Killiyur Falls Trek"
+      ],
+      "title": "Yercaud Emerald Escapes",
+      "vehicle": "Toyota Etios",
+      "rating": 4.6,
+      "region": "Hill Station",
+      "tag": "Weekend Getaway"
+    },
+    {
+      "id": "0Cnp2Xr1mlbTsMEg91Kh",
+      "description": "Discover Kodaikanal's countryside. Visit the terraced agriculture valleys of Poombarai village, walk around the grasslands of Mannavanur Lake, and tour animal farms.",
+      "highlights": [
+        "Observatory Pine Forest",
+        "Rose Garden",
+        "Poombarai Village View",
+        "Poombarai Village",
+        "Mahalakshmi Temple",
+        "Kulanthi velappar Temple",
+        "Palani View",
+        "Mannavanur Sheep Farm",
+        "Rabit Farm",
+        "Mannavanur Lake"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_29_valparai_agdcal.jpg",
+      "tourType": "Local Tour",
+      "duration": "1 Day",
+      "tag": "Village Tour",
+      "title": "Tour No. 5 (Village Tour)",
+      "rating": 4.9,
+      "vehicle": "Etios / Innova",
+      "region": "Hill Station"
+    },
+    {
+      "id": "0EBQRhF15NRxqgLJWA2F",
+      "description": "A trekking trail for nature lovers. Hike to the famous Dolphin Nose rock ledge overlooking deep valley drops, hear echoes at the canyon, and cross streams.",
+      "highlights": [
+        "La Saleth Church",
+        "Vattakkanal Falls",
+        "Pambar Falls",
+        "Mountain Beauty",
+        "Dolphine Nose",
+        "Echo Rock",
+        "500 Year Old Tree",
+        "Shopping",
+        "Brayant Park",
+        "Lake Boating"
+      ],
+      "duration": "1 Day",
+      "tourType": "Local Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246354/imgi_16_kotagiri_mmkg42.jpg",
+      "tag": "Trekking Tour",
+      "rating": 4.8,
+      "vehicle": "Etios / Innova",
+      "title": "Tour No. 4 (Trekking Tour)",
+      "region": "Hill Station"
+    },
+    {
+      "id": "0FT4cnyGsccLrxgUR7aR",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_27_trichy_uxa0hr.jpg",
+      "tourType": "Luxury Cab",
+      "duration": "2 Days / 1 Night",
+      "description": "Visit the massive Srirangam temple complex, the largest functioning temple in the world, and climb Trichy's historic Rockfort Temple for panoramic city views.",
+      "highlights": [
+        "Srirangam Temple VIP Darshan",
+        "Rockfort Uchchi Pillayar Climb",
+        "Kallanai Dam Chola Legacy Walk"
+      ],
+      "title": "Trichy Rockfort & Srirangam",
+      "rating": 4.8,
+      "vehicle": "Toyota Etios",
+      "region": "Spiritual",
+      "tag": "Spiritual"
+    },
+    {
+      "id": "0GifEfheRtCbhGDd4v45",
+      "tag": "Religious",
+      "region": "Spiritual",
+      "title": "Arupadaiveedu Murugan Temple Tour",
+      "vehicle": "Luxury Tempo Traveller",
+      "rating": 5,
+      "highlights": [
+        "Visit All 6 Sacred Abodes",
+        "VIP Archana & Pooja Assistance",
+        "Premium Chaperoned Travel"
+      ],
+      "description": "An executive group pilgrimage covering all six holy hill abodes of Lord Murugan across Tamil Nadu (Palani, Swamimalai, Thiruthani, Pazhamudircholai, Thiruparankundram, Thiruchendur).",
+      "duration": "6 Days / 5 Nights",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_5_arupadaiveedu_t3cyhi.jpg",
+      "tourType": "Luxury Cab"
+    },
+    {
+      "id": "0Ljfdsg9jn5rHskwWbUC",
+      "title": "Madurai Meenakshi & Palace Heritage",
+      "rating": 4.9,
+      "vehicle": "Toyota Innova Crysta",
+      "region": "Spiritual",
+      "tag": "Heritage",
+      "tourType": "Luxury Fleet",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_18_madurai_rpybve.jpg",
+      "duration": "2 Days / 1 Night",
+      "description": "Step into the ancient city of Madurai. Experience the architecture of the Meenakshi Temple and enjoy local food tours in this legendary cultural hub.",
+      "highlights": [
+        "Meenakshi Amman VIP Darshan",
+        "Thirumalai Nayakkar Palace Show",
+        "Famous Jigarthanda Tasting"
+      ]
+    },
+    {
+      "id": "0NwCBmAdYZWF5AWZcOGZ",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246354/imgi_23_rameshwaram_bv5odj.jpg",
+      "tourType": "Luxury Cab",
+      "duration": "3 Days / 2 Nights",
+      "description": "Explore the holy island of Rameshwaram. Experience the spiritual bathing rituals at Ramanathaswamy Temple and drive to the abandoned town of Dhanushkodi.",
+      "highlights": [
+        "Pamban Bridge Scenic Crossing",
+        "22 Sacred Wells Bathing Ritual",
+        "Dhanushkodi Ghost Town Exploration"
+      ],
+      "title": "Rameshwaram & Dhanushkodi Island",
+      "rating": 4.9,
+      "vehicle": "Seven Luxury Cars",
+      "region": "Spiritual",
+      "tag": "Bestseller"
+    },
+    {
+      "id": "0T4ndnPON1JbxPE7NHle",
+      "region": "Hill Station",
+      "title": "Thekkady Wildlife & Spice Tour",
+      "rating": 4.7,
+      "vehicle": "Toyota Innova Hycross",
+      "tag": "Adventure",
+      "duration": "3 Days / 2 Nights",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246355/imgi_24_thekkady_s6nd7c.jpg",
+      "highlights": [
+        "Periyar Lake Wildlife Cruise",
+        "Guided Spice Plantation Tour",
+        "Kathakali Cultural Show"
+      ],
+      "description": "Journey into the heart of Kerala's Periyar forest. Observe wild elephants, learn about local spice farming, and enjoy private traditional cultural performances."
+    },
+    {
+      "id": "0Y6LhSEmkQLPs2wx0SCS",
+      "region": "Spiritual",
+      "title": "Tirupati Balaji VIP Pilgrimage",
+      "vehicle": "Toyota Fortuner",
+      "rating": 5,
+      "tag": "Exclusive",
+      "duration": "2 Days / 1 Night",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246355/imgi_26_Tirupati_ebfe8n.jpg",
+      "tourType": "Luxury Cab",
+      "highlights": [
+        "Special Entry VIP Darshan Tickets",
+        "Tirumala Hills Chauffeur Escort",
+        "Srikalahasti Temple Visit"
+      ],
+      "description": "Experience a stress-free pilgrimage to the world-famous Lord Venkateswara temple in Tirupati, featuring pre-arranged VIP entry and luxury hill transit."
+    },
+    {
+      "id": "0eOPHAm93MQbjV2D243U",
+      "description": "Unwind in the mist-laden hills of Munnar. Explore sprawling tea plantations, scenic waterfalls, and experience premium resort luxury in Kerala's premier hill country.",
+      "highlights": [
+        "Private Tea Factory Tour",
+        "Eravikulam National Park Visit",
+        "Mattupetty Dam Boating"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_19_Munnar_zpepqe.jpg",
+      "tourType": "Luxury Cab",
+      "duration": "3 Days / 2 Nights",
+      "tag": "Hills Escape",
+      "title": "Munnar Hills & Tea Estates",
+      "rating": 4.8,
+      "vehicle": "Toyota Innova Crysta",
+      "region": "Hill Station"
+    },
+    {
+      "id": "0esLTn7doslgGt0ty4gC",
+      "region": "Hill Station",
+      "title": "Tour No. 3 (Wild Tour)",
+      "rating": 4.7,
+      "vehicle": "Etios / Innova",
+      "tag": "Wild Tour",
+      "tourType": "Local Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_31_wayanad_pnyroq.jpg",
+      "duration": "1 Day",
+      "highlights": [
+        "Silent Valley View",
+        "Fire Tower",
+        "Berijam Lake View",
+        "Caps Fly View",
+        "Herbal Forest",
+        "Berijam Lake",
+        "Shopping",
+        "Kodai Lake"
+      ],
+      "description": "Venture deep into Kodaikanal's protected forest zones. Experience the serene beauty of Berijam Lake and high-altitude wild pine views under a special forest permit."
+    },
+    {
+      "id": "0mVecP03m37vtFru1v4m",
+      "region": "Hill Station",
+      "title": "Tour No. 1 (Valley Tour)",
+      "vehicle": "Etios / Innova",
+      "rating": 4.8,
+      "tag": "Valley Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "tourType": "Local Tour",
+      "duration": "1 Day",
+      "highlights": [
+        "Coaker's Walk",
+        "Upper Lake View",
+        "Moier Point",
+        "Pine Tree Forest",
+        "Devil's Kichen (Guna Cave)",
+        "Pillar Rocks",
+        "Green Valley View",
+        "Golf Course",
+        "Pambar Falls",
+        "Shopping & Lunch Break",
+        "Brayant Park",
+        "Kodai Lake"
+      ],
+      "description": "Explore the signature valley viewpoints of Kodaikanal. Walk misty paths at Coaker's Walk, visit deep pine forests, and stand in awe of the towering Pillar Rocks."
+    },
+    {
+      "id": "0rzWupQO5GzaqQpQOFd2",
+      "description": "Take a relaxed drive through Kodaikanal's main town attractions. Explore historical temples, beautiful public flower gardens, and local museums.",
+      "highlights": [
+        "Jain Temple",
+        "Kurinji Andaver Temple",
+        "Chettiar Park",
+        "Palani View",
+        "Kodai City View",
+        "7D Theatre",
+        "Science Museum",
+        "Silver Falls",
+        "Lake & Park"
+      ],
+      "duration": "1 Day",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246361/Desktop_wallpaper_-_Serene_mountain_road_xmpyv4.jpg",
+      "tourType": "Local Tour",
+      "tag": "City Tour",
+      "title": "Tour No. 2 (City Tour)",
+      "vehicle": "Etios / Innova",
+      "rating": 4.6,
+      "region": "Hill Station"
+    },
+    {
+      "id": "0v0P0l4CDITpMKNt0HTt",
+      "description": "Tour the capital of Kerala, home to the wealthiest temple in the world. Enjoy pristine sandy beaches at Kovalam and the royal heritage of Travancore palaces.",
+      "highlights": [
+        "Sree Padmanabhaswamy Temple Darshan",
+        "Kovalam Beach Resort Stay",
+        "Kuthira Malika Palace Tour"
+      ],
+      "duration": "3 Days / 2 Nights",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_28_trivandrum_alfyde.jpg",
+      "tag": "Coastal",
+      "rating": 4.8,
+      "vehicle": "Premium Sedan",
+      "title": "Trivandrum Padmanabhaswamy & Kovalam",
+      "region": "Coastal"
+    },
+    {
+      "id": "1PYP9qgZeoMThslai6Xo",
+      "duration": "3 Days / 2 Nights",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "tourType": "Luxury Cab",
+      "highlights": [
+        "Coaker's Walk Heritage Trail",
+        "Kodaikanal Lake Cycling",
+        "Pillar Rocks Panoramic View"
+      ],
+      "description": "Experience Kodaikanal's fresh pine forests, misty valleys, and calm lake. A scenic tour focusing on peaceful relaxation and customized nature trails.",
+      "region": "Hill Station",
+      "vehicle": "Toyota Fortuner",
+      "rating": 4.7,
+      "title": "Kodaikanal Misty Peaks",
+      "tag": "Scenic Drive"
+    },
+    {
+      "id": "2DckGs2rs0EIa0GxT1Im",
+      "tag": "Spiritual",
+      "region": "Spiritual",
+      "title": "Thiruchendur Murugan Sea Temple",
+      "vehicle": "Premium Sedan",
+      "rating": 4.7,
+      "highlights": [
+        "Nazhikinaru Sacred Well Darshan",
+        "Shoreline Temple Sunrise Walk",
+        "Tuticorin Salt Fields Drive"
+      ],
+      "description": "Visit the only Murugan temple situated on the sea coast. Witness early morning beachfront rituals and enjoy seamless chauffeur transfers.",
+      "duration": "2 Days / 1 Night",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246355/imgi_25_thiruchendur_fxugle.jpg",
+      "tourType": "Luxury Cab"
+    },
+    {
+      "id": "39r5KU9y1pZDcPpuR0OT",
+      "rating": 5,
+      "vehicle": "Toyota Fortuner",
+      "title": "Tirupati Balaji VIP Pilgrimage",
+      "region": "Spiritual",
+      "tag": "Exclusive",
+      "duration": "2 Days / 1 Night",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246355/imgi_26_Tirupati_ebfe8n.jpg",
+      "description": "Experience a stress-free pilgrimage to the world-famous Lord Venkateswara temple in Tirupati, featuring pre-arranged VIP entry and luxury hill transit.",
+      "highlights": [
+        "Special Entry VIP Darshan Tickets",
+        "Tirumala Hills Chauffeur Escort",
+        "Srikalahasti Temple Visit"
+      ]
+    },
+    {
+      "id": "3DgStX4n2j8XA49tLEkl",
+      "description": "Take a relaxed drive through Kodaikanal's main town attractions. Explore historical temples, beautiful public flower gardens, and local museums.",
+      "highlights": [
+        "Jain Temple",
+        "Kurinji Andaver Temple",
+        "Chettiar Park",
+        "Palani View",
+        "Kodai City View",
+        "7D Theatre",
+        "Science Museum",
+        "Silver Falls",
+        "Lake & Park"
+      ],
+      "tourType": "Local Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246361/Desktop_wallpaper_-_Serene_mountain_road_xmpyv4.jpg",
+      "duration": "1 Day",
+      "tag": "City Tour",
+      "title": "Tour No. 2 (City Tour)",
+      "vehicle": "Etios / Innova",
+      "rating": 4.6,
+      "region": "Hill Station"
+    },
+    {
+      "id": "4Lz6sn1N0Mz5B30Ao2su",
+      "tag": "Coastal",
+      "region": "Coastal",
+      "vehicle": "Premium Sedan",
+      "rating": 4.8,
+      "title": "Trivandrum Padmanabhaswamy & Kovalam",
+      "highlights": [
+        "Sree Padmanabhaswamy Temple Darshan",
+        "Kovalam Beach Resort Stay",
+        "Kuthira Malika Palace Tour"
+      ],
+      "description": "Tour the capital of Kerala, home to the wealthiest temple in the world. Enjoy pristine sandy beaches at Kovalam and the royal heritage of Travancore palaces.",
+      "duration": "3 Days / 2 Nights",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_28_trivandrum_alfyde.jpg",
+      "tourType": "Luxury Cab"
+    },
+    {
+      "id": "9pig4dPslx2qRMZFgi8s",
+      "tourType": "Local Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246354/imgi_16_kotagiri_mmkg42.jpg",
+      "duration": "1 Day",
+      "highlights": [
+        "La Saleth Church",
+        "Vattakkanal Falls",
+        "Pambar Falls",
+        "Mountain Beauty",
+        "Dolphine Nose",
+        "Echo Rock",
+        "500 Year Old Tree",
+        "Shopping",
+        "Brayant Park",
+        "Lake Boating"
+      ],
+      "description": "A trekking trail for nature lovers. Hike to the famous Dolphin Nose rock ledge overlooking deep valley drops, hear echoes at the canyon, and cross streams.",
+      "region": "Hill Station",
+      "title": "Tour No. 4 (Trekking Tour)",
+      "rating": 4.8,
+      "vehicle": "Etios / Innova",
+      "tag": "Trekking Tour"
+    },
+    {
+      "id": "EuX3eepggXTsSeRoqbmB",
+      "region": "Spiritual",
+      "title": "Rameshwaram & Dhanushkodi Island",
+      "rating": 4.9,
+      "vehicle": "Seven Luxury Cars",
+      "tag": "Bestseller",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246354/imgi_23_rameshwaram_bv5odj.jpg",
+      "duration": "3 Days / 2 Nights",
+      "highlights": [
+        "Pamban Bridge Scenic Crossing",
+        "22 Sacred Wells Bathing Ritual",
+        "Dhanushkodi Ghost Town Exploration"
+      ],
+      "description": "Explore the holy island of Rameshwaram. Experience the spiritual bathing rituals at Ramanathaswamy Temple and drive to the abandoned town of Dhanushkodi."
+    },
+    {
+      "id": "FzGzupXCYJMmq384BvMk",
+      "highlights": [
+        "Vivekananda Rock Memorial Ferry",
+        "Thiruvalluvar Statue Visit",
+        "Triveni Sangam Sunset View"
+      ],
+      "description": "Stand at the southernmost tip of mainland India. Witness the Confluence of three oceans and enjoy historical tours of Padmanabhapuram Palace.",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_14_kanyakumari_csetx3.jpg",
+      "tourType": "Luxury Cab",
+      "duration": "2 Days / 1 Night",
+      "tag": "Scenic Drive",
+      "region": "Coastal",
+      "title": "Kanyakumari Sunrise & Heritage",
+      "vehicle": "Premium SUV",
+      "rating": 4.8
+    },
+    {
+      "id": "LsZRNEc4YXb5u7T8G6gh",
+      "title": "Madurai Meenakshi & Palace Heritage",
+      "vehicle": "Toyota Innova Crysta",
+      "rating": 4.9,
+      "region": "Spiritual",
+      "tag": "Heritage",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_18_madurai_rpybve.jpg",
+      "tourType": "Luxury Cab",
+      "duration": "2 Days / 1 Night",
+      "description": "Step into the ancient city of Madurai. Experience the architecture of the Meenakshi Temple and enjoy local food tours in this legendary cultural hub.",
+      "highlights": [
+        "Meenakshi Amman VIP Darshan",
+        "Thirumalai Nayakkar Palace Show",
+        "Famous Jigarthanda Tasting"
+      ]
+    },
+    {
+      "id": "MPUTa1iLFCGE9F4lSVyk",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_22_ooty_mwiwte.jpg",
+      "duration": "3 Days / 2 Nights",
+      "highlights": [
+        "Nilgiri Toy Train Ride",
+        "Doddabetta Peak Viewpoint",
+        "Ooty Lake Private Boating"
+      ],
+      "description": "Known as the Queen of Hill Stations, enjoy Ooty's colonial heritage gardens, scenic viewpoints, and peaceful boating, accompanied by luxury private transport.",
+      "region": "Hill Station",
+      "title": "Ooty Botanic & Lake Getaway",
+      "vehicle": "Premium Sedan",
+      "rating": 4.8,
+      "tag": "Romantic Escape"
+    },
+    {
+      "id": "Qbov61vO7cIG58TVm3HC",
+      "vehicle": "Toyota Innova Hycross",
+      "rating": 4.7,
+      "title": "Thekkady Wildlife & Spice Tour",
+      "region": "Hill Station",
+      "tag": "Adventure",
+      "duration": "3 Days / 2 Nights",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246355/imgi_24_thekkady_s6nd7c.jpg",
+      "tourType": "Luxury Cab",
+      "description": "Journey into the heart of Kerala's Periyar forest. Observe wild elephants, learn about local spice farming, and enjoy private traditional cultural performances.",
+      "highlights": [
+        "Periyar Lake Wildlife Cruise",
+        "Guided Spice Plantation Tour",
+        "Kathakali Cultural Show"
+      ]
+    },
+    {
+      "id": "SrRj4wfexswYUqoF9kuP",
+      "rating": 4.8,
+      "vehicle": "Toyota Etios",
+      "title": "Trichy Rockfort & Srirangam",
+      "region": "Spiritual",
+      "tag": "Spiritual",
+      "duration": "2 Days / 1 Night",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_27_trichy_uxa0hr.jpg",
+      "description": "Visit the massive Srirangam temple complex, the largest functioning temple in the world, and climb Trichy's historic Rockfort Temple for panoramic city views.",
+      "highlights": [
+        "Srirangam Temple VIP Darshan",
+        "Rockfort Uchchi Pillayar Climb",
+        "Kallanai Dam Chola Legacy Walk"
+      ]
+    },
+    {
+      "id": "evEDQHCBPrczHQGtcb2U",
+      "tag": "Weekend Getaway",
+      "title": "Yercaud Emerald Escapes",
+      "rating": 4.6,
+      "vehicle": "Toyota Etios",
+      "region": "Hill Station",
+      "description": "Explore the quiet charm of Yercaud. Famous for its coffee plantations, botanical gardens, and panoramic views of Salem from the Shevaroy Hills.",
+      "highlights": [
+        "Emerald Lake Boating",
+        "Pagoda Point Sunset",
+        "Killiyur Falls Trek"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_30_yercaud_atq9eq.jpg",
+      "tourType": "Luxury Cab",
+      "duration": "2 Days / 1 Night"
+    },
+    {
+      "id": "fr5KMRL4wcoR5PBtpvDK",
+      "tag": "Hills Escape",
+      "region": "Hill Station",
+      "title": "Munnar Hills & Tea Estates",
+      "vehicle": "Toyota Innova Crysta",
+      "rating": 4.8,
+      "highlights": [
+        "Private Tea Factory Tour",
+        "Eravikulam National Park Visit",
+        "Mattupetty Dam Boating"
+      ],
+      "description": "Unwind in the mist-laden hills of Munnar. Explore sprawling tea plantations, scenic waterfalls, and experience premium resort luxury in Kerala's premier hill country.",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_19_Munnar_zpepqe.jpg",
+      "duration": "3 Days / 2 Nights"
+    },
+    {
+      "id": "g8UjGD5uOi52a5zVWj0e",
+      "highlights": [
+        "Nazhikinaru Sacred Well Darshan",
+        "Shoreline Temple Sunrise Walk",
+        "Tuticorin Salt Fields Drive"
+      ],
+      "description": "Visit the only Murugan temple situated on the sea coast. Witness early morning beachfront rituals and enjoy seamless chauffeur transfers.",
+      "duration": "2 Days / 1 Night",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246355/imgi_25_thiruchendur_fxugle.jpg",
+      "tourType": "Luxury Cab",
+      "tag": "Spiritual",
+      "region": "Spiritual",
+      "vehicle": "Premium Sedan",
+      "rating": 4.7,
+      "title": "Thiruchendur Murugan Sea Temple"
+    },
+    {
+      "id": "iNlvS1ULOXA5zz0h1dgc",
+      "description": "Explore the signature valley viewpoints of Kodaikanal. Walk misty paths at Coaker's Walk, visit deep pine forests, and stand in awe of the towering Pillar Rocks.",
+      "highlights": [
+        "Coaker's Walk",
+        "Upper Lake View",
+        "Moier Point",
+        "Pine Tree Forest",
+        "Devil's Kichen (Guna Cave)",
+        "Pillar Rocks",
+        "Green Valley View",
+        "Golf Course",
+        "Pambar Falls",
+        "Shopping & Lunch Break",
+        "Brayant Park",
+        "Kodai Lake"
+      ],
+      "duration": "1 Day",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "tourType": "Local Tour",
+      "tag": "Valley Tour",
+      "title": "Tour No. 1 (Valley Tour)",
+      "vehicle": "Etios / Innova",
+      "rating": 4.8,
+      "region": "Hill Station"
+    },
+    {
+      "id": "m3NHVDSKXxZASD426BFf",
+      "highlights": [
+        "Visit All 6 Sacred Abodes",
+        "VIP Archana & Pooja Assistance",
+        "Premium Chaperoned Travel"
+      ],
+      "description": "An executive group pilgrimage covering all six holy hill abodes of Lord Murugan across Tamil Nadu (Palani, Swamimalai, Thiruthani, Pazhamudircholai, Thiruparankundram, Thiruchendur).",
+      "duration": "6 Days / 5 Nights",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_5_arupadaiveedu_t3cyhi.jpg",
+      "tag": "Religious",
+      "region": "Spiritual",
+      "rating": 5,
+      "vehicle": "Luxury Tempo Traveller",
+      "title": "Arupadaiveedu Murugan Temple Tour"
+    },
+    {
+      "id": "nymkhnqRbb5S9v0N3qDi",
+      "description": "Venture deep into Kodaikanal's protected forest zones. Experience the serene beauty of Berijam Lake and high-altitude wild pine views under a special forest permit.",
+      "highlights": [
+        "Silent Valley View",
+        "Fire Tower",
+        "Berijam Lake View",
+        "Caps Fly View",
+        "Herbal Forest",
+        "Berijam Lake",
+        "Shopping",
+        "Kodai Lake"
+      ],
+      "duration": "1 Day",
+      "tourType": "Local Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_31_wayanad_pnyroq.jpg",
+      "tag": "Wild Tour",
+      "title": "Tour No. 3 (Wild Tour)",
+      "rating": 4.7,
+      "vehicle": "Etios / Innova",
+      "region": "Hill Station"
+    },
+    {
+      "id": "v1bEH9iWzyb8eL4qW3fa",
+      "tag": "Scenic Drive",
+      "region": "Hill Station",
+      "title": "Kodaikanal Misty Peaks",
+      "rating": 4.7,
+      "vehicle": "Toyota Fortuner",
+      "highlights": [
+        "Coaker's Walk Heritage Trail",
+        "Kodaikanal Lake Cycling",
+        "Pillar Rocks Panoramic View"
+      ],
+      "description": "Experience Kodaikanal's fresh pine forests, misty valleys, and calm lake. A scenic tour focusing on peaceful relaxation and customized nature trails.",
+      "tourType": "Luxury Cab",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "duration": "3 Days / 2 Nights"
+    },
+    {
+      "id": "zjtF6Hg4jW8M6vgS8ZEc",
+      "description": "Discover Kodaikanal's countryside. Visit the terraced agriculture valleys of Poombarai village, walk around the grasslands of Mannavanur Lake, and tour animal farms.",
+      "highlights": [
+        "Observatory Pine Forest",
+        "Rose Garden",
+        "Poombarai Village View",
+        "Poombarai Village",
+        "Mahalakshmi Temple",
+        "Kulanthi velappar Temple",
+        "Palani View",
+        "Mannavanur Sheep Farm",
+        "Rabit Farm",
+        "Mannavanur Lake"
+      ],
+      "duration": "1 Day",
+      "tourType": "Local Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246356/imgi_29_valparai_agdcal.jpg",
+      "tag": "Village Tour",
+      "title": "Tour No. 5 (Village Tour)",
+      "rating": 4.9,
+      "vehicle": "Etios / Innova",
+      "region": "Hill Station"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "2VVts5UYRCJNAPf399Ir",
+      "pills": [
+        "Comfort Ride",
+        "Corporate Tours"
+      ],
+      "category": "Luxury Coach",
+      "ac": "Dual AC",
+      "extra": "Premium Interiors",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783318114/coach_van_xqikfy.png",
+      "tag": "Executive Travel",
+      "seats": "10-14 Seats",
+      "bags": "Ample Storage",
+      "name": "Luxury Coach Van"
+    },
+    {
+      "id": "3p0DcO7UQY98QewF7Luk",
+      "tag": "Group Tour",
+      "name": "Luxury Mini Bus",
+      "bags": "Large Storage",
+      "seats": "20-25 Seats",
+      "category": "Luxury Coach",
+      "pills": [
+        "Pushback Seats",
+        "Experienced Driver"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783317862/mini_bus_rn8ulh.png",
+      "extra": "PA System",
+      "ac": "Central AC"
+    },
+    {
+      "id": "7WtZ7zBV9jWid6jpaUQP",
+      "extra": "4x4 Drive",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783316965/jeep_xk0ppu.png",
+      "ac": "Open Top / AC",
+      "category": "SUV",
+      "pills": [
+        "Off-Road Capability",
+        "Adventure Drive"
+      ],
+      "name": "Mahindra Thar / Jeep 4x4",
+      "bags": "2 Bags",
+      "seats": "4+1 Seats",
+      "tag": "Adventure SUV"
+    },
+    {
+      "id": "ACIVEF7sAeH5Pn68bgHX",
+      "pills": [
+        "Spacious Boot",
+        "Top Rated Chauffeur"
+      ],
+      "category": "Sedan",
+      "ac": "High Efficiency AC",
+      "extra": "GPS Tracking",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_4_etios_xoehkl.jpg",
+      "tag": "Premium Sedan",
+      "seats": "4+1 Seats",
+      "bags": "2 Large Bags",
+      "name": "Toyota Etios"
+    },
+    {
+      "id": "G8cWNuy0CPa8Jmhr1ijW",
+      "seats": "4+1 Seats",
+      "name": "Toyota Etios",
+      "bags": "2 Large Bags",
+      "tag": "Premium Sedan",
+      "ac": "High Efficiency AC",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_4_etios_xoehkl.jpg",
+      "extra": "GPS Tracking",
+      "pills": [
+        "Spacious Boot",
+        "Top Rated Chauffeur"
+      ],
+      "category": "Sedan"
+    },
+    {
+      "id": "GEjeqBnjBacRswxk3r32",
+      "seats": "4+1 Seats",
+      "bags": "2 Bags",
+      "name": "Maruti Swift Dzire",
+      "tag": "Comfort Sedan",
+      "ac": "High Efficiency AC",
+      "extra": "GPS Tracking",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_3_sedan_qkmju5.jpg",
+      "pills": [
+        "Uniformed Driver",
+        "City Specialist"
+      ],
+      "category": "Sedan"
+    },
+    {
+      "id": "GawdtVHkpWe0wDOcYOnA",
+      "tag": "Group Travel",
+      "bags": "Ample Storage",
+      "name": "Luxury Tempo Traveller",
+      "seats": "12-17 Seats",
+      "category": "Tempo Traveller",
+      "pills": [
+        "Reclining Seats",
+        "Reading Lights"
+      ],
+      "extra": "Entertainment",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246345/imgi_9_tempo_obexg0.jpg",
+      "ac": "Roof Mounted AC"
+    },
+    {
+      "id": "IQYbq5QC1NRWF8WyZY8q",
+      "name": "Toyota Fortuner / SUV",
+      "bags": "3 Large Bags",
+      "seats": "6+1 Seats",
+      "tag": "Luxury SUV",
+      "extra": "Premium Suspension",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_5_suv_t9qzwz.jpg",
+      "ac": "Dual Zone AC",
+      "category": "SUV",
+      "pills": [
+        "Uniformed Driver",
+        "All-Terrain Capability"
+      ]
+    },
+    {
+      "id": "Nmv2zFcH4kEr9q8Xo1PK",
+      "tag": "Executive SUV",
+      "bags": "3 Large Bags",
+      "name": "Toyota Innova Crysta",
+      "seats": "6+1 Seats",
+      "category": "SUV",
+      "pills": [
+        "Professional Driver",
+        "Mineral Water"
+      ],
+      "extra": "Onboard WiFi",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246345/imgi_7_crysta_vvogcu.jpg",
+      "ac": "Climate Control"
+    },
+    {
+      "id": "OADgBsn3fAfsdbR4v7GK",
+      "category": "Sedan",
+      "pills": [
+        "Uniformed Driver",
+        "City Specialist"
+      ],
+      "extra": "GPS Tracking",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_3_sedan_qkmju5.jpg",
+      "ac": "High Efficiency AC",
+      "tag": "Comfort Sedan",
+      "name": "Maruti Swift Dzire",
+      "bags": "2 Bags",
+      "seats": "4+1 Seats"
+    },
+    {
+      "id": "SWp1iAbINtLEJG5YQz4c",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246343/imgi_2_hatchback_zj9cdb.jpg",
+      "extra": "Budget Friendly",
+      "ac": "Standard AC",
+      "category": "Hatchback",
+      "pills": [
+        "AC / Heater",
+        "Experienced Driver"
+      ],
+      "bags": "1 Med Bag",
+      "name": "Maruti Swift / Indica",
+      "seats": "4+1 Seats",
+      "tag": "Economy Hatchback"
+    },
+    {
+      "id": "TZ8HR2d1RGclLaDnOr2S",
+      "category": "Premium MUV",
+      "pills": [
+        "Premium Captain Seats",
+        "Professional Chauffeur"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_6_innova_ooa4b8.jpg",
+      "extra": "Ambient Lighting",
+      "ac": "Climate Control",
+      "tag": "Premium MUV",
+      "name": "Toyota Innova Hycross",
+      "bags": "4 Large Bags",
+      "seats": "7+1 Seats"
+    },
+    {
+      "id": "X46BUQwQt2d5GWdn7Dqn",
+      "ac": "Standard AC",
+      "extra": "Budget Friendly",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246343/imgi_2_hatchback_zj9cdb.jpg",
+      "pills": [
+        "AC / Heater",
+        "Experienced Driver"
+      ],
+      "category": "Hatchback",
+      "seats": "4+1 Seats",
+      "name": "Maruti Swift / Indica",
+      "bags": "1 Med Bag",
+      "tag": "Economy Hatchback"
+    },
+    {
+      "id": "ceeKl0kW8qxJ7qaYO7wH",
+      "tag": "Executive SUV",
+      "name": "Toyota Innova Crysta",
+      "bags": "3 Large Bags",
+      "seats": "6+1 Seats",
+      "category": "SUV",
+      "pills": [
+        "Professional Driver",
+        "Mineral Water"
+      ],
+      "extra": "Onboard WiFi",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246345/imgi_7_crysta_vvogcu.jpg",
+      "ac": "Climate Control"
+    },
+    {
+      "id": "oVPO80qVoCjocHJa1ah8",
+      "seats": "6+1 Seats",
+      "name": "Toyota Fortuner / SUV",
+      "bags": "3 Large Bags",
+      "tag": "Luxury SUV",
+      "ac": "Dual Zone AC",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_5_suv_t9qzwz.jpg",
+      "extra": "Premium Suspension",
+      "pills": [
+        "Uniformed Driver",
+        "All-Terrain Capability"
+      ],
+      "category": "SUV"
+    },
+    {
+      "id": "x3Qh9bFoR8sNsAlZweB6",
+      "extra": "Entertainment",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246345/imgi_9_tempo_obexg0.jpg",
+      "ac": "Roof Mounted AC",
+      "category": "Tempo Traveller",
+      "pills": [
+        "Reclining Seats",
+        "Reading Lights"
+      ],
+      "name": "Luxury Tempo Traveller",
+      "bags": "Ample Storage",
+      "seats": "12-17 Seats",
+      "tag": "Group Travel"
+    },
+    {
+      "id": "zBUYzinPclfxGVrbOn9G",
+      "seats": "7+1 Seats",
+      "bags": "4 Large Bags",
+      "name": "Toyota Innova Hycross",
+      "tag": "Premium MUV",
+      "ac": "Climate Control",
+      "extra": "Ambient Lighting",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246344/imgi_6_innova_ooa4b8.jpg",
+      "pills": [
+        "Premium Captain Seats",
+        "Professional Chauffeur"
+      ],
+      "category": "Premium MUV"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "6cxy3utDNNYAus7Kdh2H",
+      "url": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_33_tours-bnr_xpvnob.jpg",
+      "category": "Fleet",
+      "title": "RIR Tours Premium Banner"
+    },
+    {
+      "id": "FixrJ2dzlUnq8XILM3B0",
+      "category": "Fleet",
+      "url": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246359/imgi_33_tours-bnr_xpvnob.jpg",
+      "title": "RIR Tours Premium Banner"
+    },
+    {
+      "id": "HFWjBEnsIVgSHM92tASk",
+      "title": "Traditional Welcome & Hospitality",
+      "category": "Events",
+      "url": "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=600"
+    },
+    {
+      "id": "KOPcjTOcvsTBm9Y11Hiv",
+      "title": "Meenakshi Temple Tank at Twilight",
+      "url": "https://images.unsplash.com/photo-1600100397608-f010b423b971?q=80&w=600",
+      "category": "Destinations"
+    },
+    {
+      "id": "Q723aWiyiYLDbTYHzRUa",
+      "title": "Chauffeur Drives on Coastal Roads",
+      "category": "Fleet",
+      "url": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783185824/imgi_5_kerala-trip-packages_iboeoi.jpg"
+    },
+    {
+      "id": "aZ8VyFHhMdTRNOub2Bjh",
+      "title": "Luxury Tempo Traveller Interior Cabin",
+      "category": "Fleet",
+      "url": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600"
+    },
+    {
+      "id": "cYKfaoukvmM1iutivY4U",
+      "category": "Events",
+      "url": "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=600",
+      "title": "Feasting on Authentic Banana Leaves Meal"
+    },
+    {
+      "id": "p4VIE4nr9Bl8K1qFN4Qp",
+      "category": "Fleet",
+      "url": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=600",
+      "title": "Our Premium Volvo Coach Fleet"
+    }
+  ],
+  "kodai_tours": [
+    {
+      "id": "4Vr265q7GWbehqwtEsGO",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783403982/imgi_20_jw_sig_cache_943205497a_kodai-resort-kodaikanal-hotel-tour-package-from-hyderabad_x5yife.jpg",
+      "features": [
+        "Family Suite or Villa Stay",
+        "Stay (complimentary food & campfire)",
+        "Group Activities",
+        "Jeep safari",
+        "Sightseeing",
+        "Kids Play Area Access"
+      ],
+      "duration": "3 Days / 2 Nights",
+      "title": "Family Package",
+      "capacity": "Min 4",
+      "desc": "The perfect family getaway with comfortable stays, exciting activities, and memorable experiences for everyone."
+    },
+    {
+      "id": "5To7jMHkSki83fGL5B2k",
+      "capacity": "Min 4",
+      "desc": "An adventure-packed package designed for groups of friends looking for thrills and unforgettable memories in the hills.",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "features": [
+        "Dormitory or Tent Stay",
+        "Stay (complimentary food & campfire)",
+        "Trekking & Adventure",
+        "Jeep safari",
+        "Night Safari",
+        "BBQ Setup"
+      ],
+      "duration": "3 Days / 2 Nights",
+      "title": "Namma Pasanga Package"
+    },
+    {
+      "id": "7UxqnH0vb964UX9HeUai",
+      "capacity": "Max 2",
+      "desc": "A romantic getaway with comfortable room or cottage accommodation, complete with photoshoot and adventure activities.",
+      "title": "Couple Package 2",
+      "features": [
+        "Room or Cottage Stay",
+        "Stay (complimentary food & campfire)",
+        "Couple Photoshoot",
+        "Jeep safari",
+        "Sightseeing",
+        "Mannavanur & Poombarai"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783403984/imgi_22_jw_sig_cache_943205497a_kodai-resort-kodaikanal-hotel-tour-package-with-campfire_xpbb1d.jpg",
+      "duration": "3 Days / 2 Nights",
+      "badge": "POPULAR"
+    },
+    {
+      "id": "Cpsy7P0rEjAxbuJY3SXe",
+      "title": "Couple Package 1",
+      "duration": "3 Days / 2 Nights",
+      "features": [
+        "A-frame or Glass house stays",
+        "Stay (complimentary food & campfire)",
+        "Couple Photoshoot",
+        "Jeep safari",
+        "Sightseeing",
+        "Mannavanur & Poombarai"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783403984/imgi_21_jw_sig_cache_943205497a_kodai-resort-kodaikanal-hotel-tour-package-from-madurai_qkiye3.jpg",
+      "capacity": "Max 2",
+      "desc": "Experience romance in our stunning A-frame or Glass house stays with complimentary food, campfire, and a special couple photoshoot.",
+      "badge": "POPULAR"
+    },
+    {
+      "id": "IcPWMBKIfWiRcPdrwuXw",
+      "badge": "POPULAR",
+      "capacity": "Max 2",
+      "desc": "Experience romance in our stunning A-frame or Glass house stays with complimentary food, campfire, and a special couple photoshoot.",
+      "title": "Couple Package 1",
+      "features": [
+        "A-frame or Glass house stays",
+        "Stay (complimentary food & campfire)",
+        "Couple Photoshoot",
+        "Jeep safari",
+        "Sightseeing",
+        "Mannavanur & Poombarai"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783403984/imgi_21_jw_sig_cache_943205497a_kodai-resort-kodaikanal-hotel-tour-package-from-madurai_qkiye3.jpg",
+      "duration": "3 Days / 2 Nights"
+    },
+    {
+      "id": "N7X9CNqJvCkNhzkhKxzk",
+      "capacity": "Min 4",
+      "desc": "The perfect family getaway with comfortable stays, exciting activities, and memorable experiences for everyone.",
+      "title": "Family Package",
+      "duration": "3 Days / 2 Nights",
+      "features": [
+        "Family Suite or Villa Stay",
+        "Stay (complimentary food & campfire)",
+        "Group Activities",
+        "Jeep safari",
+        "Sightseeing",
+        "Kids Play Area Access"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783403982/imgi_20_jw_sig_cache_943205497a_kodai-resort-kodaikanal-hotel-tour-package-from-hyderabad_x5yife.jpg"
+    },
+    {
+      "id": "XMXCinQ8X4OaEaQ5fkSl",
+      "title": "Couple Package 2",
+      "features": [
+        "Room or Cottage Stay",
+        "Stay (complimentary food & campfire)",
+        "Couple Photoshoot",
+        "Jeep safari",
+        "Sightseeing",
+        "Mannavanur & Poombarai"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783403984/imgi_22_jw_sig_cache_943205497a_kodai-resort-kodaikanal-hotel-tour-package-with-campfire_xpbb1d.jpg",
+      "duration": "3 Days / 2 Nights",
+      "capacity": "Max 2",
+      "desc": "A romantic getaway with comfortable room or cottage accommodation, complete with photoshoot and adventure activities.",
+      "badge": "POPULAR"
+    },
+    {
+      "id": "w165ZSP9zITgUbgXBK4q",
+      "title": "Namma Pasanga Package",
+      "duration": "3 Days / 2 Nights",
+      "features": [
+        "Dormitory or Tent Stay",
+        "Stay (complimentary food & campfire)",
+        "Trekking & Adventure",
+        "Jeep safari",
+        "Night Safari",
+        "BBQ Setup"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "capacity": "Min 4",
+      "desc": "An adventure-packed package designed for groups of friends looking for thrills and unforgettable memories in the hills."
+    }
+  ],
+  "kodai_safaris": [
+    {
+      "id": "LjvIcwfmDjSQ6ce2uFw6",
+      "spots": [
+        "Wilderness Trek",
+        "Bird Watching",
+        "Photography Spots",
+        "Campfire Site",
+        "Forest Cave"
+      ],
+      "subtitle": "Max 6",
+      "title": "Jeep Safari 6",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396004/imgi_4_safari-trekking_u2yyil.png"
+    },
+    {
+      "id": "YKtBi6Og5WtIVDBu0cyq",
+      "spots": [
+        "Offroad",
+        "Pepper Falls",
+        "Skating Falls",
+        "Mountain View",
+        "Sera Cafe"
+      ],
+      "subtitle": "Max 6",
+      "title": "Jeep Safari 2",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396003/imgi_7_off-road-jeep-safari-in-kodaikanal_sbo2ae.webp"
+    },
+    {
+      "id": "ZIfvKAIL9sqg33U2MX58",
+      "spots": [
+        "Shooting spot view",
+        "Palani view point",
+        "Falls",
+        "Mehindi Circle",
+        "Falls view Point",
+        "River Cross"
+      ],
+      "subtitle": "Max 6",
+      "title": "Jeep Safari 1",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396004/imgi_5_safari-jungle_nkyuqq.png"
+    },
+    {
+      "id": "mEUgNu1LNrLNsCcwheWF",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396001/imgi_8_jeep-safari-in-kodaikanal_witqyd.jpg",
+      "title": "Jeep Safari 3",
+      "subtitle": "Max 6",
+      "spots": [
+        "Deep Jungle",
+        "Lake View",
+        "Echo Point",
+        "Silent Valley",
+        "Caps Valley"
+      ]
+    },
+    {
+      "id": "oBr8qjEfNLdU27LDQgFa",
+      "title": "Jeep Safari 4",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396002/imgi_6_top-5-hidden-gems-in-kodaikanal_fkcs10.webp",
+      "spots": [
+        "Hidden Waterfalls",
+        "Mist Valley",
+        "Pine Forest",
+        "Moir Point",
+        "Pillar Rocks"
+      ],
+      "subtitle": "Max 6"
+    },
+    {
+      "id": "pyt1EvD6FQt6wBNLvCpC",
+      "spots": [
+        "Sunrise Point",
+        "Village View",
+        "Trekking Trail",
+        "Nature Walk",
+        "Mountain Peaks"
+      ],
+      "subtitle": "Max 6",
+      "title": "Jeep Safari 5",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783396001/imgi_10_banner_fqurqj.jpg"
+    }
+  ],
+  "kodai_stays": [
+    {
+      "id": "4YBntrg3pyOKRltZIT4l",
+      "tag": "Cottage",
+      "rating": 4.9,
+      "title": "Hillside Cottage",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395493/imgi_21_main-building-exterior-cHCpu93u_cvhbla.jpg",
+      "guests": 4,
+      "beds": 2,
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Mini Bar"
+        },
+        {
+          "label": "+3 more"
+        }
+      ],
+      "desc": "A cozy cottage perched on the hillside with panoramic views of the valley. Perfect for families seeking tranquility and natural..."
+    },
+    {
+      "id": "6tKQmCiWzphHy9uXSoBA",
+      "tag": "Studio",
+      "beds": 1,
+      "desc": "A budget-friendly studio apartment perfect for solo travelers or couples. Compact yet comfortable with all essential amenities.",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Kitchenette"
+        },
+        {
+          "label": "Hot Water"
+        }
+      ],
+      "rating": 4.5,
+      "title": "Cozy Studio",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395489/imgi_15_balcony-rooftop-valley-view-B_M6Itlg_nflbet.jpg",
+      "guests": 2
+    },
+    {
+      "id": "B8u0UJDhEPJIjtrcI8oE",
+      "desc": "A luxurious villa overlooking the serene Kodaikanal lake. Features elegant interiors, spacious rooms, and premium...",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Full Kitchen"
+        },
+        {
+          "label": "+3 more"
+        }
+      ],
+      "beds": 3,
+      "guests": 6,
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395491/imgi_3_stone-cottage-exterior-DB7CjBhG_uqgaro.jpg",
+      "title": "Lake View Villa",
+      "rating": 4.8,
+      "tag": "Villa"
+    },
+    {
+      "id": "HUpmZXCWtWgKisGZ4Roo",
+      "beds": 2,
+      "desc": "A cozy cottage perched on the hillside with panoramic views of the valley. Perfect for families seeking tranquility and natural...",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Mini Bar"
+        },
+        {
+          "label": "+3 more"
+        }
+      ],
+      "title": "Hillside Cottage",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395493/imgi_21_main-building-exterior-cHCpu93u_cvhbla.jpg",
+      "rating": 4.9,
+      "guests": 4,
+      "tag": "Cottage"
+    },
+    {
+      "id": "HcP5Q72whqgbwXfFDsw2",
+      "tag": "Bungalow",
+      "beds": 4,
+      "desc": "A spacious bungalow surrounded by beautiful gardens. Ideal for large families or groups looking for a home-away from home...",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Full Kitchen"
+        },
+        {
+          "label": "+3 more"
+        }
+      ],
+      "title": "Garden Bungalow",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395489/imgi_6_wide-balcony-valley-view-CgcFhm0k_uuhvat.jpg",
+      "rating": 4.6,
+      "guests": 8
+    },
+    {
+      "id": "SXVai4J0UDJRUBmjIlLV",
+      "tag": "Bungalow",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395489/imgi_6_wide-balcony-valley-view-CgcFhm0k_uuhvat.jpg",
+      "title": "Garden Bungalow",
+      "rating": 4.6,
+      "guests": 8,
+      "beds": 4,
+      "desc": "A spacious bungalow surrounded by beautiful gardens. Ideal for large families or groups looking for a home-away from home...",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Full Kitchen"
+        },
+        {
+          "label": "+3 more"
+        }
+      ]
+    },
+    {
+      "id": "U6tJLDRsggmcUfR1kWpE",
+      "tag": "Room",
+      "rating": 4.7,
+      "title": "Forest Retreat Room",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395490/imgi_6_cottage-exterior-patio-Bj1q3Muc_fiolw3.jpg",
+      "guests": 2,
+      "beds": 1,
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Kitchenette"
+        },
+        {
+          "label": "Hot Water"
+        }
+      ],
+      "desc": "A peaceful room nestled in the forest, offering the perfect escape for couples. Wake up to birdsong and misty mornings."
+    },
+    {
+      "id": "Ysn6JbusEGh2L16r4pvt",
+      "beds": 1,
+      "desc": "A peaceful room nestled in the forest, offering the perfect escape for couples. Wake up to birdsong and misty mornings.",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Kitchenette"
+        },
+        {
+          "label": "Hot Water"
+        }
+      ],
+      "rating": 4.7,
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395490/imgi_6_cottage-exterior-patio-Bj1q3Muc_fiolw3.jpg",
+      "title": "Forest Retreat Room",
+      "guests": 2,
+      "tag": "Room"
+    },
+    {
+      "id": "dLaGn85DvIfoaXNXK6ml",
+      "beds": 1,
+      "desc": "An elegant suite at the highest point of our property, offering unobstructed views of the Western Ghats. Luxury meets...",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Mini Bar"
+        },
+        {
+          "label": "+3 more"
+        }
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395489/imgi_2_balcony-valley-view-DYND3t_I_trk3o8.jpg",
+      "title": "Mountain Peak Suite",
+      "rating": 4.9,
+      "guests": 3,
+      "tag": "Suite"
+    },
+    {
+      "id": "fIPkHGfMIuWMCQvlkGVX",
+      "tag": "Villa",
+      "rating": 4.8,
+      "title": "Lake View Villa",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395491/imgi_3_stone-cottage-exterior-DB7CjBhG_uqgaro.jpg",
+      "guests": 6,
+      "beds": 3,
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Full Kitchen"
+        },
+        {
+          "label": "+3 more"
+        }
+      ],
+      "desc": "A luxurious villa overlooking the serene Kodaikanal lake. Features elegant interiors, spacious rooms, and premium..."
+    },
+    {
+      "id": "jaUGCkuJ2s1N5i00HPTe",
+      "tag": "Suite",
+      "beds": 1,
+      "desc": "An elegant suite at the highest point of our property, offering unobstructed views of the Western Ghats. Luxury meets...",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Parking"
+        },
+        {
+          "label": "Mini Bar"
+        },
+        {
+          "label": "+3 more"
+        }
+      ],
+      "rating": 4.9,
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395489/imgi_2_balcony-valley-view-DYND3t_I_trk3o8.jpg",
+      "title": "Mountain Peak Suite",
+      "guests": 3
+    },
+    {
+      "id": "kt3OKpXpFyQbC8yjtW1Q",
+      "guests": 2,
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783395489/imgi_15_balcony-rooftop-valley-view-B_M6Itlg_nflbet.jpg",
+      "title": "Cozy Studio",
+      "rating": 4.5,
+      "desc": "A budget-friendly studio apartment perfect for solo travelers or couples. Compact yet comfortable with all essential amenities.",
+      "amenities": [
+        {
+          "label": "Free WiFi"
+        },
+        {
+          "label": "Kitchenette"
+        },
+        {
+          "label": "Hot Water"
+        }
+      ],
+      "beds": 1,
+      "tag": "Studio"
+    }
+  ],
+  "kodai_sightseeing": [
+    {
+      "id": "9J7AEFRKJHu5NeojNt1p",
+      "spots": [
+        "1. Observatory pine forest",
+        "2. Poombarai village view",
+        "3. Poombarai village",
+        "4. Mahalakshmi temple",
+        "5. Kulanthi velappar temple",
+        "6. Palani view",
+        "7. Mannavanur sheep farm",
+        "8. Mannavanur Lake"
+      ],
+      "footerText": "Drop for Lunch and drop at property",
+      "title": "Village Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_18_madurai_rpybve.jpg"
+    },
+    {
+      "id": "K6uVsWMLFGsCccLuH8Bl",
+      "footerText": "Drop for Lunch and drop at property",
+      "title": "Village Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246353/imgi_18_madurai_rpybve.jpg",
+      "spots": [
+        "1. Observatory pine forest",
+        "2. Poombarai village view",
+        "3. Poombarai village",
+        "4. Mahalakshmi temple",
+        "5. Kulanthi velappar temple",
+        "6. Palani view",
+        "7. Mannavanur sheep farm",
+        "8. Mannavanur Lake"
+      ]
+    },
+    {
+      "id": "KbTLrYnBdCrxMwBzauoG",
+      "spots": [
+        "1. La saleth church",
+        "2. Vattakanal falls",
+        "3. Pambar falls",
+        "4. Lion cave",
+        "5. Mountain beauty",
+        "6. Dolphin nose",
+        "7. Eco rock",
+        "8. 500 years old tree"
+      ],
+      "title": "Trekking Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783185825/imgi_7_vibrant-kerala-tour-packages_whrahw.jpg",
+      "footerText": "Drop for Lunch and drop at property"
+    },
+    {
+      "id": "N9c5AYbLhPvf2fauforJ",
+      "spots": [
+        "1. Rose Garden",
+        "2. Observatory telescope",
+        "3. Moir point",
+        "4. Pine forest",
+        "5. Devils kitchen",
+        "6. Pillar rocks",
+        "7. Golf course",
+        "8. Green valley view",
+        "9. Upper lake view",
+        "10. Pambar falls",
+        "11. Kodaikanal Lake (star lake)",
+        "12. Byrant park"
+      ],
+      "footerText": "Drop for Lunch and drop at property",
+      "title": "Valley Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg"
+    },
+    {
+      "id": "Nk74gaNhdXUnfQX6kFuL",
+      "spots": [
+        "1. Silent valley view",
+        "2. Fire tower",
+        "3. Berijam lake view",
+        "4. Caps valley view",
+        "5. Herbal Forest",
+        "6. Berijam lake",
+        "7. Boating"
+      ],
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "title": "Berijam Tour",
+      "footerText": "Drop for Lunch and drop at property"
+    },
+    {
+      "id": "TpR9fvgjgKVVoLlq4jEH",
+      "footerText": "Drop for Lunch and drop at property",
+      "title": "Valley Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "spots": [
+        "1. Rose Garden",
+        "2. Observatory telescope",
+        "3. Moir point",
+        "4. Pine forest",
+        "5. Devils kitchen",
+        "6. Pillar rocks",
+        "7. Golf course",
+        "8. Green valley view",
+        "9. Upper lake view",
+        "10. Pambar falls",
+        "11. Kodaikanal Lake (star lake)",
+        "12. Byrant park"
+      ]
+    },
+    {
+      "id": "UBj7KT4wNXqbuHJuaD4v",
+      "footerText": "Drop for Lunch and drop at property",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783185825/imgi_7_vibrant-kerala-tour-packages_whrahw.jpg",
+      "title": "Trekking Tour",
+      "spots": [
+        "1. La saleth church",
+        "2. Vattakanal falls",
+        "3. Pambar falls",
+        "4. Lion cave",
+        "5. Mountain beauty",
+        "6. Dolphin nose",
+        "7. Eco rock",
+        "8. 500 years old tree"
+      ]
+    },
+    {
+      "id": "ZvE7PcvTu8g7dH8sD743",
+      "footerText": "Drop for Lunch and drop at property",
+      "title": "Berijam Tour",
+      "image": "https://res.cloudinary.com/vpjbovlg/image/upload/v1783246352/imgi_15_kodaikanal_bna8gi.jpg",
+      "spots": [
+        "1. Silent valley view",
+        "2. Fire tower",
+        "3. Berijam lake view",
+        "4. Caps valley view",
+        "5. Herbal Forest",
+        "6. Berijam lake",
+        "7. Boating"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "0IIgBujSm5rUvB3lCuBf",
+      "logoUrl": "",
+      "email": "info@rirtours.com",
+      "phone": "+91 44 2456 7890",
+      "faviconUrl": "",
+      "facebook": "https://facebook.com/rirtours",
+      "youtube": "https://youtube.com/rirtours",
+      "footerText": "© 2026 RIR Tours and Travels. All rights reserved. Crafted for luxury.",
+      "instagram": "https://instagram.com/rirtours",
+      "googleMaps": "https://maps.app.goo.gl/jfDDXBKQgqqmHM6k6",
+      "address": "42 Luxury Drive, Anna Salai, Chennai, Tamil Nadu 600002",
+      "whatsapp": "+91 93425 53805",
+      "companyName": "RIR Tours & Travels"
+    },
+    {
+      "id": "SuG96X48i2PZDOQ7hkST",
+      "faviconUrl": "",
+      "phone": "+91 9787785075",
+      "email": "rirtoursandtravels@gmail.com",
+      "logoUrl": "",
+      "instagram": "https://www.instagram.com/r.i.r_tours_travels?igsh=NXd1MzEzbDA1bWZt",
+      "googleMaps": "https://maps.app.goo.gl/hhAYYbK5CkUWHBRs5?g_st=ac",
+      "youtube": "https://youtube.com/rirtours",
+      "companyName": "RIR Tours & Travels",
+      "address": "RAILWAY STATION,Kodai Road,Dindigul,TamilNadu 624206.",
+      "whatsapp": "+91 9787785075",
+      "hours": "24/7",
+      "facebook": "https://facebook.com/rirtours",
+      "footerText": "© 2026 RIR Tours and Travels. All rights reserved. Crafted for luxury."
+    },
+    {
+      "id": "iqQGawopL66Ik1uG2zWw",
+      "whatsapp": "+91 93425 53805",
+      "address": "42 Luxury Drive, Anna Salai, Chennai, Tamil Nadu 600002",
+      "companyName": "RIR Tours & Travels",
+      "facebook": "https://facebook.com/rirtours",
+      "youtube": "https://youtube.com/rirtours",
+      "footerText": "© 2026 RIR Tours and Travels. All rights reserved. Crafted for luxury.",
+      "instagram": "https://instagram.com/rirtours",
+      "googleMaps": "https://maps.app.goo.gl/jfDDXBKQgqqmHM6k6",
+      "logoUrl": "",
+      "email": "info@rirtours.com",
+      "phone": "+91 44 2456 7890",
+      "faviconUrl": ""
+    }
+  ],
+  "enquiries": [
+    {
+      "id": "PWWw9BOByliSpOfOWzH3",
+      "date": "2026-07-03T18:45:00Z",
+      "message": "Corporate leisure trip for 12 research scholars. Need pickup from Coimbatore airport.",
+      "package": "Ooty & Kodaikanal",
+      "status": "Contacted",
+      "vehicle": "Luxury Tempo Traveller",
+      "name": "Dr. Ananya Sen",
+      "phone": "+91 94432 10987",
+      "email": "ananya.sen@univ.edu"
+    },
+    {
+      "id": "YkUYsvCtUd8N3uf3ScYW",
+      "date": "2026-07-04T12:00:00Z",
+      "message": "We are planning a family temple tour with 6 adults and 2 children. Please quote for a 3 Days custom package.",
+      "package": "Madurai & Rameshwaram",
+      "name": "Karthik Raja",
+      "phone": "+91 98765 43210",
+      "email": "karthik.raja@outlook.com",
+      "vehicle": "Toyota Innova Crysta",
+      "status": "New"
+    },
+    {
+      "id": "aonU4mDWU33xLADOD0q7",
+      "email": "bsrgamingvj@gmail.com",
+      "phone": "+916384645227",
+      "service": "Toyota Etios",
+      "status": "New",
+      "fullName": "Bsr",
+      "date": "2026-07-09T16:49:42.804Z",
+      "message": "Hi, I am interested in renting the \"Toyota Etios\" cab (Sedan). Please share tariff options."
+    },
+    {
+      "id": "o86w4M9KQYaCOCBpdcM8",
+      "status": "New",
+      "email": "jthirukarthick@gmail.com",
+      "phone": "+919342553805",
+      "service": "Ooty Botanic & Lake Getaway",
+      "date": "2026-07-09T09:37:05.671Z",
+      "fullName": "Thiru Karthik",
+      "message": "Hi, I am interested in booking the \"Ooty Botanic & Lake Getaway\" package (3 Days / 2 Nights). Please share customized pricing details."
+    }
+  ],
+  "newsletter": [],
+  "profile": [
+    {
+      "id": "EdXPbqk4afQgTGSTjCh8",
+      "avatarUrl": "",
+      "name": "Bala",
+      "email": "rirtoursandtravels@gmail.com"
+    }
+  ]
+}
